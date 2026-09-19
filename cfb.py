@@ -1,6 +1,4 @@
 """
-fetch_cfbd_data.py
-
 Pulls multiple seasons of college football games, teams, talent
 (recruiting composite), and SP+ ratings from the CollegeFootballData
 (CFBD) API and saves them to local CSV files. Built to support an
@@ -19,16 +17,6 @@ Setup:
 
     3. Run (defaults to 2019-2024):
            python fetch_cfbd_data.py
-
-       Or specify a range:
-           python fetch_cfbd_data.py --start-year 2015 --end-year 2024
-
-       Or just one year:
-           python fetch_cfbd_data.py --start-year 2024 --end-year 2024
-
-Never hardcode your API key in this file or commit it to GitHub.
-Everything this script pulls (games, teams, talent, SP+ ratings) is
-available on CFBD's free tier -- no payment required.
 """
 
 import argparse
