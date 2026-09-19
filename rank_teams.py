@@ -1,6 +1,6 @@
 """
 Builds week-by-week Elo-style power ratings for FBS teams from the
-data pulled.
+data pulled by fetch_cfbd_data.py (cfb.py).
 
 How it works:
     - Every team starts a season with a rating carried over from the
@@ -97,15 +97,18 @@ def load_games() -> list[dict]:
             }
         )
 
-    # Deduplicate in case a game appears in both a per-year file and the combined file
-    seen = set()
-    deduped = []
+    # Deduplicate in case the same game appears more than once (e.g. it
+    # showed up in both a per-year file and the combined file, or CFBD
+    # corrected a score between two pulls). Key on the matchup itself, not
+    # the score, and keep the LAST-seen version -- since files are loaded
+    # combined-file-first and per-year-fallback-second, and re-pulls always
+    # contain the most current data, "last seen" is the freshest version.
+    deduped_by_key = {}
     for g in parsed:
-        key = (g["season"], g["week"], g["home_team"], g["away_team"], g["home_points"], g["away_points"])
-        if key not in seen:
-            seen.add(key)
-            deduped.append(g)
+        key = (g["season"], g["week"], g["home_team"], g["away_team"])
+        deduped_by_key[key] = g  # overwrite -- last occurrence wins
 
+    deduped = list(deduped_by_key.values())
     deduped.sort(key=lambda g: (g["season"], g["week"], g["start_date"]))
     return deduped
 
