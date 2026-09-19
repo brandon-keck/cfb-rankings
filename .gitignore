@@ -1,0 +1,19 @@
+# Environment variables / secrets -- NEVER commit your API key
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Large generated data (optional -- see note below)
+# Uncomment these if you decide NOT to commit your CSVs to GitHub
+# data/*.csv
