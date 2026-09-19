@@ -1,0 +1,53 @@
+name: Update CFB Rankings
+
+on:
+  schedule:
+    # Monday 9am UTC -- catches the full weekend's games (Thu-Sun)
+    - cron: '0 9 * * 1'
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write   # needed so the workflow can commit updated data back to the repo
+
+jobs:
+  update-rankings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Determine current season year
+        id: season
+        run: |
+          MONTH=$(date -u +%-m)
+          YEAR=$(date -u +%Y)
+          if [ "$MONTH" -ge 8 ]; then
+            SEASON=$YEAR
+          else
+            SEASON=$((YEAR - 1))
+          fi
+          echo "season=$SEASON" >> "$GITHUB_OUTPUT"
+
+      - name: Pull latest games/teams/talent/SP+ data
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python cfb.py --start-year ${{ steps.season.outputs.season }} --end-year ${{ steps.season.outputs.season }}
+
+      - name: Recompute rankings
+        run: python rank_teams.py
+
+      - name: Commit and push updated data (if anything changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Automated rankings update ($(date -u +%Y-%m-%d))"
+          git push
