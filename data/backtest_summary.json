@@ -1,0 +1,54 @@
+{
+  "generated_at_utc": "2026-09-19",
+  "games_evaluated": 5085,
+  "elo_accuracy": 0.7143,
+  "elo_brier_score": 0.1879,
+  "home_baseline_accuracy": 0.5882,
+  "elo_vs_home_baseline_pts": 12.6,
+  "sp_plus_accuracy": 0.7882,
+  "sp_plus_brier_score": 0.1462,
+  "sp_plus_games_compared": 5085,
+  "elo_vs_sp_plus_pts": -7.4,
+  "accuracy_by_season": [
+    {
+      "season": 2019,
+      "accuracy": 0.7248,
+      "games": 734
+    },
+    {
+      "season": 2020,
+      "accuracy": 0.7165,
+      "games": 508
+    },
+    {
+      "season": 2021,
+      "accuracy": 0.709,
+      "games": 732
+    },
+    {
+      "season": 2022,
+      "accuracy": 0.6798,
+      "games": 734
+    },
+    {
+      "season": 2023,
+      "accuracy": 0.7373,
+      "games": 750
+    },
+    {
+      "season": 2024,
+      "accuracy": 0.6955,
+      "games": 752
+    },
+    {
+      "season": 2025,
+      "accuracy": 0.7178,
+      "games": 762
+    },
+    {
+      "season": 2026,
+      "accuracy": 0.8407,
+      "games": 113
+    }
+  ]
+}

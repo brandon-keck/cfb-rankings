@@ -21,6 +21,8 @@ Metrics:
 """
 
 import csv
+import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from rank_teams import DATA_DIR, load_games, load_talent, load_fbs_teams, run_elo
@@ -125,12 +127,15 @@ def main():
 
     # ---- Per-season breakdown ----
     seasons = sorted(set(p["season"] for p in predictions))
+    per_season = []
     print("\nAccuracy by season:")
     for season in seasons:
         season_preds = [p for p in predictions if p["season"] == season]
         if len(season_preds) < 10:
             continue  # skip seasons with too few completed games to be meaningful (e.g. current in-progress season early on)
-        print(f"  {season}: {accuracy(season_preds):.1%}  ({len(season_preds)} games)")
+        season_acc = accuracy(season_preds)
+        per_season.append({"season": season, "accuracy": round(season_acc, 4), "games": len(season_preds)})
+        print(f"  {season}: {season_acc:.1%}  ({len(season_preds)} games)")
 
     # ---- Save full results for further analysis ----
     out_path = DATA_DIR / "backtest_predictions.csv"
@@ -143,6 +148,27 @@ def main():
             row["predicted_correctly"] = (p["home_win_prob"] > 0.5) == p["home_won"]
             writer.writerow(row)
     print(f"\nSaved per-game predictions -> {out_path}")
+
+    # ---- Save a small summary JSON -- this is what the README and the
+    # dashboard read from, so both stay current automatically instead of
+    # having yesterday's numbers typed in by hand.
+    summary = {
+        "generated_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "games_evaluated": len(predictions),
+        "elo_accuracy": round(elo_acc, 4),
+        "elo_brier_score": round(elo_brier, 4),
+        "home_baseline_accuracy": round(home_acc, 4),
+        "elo_vs_home_baseline_pts": round((elo_acc - home_acc) * 100, 1),
+        "sp_plus_accuracy": round(sp_acc, 4) if sp_predictions else None,
+        "sp_plus_brier_score": round(sp_brier, 4) if sp_predictions else None,
+        "sp_plus_games_compared": len(sp_predictions) if sp_predictions else 0,
+        "elo_vs_sp_plus_pts": round((elo_acc - sp_acc) * 100, 1) if sp_predictions else None,
+        "accuracy_by_season": per_season,
+    }
+    summary_path = DATA_DIR / "backtest_summary.json"
+    with open(summary_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2)
+    print(f"Saved summary -> {summary_path}")
 
 
 if __name__ == "__main__":

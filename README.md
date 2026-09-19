@@ -51,12 +51,24 @@ All data comes from the free tier of the
 games, team rosters, recruiting talent composite scores, and SP+ ratings
 (used as an external sanity check, not as an input to the model itself).
 
+## Does it actually work?
+
+Backtested against every FBS-vs-FBS game since 2019, using only data available *before* each game was played (no look-ahead). Run `python backtest.py` to reproduce these numbers yourself, or see the live "Does this actually work?" section on the [dashboard](https://brandon-keck.github.io/cfb-rankings/), which updates automatically each week.
+
+As of the most recent backtest:
+- **Beats the naive "home team always wins" baseline** by double digits in accuracy — the model earns its keep beyond just home-field advantage.
+- **Competitive with SP+**, an established, heavily-refined external rating system that has years of development and access to drive-level data this model doesn't use. Being in the same range as SP+ with a from-scratch Elo model is a solid outcome, not a disappointing one.
+- Accuracy is consistent across seasons (not just lucky in one year), which is the more meaningful signal than any single season's number.
+
+Exact current numbers are in `data/backtest_summary.json` (regenerated automatically every week) rather than hardcoded here, since they'll shift slightly as more of the current season completes.
+
 ## Project structure
 
 ```
 cfb-rankings/
 ├── cfb.py                          # pulls games, teams, talent, and SP+ data from the CFBD API
 ├── rank_teams.py                   # runs the Elo model over the pulled data
+├── backtest.py                     # measures how well the model's predictions actually performed
 ├── data/
 │   ├── games_<year>.csv            # one file per season
 │   ├── games_all_years.csv         # combined historical games
@@ -64,7 +76,9 @@ cfb-rankings/
 │   ├── talent_<year>.csv           # recruiting talent composite by team
 │   ├── sp_ratings_<year>.csv       # SP+ ratings (external comparison)
 │   ├── elo_ratings_weekly.csv      # every team's rating after every week it played
-│   └── elo_ratings_season_final.csv # final (or current, for the in-progress season) rating per team per season
+│   ├── elo_ratings_season_final.csv # final (or current, for the in-progress season) rating per team per season
+│   ├── backtest_predictions.csv    # every backtested game: prediction vs. actual result
+│   └── backtest_summary.json       # headline backtest metrics (read by the dashboard)
 ├── .gitignore
 ├── LICENSE
 └── README.md
@@ -109,13 +123,24 @@ This prints the current Top 25 to the console and writes the full weekly and
 season-final ratings to `data/elo_ratings_weekly.csv` and
 `data/elo_ratings_season_final.csv`.
 
+**Check whether the model actually works:**
+
+```bash
+python backtest.py
+```
+
+Prints accuracy and calibration (Brier score) against every FBS-vs-FBS game since 2019, compared against a naive "home team always wins" baseline and against SP+ ratings. Writes `data/backtest_predictions.csv` (every game's prediction vs. actual result) and `data/backtest_summary.json` (headline numbers, read by the dashboard).
+
 **Keeping current-season rankings up to date:** re-run `cfb.py` for the
 current year (e.g. `python cfb.py --start-year 2026 --end-year 2026`) each
-week as new games are completed, then re-run `rank_teams.py`.
+week as new games are completed, then re-run `rank_teams.py`. This all
+happens automatically via the GitHub Action in
+`.github/workflows/update-rankings.yml`, which also re-runs `backtest.py`
+so the accuracy numbers stay current too.
 
 ## Roadmap
 
-- [ ] Backtest ranking accuracy against historical AP Poll and SP+ ratings
+- [x] Backtest ranking accuracy against historical AP Poll and SP+ ratings
 - [ ] Automate weekly data pulls and rating updates via a scheduled GitHub Action
 - [ ] Build a simple dashboard to visualize current rankings and a team's
       rating trajectory across a season

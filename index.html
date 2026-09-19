@@ -244,6 +244,62 @@
 
   canvas { max-height: 280px; }
 
+  /* ---- stats ---- */
+
+  .stats {
+    padding-top: 44px;
+    margin-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stats h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+
+  .stats .desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 24px;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 4px;
+  }
+
+  .stat-value.negative { color: var(--down); }
+  .stat-value.positive { color: var(--up); }
+
+  .stat-label {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .stats-note {
+    color: var(--muted-dim);
+    font-size: 12px;
+    margin: 0;
+  }
+
   /* ---- footer ---- */
 
   footer {
@@ -318,6 +374,26 @@
       <div class="chart-panel-empty" id="chart-empty">Select a team above to see its rating trajectory.</div>
     </section>
 
+    <section class="stats" id="stats-section" style="display:none;">
+      <h2>Does this actually work?</h2>
+      <p class="desc" id="stats-desc"></p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-value" id="stat-accuracy">—</div>
+          <div class="stat-label">Prediction accuracy</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-vs-home">—</div>
+          <div class="stat-label">vs. "home team always wins"</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-vs-sp">—</div>
+          <div class="stat-label">vs. SP+ ratings</div>
+        </div>
+      </div>
+      <p class="stats-note">Backtested using only data available before each game was played — no look-ahead. Recomputed automatically every week.</p>
+    </section>
+
   </div>
 
   <div class="status" id="status">Loading ratings…</div>
@@ -389,8 +465,44 @@
       document.getElementById('status').style.display = 'none';
       document.getElementById('app-content').style.display = 'block';
       renderSeason();
+      loadBacktestSummary();
     }).catch(function (err) {
       setStatus('Could not load ratings data: ' + err.message, true);
+    });
+  }
+
+  function loadBacktestSummary() {
+    // Supplementary section -- if this file doesn't exist yet (backtest.py
+    // hasn't been run), fail silently rather than showing an error, since
+    // the main dashboard works fine without it.
+    fetch('data/backtest_summary.json').then(function (res) {
+      if (!res.ok) throw new Error('not found');
+      return res.json();
+    }).then(function (summary) {
+      const section = document.getElementById('stats-section');
+
+      document.getElementById('stat-accuracy').textContent = (summary.elo_accuracy * 100).toFixed(1) + '%';
+
+      const vsHome = summary.elo_vs_home_baseline_pts;
+      const vsHomeEl = document.getElementById('stat-vs-home');
+      vsHomeEl.textContent = (vsHome >= 0 ? '+' : '') + vsHome.toFixed(1) + ' pts';
+      vsHomeEl.className = 'stat-value ' + (vsHome >= 0 ? 'positive' : 'negative');
+
+      const vsSpEl = document.getElementById('stat-vs-sp');
+      if (summary.sp_plus_accuracy !== null && summary.sp_plus_accuracy !== undefined) {
+        const vsSp = summary.elo_vs_sp_plus_pts;
+        vsSpEl.textContent = (vsSp >= 0 ? '+' : '') + vsSp.toFixed(1) + ' pts';
+        vsSpEl.className = 'stat-value ' + (vsSp >= 0 ? 'positive' : 'negative');
+      } else {
+        vsSpEl.textContent = 'N/A';
+      }
+
+      document.getElementById('stats-desc').textContent =
+        'Across ' + summary.games_evaluated.toLocaleString() + ' FBS-vs-FBS games since 2019 (as of ' + summary.generated_at_utc + ').';
+
+      section.style.display = 'block';
+    }).catch(function () {
+      // Silently skip -- no backtest data available yet.
     });
   }
 
