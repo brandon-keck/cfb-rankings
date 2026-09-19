@@ -1,6 +1,4 @@
 """
-rank_teams.py
-
 Builds week-by-week Elo-style power ratings for FBS teams from the
 data pulled by fetch_cfbd_data.py (cfb.py).
 
@@ -23,20 +21,6 @@ How it works:
     - A snapshot of every team's rating is saved after each week, so
       you can plot a team's rating trajectory across a season or
       reconstruct "what would the rankings have looked like in week 8."
-
-Run this after fetch_cfbd_data.py (cfb.py) has populated the data/
-folder:
-
-    python rank_teams.py
-
-Reads:
-    data/games_all_years.csv   (historical seasons)
-    data/games_2026.csv        (current in-progress season, if present)
-    data/talent_all_years.csv  (recruiting talent composite)
-
-Writes:
-    data/elo_ratings_weekly.csv       one row per team per week per season
-    data/elo_ratings_season_final.csv one row per team per season (final rating + rank)
 """
 
 import csv
