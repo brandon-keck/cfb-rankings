@@ -1,4 +1,7 @@
 """
+Builds week-by-week Elo-style power ratings for FBS teams from the
+data pulled by fetch_cfbd_data.py (cfb.py).
+
 How it works:
     - Every team starts a season with a rating carried over from the
       previous season, regressed partway back toward the average
@@ -137,21 +140,26 @@ def load_fbs_teams() -> dict[int, set[str]]:
 
 
 def load_talent() -> dict[tuple[int, str], float]:
-    """Returns {(season, team): talent_composite}"""
+    """Returns {(season, team): talent_composite}, built from per-year
+    talent_YYYY.csv files directly (not the combined file) so this can
+    never silently go stale if the combined file is ever out of date."""
     talent = {}
-    path = DATA_DIR / "talent_all_years.csv"
-    if not path.exists():
-        return talent
-
-    with open(path, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            try:
-                season = int(row["year"]) if "year" in row else int(row["season"])
-                team = row.get("school") or row.get("team")
-                score = float(row["talent"])
-                talent[(season, team.strip())] = score
-            except (KeyError, ValueError, TypeError):
-                continue
+    for path in sorted(glob.glob(str(DATA_DIR / "talent_*.csv"))):
+        p = Path(path)
+        if p.name == "talent_all_years.csv":
+            continue
+        m = re.match(r"talent_(\d{4})\.csv$", p.name)
+        if not m:
+            continue
+        season = int(m.group(1))
+        with open(p, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                try:
+                    team = row.get("school") or row.get("team")
+                    score = float(row["talent"])
+                    talent[(season, team.strip())] = score
+                except (KeyError, ValueError, TypeError):
+                    continue
     return talent
 
 
@@ -219,6 +227,7 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
     games_played_this_season: dict[str, int] = {}
     weekly_rows = []
     season_final_rows = []
+    predictions = []  # one row per FBS-vs-FBS game: what the model predicted BEFORE it was played
 
     current_season = None
     current_season_fbs: set[str] = set()
@@ -267,6 +276,23 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
         expected_home = expected_score(home_rating_with_field, ratings[away])
         actual_home = 1.0 if g["home_points"] > g["away_points"] else (0.0 if g["home_points"] < g["away_points"] else 0.5)
 
+        # Record what the model predicted BEFORE this game updated anything --
+        # this is the raw material for backtesting. Only FBS-vs-FBS games are
+        # recorded; buy games against FCS/D2/D3 opponents are near-certain
+        # blowouts that would artificially inflate accuracy.
+        if home in current_season_fbs and away in current_season_fbs and actual_home != 0.5:
+            predictions.append(
+                {
+                    "season": g["season"],
+                    "week": g["week"],
+                    "game_date": g["start_date"][:10] if g["start_date"] else "",
+                    "home_team": home,
+                    "away_team": away,
+                    "home_win_prob": round(expected_home, 4),
+                    "home_won": actual_home == 1.0,
+                }
+            )
+
         margin = g["home_points"] - g["away_points"]
         elo_diff = home_rating_with_field - ratings[away]
         multiplier = mov_multiplier(margin, elo_diff)
@@ -311,7 +337,7 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
             if team in current_season_fbs:
                 season_final_rows.append({"season": current_season, "team": team, "final_rating": round(rating, 1)})
 
-    return weekly_rows, season_final_rows
+    return weekly_rows, season_final_rows, predictions
 
 
 def add_ranks_within_group(rows: list[dict], group_keys: list[str], value_key: str) -> None:
@@ -349,7 +375,7 @@ def main():
     print(f"  FBS rosters loaded for seasons: {sorted(fbs_teams.keys())}")
 
     print("Running Elo model...")
-    weekly_rows, season_final_rows = run_elo(games, talent_by_team, fbs_teams)
+    weekly_rows, season_final_rows, _predictions = run_elo(games, talent_by_team, fbs_teams)
 
     add_ranks_within_group(weekly_rows, ["season", "week"], "rating")
     add_ranks_within_group(season_final_rows, ["season"], "final_rating")

@@ -1,4 +1,1417 @@
 year,team,talent
+2019,Alabama,984.96
+2019,Ohio State,973.56
+2019,Georgia,960.16
+2019,USC,915.56
+2019,LSU,906.17
+2019,Florida State,878.07
+2019,Texas,877.91
+2019,Oklahoma,869.53
+2019,Clemson,863.03
+2019,Penn State,857.34
+2019,Michigan,853.4
+2019,Texas A&M,848.89
+2019,Auburn,843.93
+2019,Notre Dame,843.29
+2019,Florida,835.68
+2019,Tennessee,830.34
+2019,Oregon,817.7
+2019,Miami,815.12
+2019,Washington,801.33
+2019,Stanford,787.59
+2019,South Carolina,762.68
+2019,UCLA,741.4
+2019,Mississippi State,732.68
+2019,Nebraska,729.47
+2019,Ole Miss,717.92
+2019,Arkansas,707.72
+2019,Maryland,703.94
+2019,North Carolina,697.75
+2019,Virginia Tech,696.39
+2019,TCU,691.63
+2019,Michigan State,688.74
+2019,Arizona State,686.44
+2019,Wisconsin,675.8
+2019,Kentucky,672.74
+2019,Baylor,668.9
+2019,NC State,668.85
+2019,Illinois,661.73
+2019,Louisville,645.84
+2019,Oklahoma State,644.42
+2019,Missouri,642.83
+2019,West Virginia,639.11
+2019,Pittsburgh,637.95
+2019,Iowa,637.65
+2019,Duke,633.24
+2019,Georgia Tech,629.1
+2019,Minnesota,621.36
+2019,Utah,620.35
+2019,Colorado,614.27
+2019,Northwestern,612.62
+2019,California,611.58
+2019,Purdue,607.4
+2019,Vanderbilt,605.06
+2019,Indiana,603.81
+2019,UCF,598.57
+2019,Houston,597.62
+2019,Iowa State,597.15
+2019,Oregon State,595.5
+2019,Rutgers,587.28
+2019,Virginia,580.28
+2019,Texas Tech,577.21
+2019,Cincinnati,576.61
+2019,Syracuse,574.82
+2019,Arizona,570.07
+2019,SMU,565.15
+2019,Boston College,564.95
+2019,Wake Forest,563.24
+2019,Boise State,561.42
+2019,BYU,560.78
+2019,South Florida,559.66
+2019,Washington State,556.27
+2019,Memphis,551.97
+2019,Kansas State,543.49
+2019,Florida International,532.88
+2019,Kansas,528.62
+2019,Florida Atlantic,524.02
+2019,Colorado State,518.83
+2019,San Diego State,504.19
+2019,Louisiana Tech,501.25
+2019,Marshall,489.63
+2019,Temple,489.03
+2019,Tulane,486.98
+2019,Western Kentucky,486.97
+2019,Fresno State,482.79
+2019,UTSA,471.36
+2019,East Carolina,468.23
+2019,UNLV,462.72
+2019,Nevada,461.96
+2019,North Texas,457.24
+2019,Southern Miss,456.29
+2019,Western Michigan,452.05
+2019,Toledo,451.43
+2019,Middle Tennessee,450.79
+2019,Arkansas State,447.87
+2019,UAB,441.81
+2019,San José State,433.33
+2019,Tulsa,424.54
+2019,Utah State,424.16
+2019,Hawai'i,420.99
+2019,Central Michigan,416.63
+2019,UConn,412.55
+2019,App State,412.32
+2019,Georgia Southern,411.8
+2019,Louisiana,406.49
+2019,New Mexico,401.9
+2019,Northern Illinois,397.98
+2019,Wyoming,397.9
+2019,Rice,397.04
+2019,Troy,388.67
+2019,Charlotte,386.38
+2019,South Alabama,381.38
+2019,Old Dominion,374.74
+2019,Georgia State,369.05
+2019,Miami (OH),359.14
+2019,Massachusetts,358.88
+2019,UTEP,355.31
+2019,Texas State,348.47
+2019,UL Monroe,346.03
+2019,Ohio,337.17
+2019,Navy,335.4
+2019,Ball State,327.92
+2019,Eastern Michigan,317.49
+2019,Bowling Green,315.44
+2019,Kent State,313.22
+2019,Akron,312.81
+2019,Coastal Carolina,305.73
+2019,Buffalo,284.74
+2019,New Mexico State,269.79
+2019,Army,265.19
+2019,Sam Houston,184.58
+2019,SE Louisiana,178.38
+2019,Nicholls,155.75
+2019,Chattanooga,155.43
+2019,Liberty,153.48
+2019,Air Force,151.86
+2019,Alabama State,136.54
+2019,Towson,135.03
+2019,Duquesne,129.11
+2019,Montana State,120.95
+2019,Illinois State,119.34
+2019,James Madison,110.76
+2019,Jacksonville State,108.58
+2019,Hampton,104.67
+2019,Samford,97.76
+2019,Campbell,96.7
+2019,Murray State,96
+2019,Richmond,95.66
+2019,UT Martin,93.72
+2019,Tennessee State,92.64
+2019,Stephen F. Austin,91.75
+2019,Idaho,87.17
+2019,Kennesaw State,86.45
+2019,McNeese,86.21
+2019,Eastern Kentucky,86.14
+2019,Southeast Missouri State,83.35
+2019,Delaware,77.11
+2019,Western Illinois,70.98
+2019,William & Mary,70.28
+2019,Southern Illinois,69.8
+2019,North Carolina A&T,69.44
+2019,Florida A&M,69.36
+2019,Youngstown State,67.72
+2019,Northwestern State,67.5
+2019,Grambling,67.45
+2019,Stony Brook,66.41
+2019,Montana,65.83
+2019,East Tennessee State,61.69
+2019,Bethune-Cookman,60.9
+2019,Austin Peay,58.68
+2019,Weber State,53.55
+2019,Norfolk State,52.48
+2019,Southern,52.19
+2019,North Dakota State,50.79
+2019,Incarnate Word,47.36
+2019,Abilene Christian,46.84
+2019,Missouri State,44.24
+2019,Jackson State,44.19
+2019,North Alabama,43.9
+2019,North Carolina Central,43.62
+2019,South Dakota,42.81
+2019,Prairie View A&M,42.01
+2019,Lamar,41.39
+2019,Tennessee Tech,41.07
+2019,UAlbany,40.43
+2019,Texas Southern,40.03
+2019,Idaho State,39.63
+2019,Central Arkansas,38.51
+2019,Fordham,38.15
+2019,Northern Iowa,37.29
+2019,Southern Utah,35.09
+2019,Northern Arizona,35
+2019,South Carolina State,32.5
+2019,Charleston Southern,32.36
+2019,Portland State,30.88
+2019,Maine,30.23
+2019,Alcorn State,29.54
+2019,Arkansas-Pine Bluff,29.07
+2019,Cal Poly,28.91
+2019,Princeton,27.29
+2019,Robert Morris,26.82
+2019,Houston Christian,26.8
+2019,Eastern Illinois,24.67
+2019,Indiana State,24.51
+2019,Furman,24.31
+2019,Morgan State,23.32
+2019,Elon,18.77
+2019,Sacramento State,18.35
+2019,Wagner,17.91
+2019,Jacksonville,17.49
+2019,South Dakota State,17.26
+2019,Monmouth,15.76
+2019,Rhode Island,15.55
+2019,Delaware State,15.41
+2019,Sacred Heart,15.08
+2019,Eastern Washington,14.8
+2019,Gardner-Webb,14.72
+2019,Lehigh,13.9
+2019,Alabama A&M,13.54
+2019,Northern Colorado,13.41
+2019,North Dakota,13.24
+2019,Saint Francis,13.03
+2019,Mercer,12.14
+2019,Butler,11.61
+2019,Drake,11.1
+2019,Brown,9.44
+2019,Central Connecticut,8.93
+2019,Western Carolina,8.58
+2019,Wofford,7.83
+2019,Holy Cross,7.31
+2019,Mississippi Valley State,6.66
+2019,Georgetown,6.66
+2019,Bryant,6.3
+2020,Georgia,990.47
+2020,Alabama,985.86
+2020,Ohio State,976.48
+2020,Clemson,915.57
+2020,Texas,892.91
+2020,Texas A&M,875.1
+2020,LSU,873.23
+2020,Oklahoma,866.36
+2020,Notre Dame,866.21
+2020,USC,853.16
+2020,Penn State,850.7
+2020,Auburn,844.78
+2020,Tennessee,844.16
+2020,Michigan,832.65
+2020,Florida State,832.59
+2020,Miami,822.41
+2020,Oregon,816.74
+2020,Washington,815.23
+2020,Florida,809.32
+2020,Stanford,801.6
+2020,South Carolina,771.64
+2020,Arizona State,743.24
+2020,North Carolina,740.19
+2020,Mississippi State,739.3
+2020,Nebraska,733.39
+2020,Arkansas,719.15
+2020,Kentucky,716.65
+2020,TCU,712.31
+2020,Ole Miss,702.2
+2020,Georgia Tech,684.42
+2020,NC State,680.31
+2020,Wisconsin,676.48
+2020,Michigan State,673.43
+2020,Virginia Tech,670.7
+2020,UCLA,660.71
+2020,Pittsburgh,653.05
+2020,Utah,649.86
+2020,Maryland,646.29
+2020,Illinois,644.09
+2020,Purdue,644.03
+2020,Baylor,642.13
+2020,Oklahoma State,639.23
+2020,Iowa,631.81
+2020,West Virginia,631.27
+2020,Colorado,630.39
+2020,Northwestern,629.84
+2020,Missouri,627.24
+2020,Louisville,621.82
+2020,Texas Tech,619.6
+2020,Duke,617.12
+2020,Oregon State,616.25
+2020,Indiana,611.17
+2020,Houston,608.28
+2020,Vanderbilt,607.68
+2020,SMU,604.59
+2020,Iowa State,602.96
+2020,Boston College,602.69
+2020,Cincinnati,600.61
+2020,California,599.17
+2020,Minnesota,594.7
+2020,UCF,593.07
+2020,Rutgers,588.56
+2020,Virginia,588.54
+2020,Memphis,587.17
+2020,Syracuse,578.28
+2020,Wake Forest,577.3
+2020,Boise State,571.21
+2020,Kansas State,560.96
+2020,Kansas,546.08
+2020,South Florida,538.18
+2020,East Carolina,528.47
+2020,Arizona,526.23
+2020,Tulane,526.19
+2020,Washington State,516.96
+2020,BYU,510.95
+2020,Florida Atlantic,488.99
+2020,Temple,482.14
+2020,Florida International,480.5
+2020,Tulsa,470.03
+2020,Louisiana Tech,467.46
+2020,Charlotte,462.29
+2020,UTSA,458.03
+2020,San Diego State,454.6
+2020,Western Kentucky,447.91
+2020,UNLV,447.31
+2020,Colorado State,446.94
+2020,Fresno State,440.1
+2020,North Texas,415.68
+2020,Marshall,408.98
+2020,Middle Tennessee,405.4
+2020,Southern Miss,401.05
+2020,Nevada,400.84
+2020,Utah State,400.78
+2020,San José State,397.99
+2020,Hawai'i,393.56
+2020,Toledo,391.54
+2020,Arkansas State,389.49
+2020,UAB,383.56
+2020,Western Michigan,382.78
+2020,Texas State,382.6
+2020,App State,382.58
+2020,Louisiana,378.95
+2020,Rice,358.95
+2020,Wyoming,352.91
+2020,Old Dominion,350.91
+2020,Central Michigan,350.35
+2020,UConn,347.5
+2020,New Mexico,340.16
+2020,Georgia Southern,335.43
+2020,Georgia State,333.22
+2020,Troy,323.67
+2020,Ohio,304.79
+2020,UTEP,297.36
+2020,UL Monroe,286.74
+2020,Kent State,270.29
+2020,Navy,266.19
+2020,South Alabama,265.69
+2020,Northern Illinois,262.67
+2020,Miami (OH),259.14
+2020,Ball State,257.94
+2020,Buffalo,252.86
+2020,Massachusetts,246.83
+2020,Eastern Michigan,246.82
+2020,Akron,232.81
+2020,Bowling Green,215.06
+2020,Coastal Carolina,213.39
+2020,Liberty,158.93
+2020,Army,152.03
+2020,Chattanooga,150.93
+2020,Austin Peay,149.28
+2020,Eastern Kentucky,148.05
+2020,Texas Southern,143.43
+2020,New Mexico State,143.36
+2020,Towson,142.39
+2020,Alabama State,136.54
+2020,James Madison,118.89
+2020,North Carolina A&T,116.79
+2020,Florida A&M,102.58
+2020,Stephen F. Austin,99.93
+2020,Southern Illinois,96.82
+2020,Grambling,95.67
+2020,Campbell,93.73
+2020,Prairie View A&M,91.02
+2020,Missouri State,85.24
+2020,Incarnate Word,81.78
+2020,Sam Houston,81.65
+2020,Tennessee State,80.11
+2020,Abilene Christian,79.83
+2020,Bethune-Cookman,76.68
+2020,Montana State,76.41
+2020,UT Martin,72.15
+2020,Maine,72.07
+2020,Air Force,71.92
+2020,Samford,70.54
+2020,Stony Brook,68.32
+2020,Illinois State,67.52
+2020,Weber State,66.96
+2020,North Dakota State,61.62
+2020,East Tennessee State,60.39
+2020,SE Louisiana,58.98
+2020,Elon,55.95
+2020,Portland State,55.65
+2020,Montana,53.39
+2020,Western Illinois,53.01
+2020,Norfolk State,52.48
+2020,Alabama A&M,52.37
+2020,UC Davis,50.8
+2020,Richmond,49.75
+2020,Idaho,47.38
+2020,North Alabama,46.88
+2020,Murray State,44.74
+2020,North Carolina Central,43.62
+2020,Duquesne,42.21
+2020,Northern Arizona,41.84
+2020,Southeast Missouri State,41.44
+2020,Youngstown State,35.85
+2020,Hampton,33.45
+2020,Idaho State,32.78
+2020,South Carolina State,32.5
+2020,Northern Colorado,31.63
+2020,Northern Iowa,30.66
+2020,UAlbany,30.44
+2020,Eastern Washington,30.41
+2020,Furman,30.39
+2020,Sacramento State,30.24
+2020,Delaware,29.77
+2020,Alcorn State,29.54
+2020,Monmouth,28.91
+2020,Rhode Island,28.5
+2020,Gardner-Webb,28.16
+2020,Robert Morris,26.82
+2020,Houston Christian,26.8
+2020,South Dakota,26.27
+2020,Mercer,25.92
+2020,Eastern Illinois,25.8
+2020,Tennessee Tech,25.67
+2020,Cal Poly,25.44
+2020,Central Arkansas,24.08
+2020,The Citadel,23.94
+2020,Northwestern State,23.16
+2020,Fordham,22.86
+2020,Southern,22.17
+2020,Indiana State,22.02
+2020,Wagner,20.43
+2020,Jacksonville,17.49
+2020,Kennesaw State,16.24
+2020,Arkansas-Pine Bluff,15.35
+2020,Sacred Heart,14.46
+2020,Lamar,13.33
+2020,Western Carolina,12.53
+2020,William & Mary,12.39
+2020,Brown,9.44
+2020,Central Connecticut,8.93
+2020,Saint Francis,8.83
+2020,Wofford,7.83
+2020,New Hampshire,7.81
+2020,Yale,7.81
+2020,Bryant,6.3
+2020,Morgan State,3.8
+2021,Alabama,1004.04
+2021,Georgia,1001.79
+2021,Ohio State,985.09
+2021,Clemson,935.08
+2021,LSU,903.72
+2021,Oklahoma,895.38
+2021,Texas A&M,888.35
+2021,Oregon,885.75
+2021,Florida,885.67
+2021,USC,874.5
+2021,Texas,874.19
+2021,Notre Dame,853.1
+2021,Miami,841.45
+2021,Auburn,840.38
+2021,Michigan,832.6
+2021,Penn State,820.72
+2021,North Carolina,798.29
+2021,Washington,789.51
+2021,Tennessee,780.83
+2021,Florida State,769.76
+2021,Wisconsin,750.89
+2021,South Carolina,747.88
+2021,UCLA,746.02
+2021,Stanford,745.3
+2021,Nebraska,743.7
+2021,Arizona State,734.45
+2021,Ole Miss,732.02
+2021,Arkansas,722.84
+2021,Mississippi State,716.17
+2021,Kentucky,709.07
+2021,Utah,707.72
+2021,Georgia Tech,707.35
+2021,Maryland,705.79
+2021,NC State,700.36
+2021,TCU,698.52
+2021,Michigan State,677.07
+2021,Pittsburgh,668.67
+2021,Indiana,664.25
+2021,Virginia Tech,663.78
+2021,California,662.11
+2021,Baylor,660.65
+2021,Iowa,657.39
+2021,Minnesota,653.25
+2021,Northwestern,648.79
+2021,Missouri,647.74
+2021,Purdue,644.23
+2021,Colorado,640.85
+2021,Oregon State,640.66
+2021,UCF,639.06
+2021,Boston College,636.46
+2021,Illinois,630.16
+2021,Cincinnati,626.54
+2021,Virginia,619.61
+2021,Oklahoma State,613.69
+2021,Iowa State,613.6
+2021,West Virginia,611.29
+2021,Vanderbilt,609.82
+2021,Louisville,607.77
+2021,Texas Tech,607.1
+2021,Duke,605.57
+2021,Washington State,601.16
+2021,Wake Forest,589.19
+2021,SMU,576.03
+2021,Rutgers,573.14
+2021,Memphis,572.13
+2021,Houston,571.21
+2021,Kansas State,569.65
+2021,Arizona,567.61
+2021,Syracuse,567.19
+2021,Boise State,557.69
+2021,Florida Atlantic,553.28
+2021,Kansas,548.1
+2021,South Florida,540.51
+2021,Western Kentucky,524.97
+2021,Florida International,520.69
+2021,Louisiana Tech,520.48
+2021,East Carolina,516.06
+2021,UTSA,508.77
+2021,Temple,501.4
+2021,North Texas,496.31
+2021,Middle Tennessee,494.02
+2021,Fresno State,483.77
+2021,Arkansas State,475.74
+2021,Tulsa,470.49
+2021,Southern Miss,465.94
+2021,Toledo,465.4
+2021,Tulane,463.02
+2021,Charlotte,462.67
+2021,Marshall,456.97
+2021,App State,450.04
+2021,Troy,448.77
+2021,UAB,444.37
+2021,Colorado State,443.16
+2021,BYU,443.13
+2021,San Diego State,441.63
+2021,Louisiana,435.63
+2021,Texas State,428.48
+2021,Nevada,421.64
+2021,Rice,419.65
+2021,Coastal Carolina,415.91
+2021,South Alabama,415.07
+2021,Georgia State,413.91
+2021,San José State,410.81
+2021,Old Dominion,409.31
+2021,Hawai'i,397.43
+2021,Western Michigan,396.47
+2021,Utah State,394.37
+2021,UNLV,392.44
+2021,Georgia Southern,383.76
+2021,Bowling Green,380.74
+2021,Miami (OH),378.03
+2021,New Mexico,360.77
+2021,Kent State,357.85
+2021,Northern Illinois,354.21
+2021,Eastern Michigan,340.6
+2021,Ball State,338.31
+2021,Ohio,332.25
+2021,UConn,331.9
+2021,Akron,330.97
+2021,Wyoming,326.65
+2021,UTEP,318.65
+2021,UL Monroe,312.31
+2021,Central Michigan,268.89
+2021,Buffalo,267.09
+2021,SE Louisiana,231.02
+2021,Massachusetts,227.21
+2021,Eastern Kentucky,222.5
+2021,Missouri State,205.25
+2021,Chattanooga,193.46
+2021,Nicholls,189.98
+2021,McNeese,182.46
+2021,Jackson State,173.86
+2021,Northern Colorado,156.11
+2021,Jacksonville State,155.11
+2021,Liberty,154.75
+2021,UT Martin,149.55
+2021,North Carolina A&T,132.73
+2021,Towson,130.7
+2021,Florida A&M,127.97
+2021,Navy,127.63
+2021,Rhode Island,127.52
+2021,Northwestern State,126.22
+2021,North Alabama,123.39
+2021,Idaho,122.44
+2021,Southern,120.88
+2021,New Mexico State,117.43
+2021,Weber State,116.62
+2021,Stephen F. Austin,115.81
+2021,Northern Arizona,115.62
+2021,Army,111.53
+2021,Sam Houston,111.5
+2021,Northern Iowa,108.66
+2021,Campbell,108.65
+2021,Southern Illinois,107.83
+2021,Murray State,104.85
+2021,James Madison,102.89
+2021,Abilene Christian,96.46
+2021,Maine,95
+2021,Montana,94.99
+2021,Montana State,92.72
+2021,Youngstown State,90.76
+2021,Tennessee State,88.82
+2021,Eastern Illinois,87.86
+2021,Austin Peay,87.48
+2021,Western Illinois,82.24
+2021,Portland State,81.34
+2021,North Carolina Central,80.58
+2021,Cal Poly,80.3
+2021,Stony Brook,80.27
+2021,Duquesne,77.09
+2021,Alcorn State,71.95
+2021,Idaho State,71.55
+2021,Sacramento State,71.2
+2021,Bethune-Cookman,70.64
+2021,Samford,70.11
+2021,Central Arkansas,68.32
+2021,Texas Southern,62.7
+2021,Gardner-Webb,58.53
+2021,Western Carolina,57.52
+2021,Eastern Washington,57.26
+2021,Prairie View A&M,56.79
+2021,Incarnate Word,54.6
+2021,UC Davis,51.38
+2021,Illinois State,51.04
+2021,North Dakota State,50.33
+2021,East Tennessee State,49.58
+2021,Alabama A&M,49.54
+2021,South Dakota,46.05
+2021,Indiana State,45.15
+2021,Morgan State,44.52
+2021,Elon,43.03
+2021,Furman,39.37
+2021,William & Mary,38.56
+2021,San Diego,37.37
+2021,Lehigh,36.97
+2021,Kennesaw State,36.62
+2021,Richmond,35.81
+2021,Charleston Southern,34.78
+2021,Hampton,33.45
+2021,Air Force,30.32
+2021,Delaware,29.77
+2021,Southeast Missouri State,26.12
+2021,Sacred Heart,24.95
+2021,UAlbany,24.67
+2021,Yale,24.05
+2021,The Citadel,23.94
+2021,Mercer,23.81
+2021,Fordham,22.86
+2021,Lafayette,22.41
+2021,Wagner,21.98
+2021,Tennessee Tech,19.2
+2021,Tarleton State,18.04
+2021,Jacksonville,17.49
+2021,Arkansas-Pine Bluff,15.35
+2021,Bryant,14.59
+2021,Valparaiso,14.28
+2021,Stetson,14.06
+2021,South Dakota State,13.27
+2021,Monmouth,13.17
+2021,Brown,9.44
+2021,Wofford,7.83
+2021,New Hampshire,7.81
+2021,Saint Francis,7.3
+2021,Houston Christian,5.41
+2022,Alabama,1016.79
+2022,Georgia,989.76
+2022,Ohio State,983.14
+2022,Texas A&M,947.3
+2022,Clemson,943
+2022,Texas,887.45
+2022,Oregon,877.93
+2022,LSU,872.61
+2022,Oklahoma,870.34
+2022,Notre Dame,866.48
+2022,USC,860.12
+2022,Florida,856.95
+2022,Miami,854.72
+2022,Michigan,847.24
+2022,Penn State,830.44
+2022,North Carolina,812.94
+2022,Auburn,783.87
+2022,Florida State,780.76
+2022,Tennessee,764.8
+2022,South Carolina,762.63
+2022,Washington,761.72
+2022,Stanford,757.81
+2022,Ole Miss,757.39
+2022,Nebraska,752.12
+2022,Wisconsin,744.44
+2022,Arkansas,741.06
+2022,Kentucky,737.33
+2022,UCLA,733.3
+2022,Mississippi State,725.55
+2022,Georgia Tech,715.48
+2022,Missouri,715.36
+2022,TCU,712.05
+2022,Utah,705.12
+2022,Michigan State,693.91
+2022,NC State,686.19
+2022,Iowa,681.98
+2022,Indiana,680.74
+2022,Maryland,680.22
+2022,Oklahoma State,670.53
+2022,Arizona State,670.18
+2022,Baylor,666.05
+2022,Boston College,664.63
+2022,West Virginia,662.57
+2022,Texas Tech,660.31
+2022,Pittsburgh,654.56
+2022,Northwestern,653.48
+2022,California,653.31
+2022,Arizona,652.06
+2022,Cincinnati,650.89
+2022,Minnesota,649.43
+2022,Purdue,646.08
+2022,Virginia Tech,640.85
+2022,UCF,636.16
+2022,Oregon State,635.88
+2022,Rutgers,631.47
+2022,Illinois,631.46
+2022,Vanderbilt,629.76
+2022,Houston,629.12
+2022,Virginia,625.94
+2022,Louisville,625.42
+2022,Colorado,616.28
+2022,Duke,603.98
+2022,SMU,598.49
+2022,Jackson State,590.92
+2022,Iowa State,590.43
+2022,Syracuse,590.36
+2022,Kansas State,584.68
+2022,Wake Forest,575.42
+2022,South Florida,574.32
+2022,Kansas,574.29
+2022,Washington State,570.94
+2022,Florida Atlantic,550.51
+2022,Boise State,533.92
+2022,Memphis,533.26
+2022,Tulane,521.86
+2022,UTSA,515.76
+2022,Temple,505.48
+2022,North Texas,504.97
+2022,Fresno State,502.26
+2022,Toledo,498.98
+2022,Western Kentucky,495.64
+2022,East Carolina,494.82
+2022,Charlotte,487.24
+2022,Tulsa,485.87
+2022,Southern Miss,478.97
+2022,Louisiana Tech,473.76
+2022,Georgia State,471.84
+2022,Arkansas State,471.65
+2022,South Alabama,466.34
+2022,Texas State,464.66
+2022,Troy,464.3
+2022,Florida International,459.71
+2022,Louisiana,458.15
+2022,App State,456.66
+2022,Akron,456.15
+2022,Marshall,455.3
+2022,Western Michigan,449.89
+2022,Coastal Carolina,446.58
+2022,UAB,443.8
+2022,Rice,441.93
+2022,Old Dominion,438.06
+2022,Colorado State,431.38
+2022,Middle Tennessee,425.43
+2022,Hawai'i,419.54
+2022,San José State,417.95
+2022,Nevada,416.44
+2022,BYU,415.19
+2022,Bowling Green,415.08
+2022,Georgia Southern,414.14
+2022,Northern Illinois,409.86
+2022,Eastern Michigan,404.1
+2022,Miami (OH),397.26
+2022,Kent State,386.94
+2022,Central Michigan,384.48
+2022,San Diego State,372.29
+2022,Utah State,371.37
+2022,Buffalo,370.96
+2022,UNLV,368.29
+2022,Ohio,365.74
+2022,UL Monroe,348.53
+2022,Ball State,345.29
+2022,New Mexico,312.79
+2022,Alabama A&M,293.63
+2022,Massachusetts,292.14
+2022,Wyoming,292.03
+2022,UTEP,289.39
+2022,Abilene Christian,260.16
+2022,Missouri State,251.03
+2022,UConn,239.17
+2022,Chattanooga,237.41
+2022,Jacksonville State,229.74
+2022,Northern Colorado,227.83
+2022,Eastern Kentucky,224.82
+2022,Florida A&M,223.82
+2022,Grambling,221.26
+2022,Alabama State,208.22
+2022,Bethune-Cookman,205.68
+2022,Sam Houston,200.06
+2022,Tennessee State,194.56
+2022,New Mexico State,189.37
+2022,Northern Iowa,185.49
+2022,Southern Illinois,183.5
+2022,Southern,178.64
+2022,Towson,178.36
+2022,SE Louisiana,166.75
+2022,Liberty,161.88
+2022,Rhode Island,158.52
+2022,McNeese,155.54
+2022,North Carolina A&T,142.63
+2022,Northwestern State,134.66
+2022,Stephen F. Austin,130.97
+2022,UT Martin,128.97
+2022,Campbell,124.16
+2022,Austin Peay,121.11
+2022,Montana,110.64
+2022,Portland State,110.5
+2022,North Alabama,107.8
+2022,James Madison,104.24
+2022,UC Davis,103.7
+2022,Nicholls,100.39
+2022,Samford,100.34
+2022,Montana State,98.27
+2022,Sacramento State,96.08
+2022,Youngstown State,94.39
+2022,Duquesne,94.04
+2022,Illinois State,92.75
+2022,UAlbany,92.55
+2022,Western Illinois,91.95
+2022,Central Arkansas,82.3
+2022,Idaho,82.22
+2022,East Tennessee State,74.98
+2022,Eastern Washington,73.36
+2022,Indiana State,70.29
+2022,Stony Brook,69.58
+2022,Hampton,69.24
+2022,Furman,67.63
+2022,Elon,64.96
+2022,Alcorn State,62.59
+2022,Norfolk State,61.79
+2022,Prairie View A&M,56.88
+2022,Murray State,56.27
+2022,Cal Poly,55.91
+2022,Eastern Illinois,55.8
+2022,Richmond,55.5
+2022,Maine,54.69
+2022,Texas Southern,54.59
+2022,Weber State,53.15
+2022,Southern Utah,52.58
+2022,North Carolina Central,51.95
+2022,South Dakota,51.92
+2022,Mississippi Valley State,48.86
+2022,Northern Arizona,47.14
+2022,Tennessee Tech,43.6
+2022,San Diego,43.29
+2022,Incarnate Word,40.89
+2022,Wagner,39.77
+2022,Delaware,39.14
+2022,Mercer,38.11
+2022,Idaho State,37.08
+2022,Western Carolina,35.6
+2022,South Carolina State,35.03
+2022,Fordham,32.71
+2022,Monmouth,28.53
+2022,Charleston Southern,28.1
+2022,Morgan State,28
+2022,Southeast Missouri State,26.12
+2022,North Dakota State,25.18
+2022,New Hampshire,24.6
+2022,Yale,24.05
+2022,Lamar,23.88
+2022,Kennesaw State,22.69
+2022,Lafayette,22.41
+2022,Robert Morris,21.85
+2022,The Citadel,21.07
+2022,Arkansas-Pine Bluff,20.54
+2022,Gardner-Webb,19.68
+2022,Wofford,17.85
+2022,Jacksonville,17.49
+2022,Army,17.27
+2022,Saint Francis,16.89
+2022,Princeton,16.08
+2022,Villanova,15.94
+2022,Bryant,14.59
+2022,Colgate,14.43
+2022,Valparaiso,11.85
+2022,Lehigh,11.72
+2022,Central Connecticut,11.33
+2022,William & Mary,10.64
+2022,South Dakota State,5.97
+2022,Houston Christian,5.41
+2022,Morehead State,4.96
+2022,Navy,0
+2022,Air Force,0
+2023,Alabama,1015.43
+2023,Georgia,977.87
+2023,Ohio State,974.79
+2023,Texas A&M,925.92
+2023,Clemson,917.88
+2023,Texas,913.24
+2023,LSU,899.31
+2023,USC,896.41
+2023,Oklahoma,884.97
+2023,Oregon,874.74
+2023,Notre Dame,870.7
+2023,Miami,860.27
+2023,Penn State,858.06
+2023,Michigan,850.43
+2023,Florida,845.29
+2023,Tennessee,821.07
+2023,North Carolina,805.63
+2023,Auburn,770.94
+2023,TCU,768.25
+2023,Florida State,765.33
+2023,Nebraska,765.2
+2023,South Carolina,763.02
+2023,Ole Miss,756.04
+2023,Missouri,755.4
+2023,UCLA,752.6
+2023,Washington,751.12
+2023,Michigan State,747.34
+2023,Mississippi State,746.29
+2023,Louisville,744.16
+2023,Wisconsin,741.63
+2023,Kentucky,740.54
+2023,Arkansas,730.93
+2023,Utah,722.55
+2023,SMU,714.21
+2023,Colorado,711.87
+2023,Georgia Tech,710.85
+2023,Stanford,710.28
+2023,NC State,700.85
+2023,Pittsburgh,700.42
+2023,Texas Tech,694.26
+2023,Iowa,692.62
+2023,Arizona,687.01
+2023,Maryland,685.75
+2023,Arizona State,681.32
+2023,California,681.14
+2023,Baylor,678
+2023,Indiana,677.57
+2023,Purdue,671.1
+2023,Houston,670.25
+2023,West Virginia,666.23
+2023,Cincinnati,663.68
+2023,Northwestern,657.88
+2023,UCF,653.97
+2023,Oregon State,653.16
+2023,Boston College,650.23
+2023,Oklahoma State,649.79
+2023,Minnesota,640.46
+2023,Vanderbilt,639.88
+2023,Virginia Tech,638.89
+2023,Iowa State,638.87
+2023,Rutgers,636.35
+2023,Kansas,632.68
+2023,Illinois,630.95
+2023,Memphis,626.86
+2023,South Florida,622.89
+2023,Virginia,622.7
+2023,Duke,620.9
+2023,Kansas State,616
+2023,Syracuse,610.75
+2023,Wake Forest,603.68
+2023,Florida Atlantic,582.59
+2023,Boise State,579.88
+2023,BYU,576.25
+2023,UTSA,574.52
+2023,Washington State,573.28
+2023,Massachusetts,565.65
+2023,East Carolina,563.94
+2023,Fresno State,555.3
+2023,Charlotte,554.96
+2023,Temple,554.47
+2023,South Alabama,545.68
+2023,Tulane,537.7
+2023,Tulsa,520.23
+2023,App State,517.56
+2023,Coastal Carolina,515.69
+2023,San José State,513.83
+2023,Georgia State,499.67
+2023,Toledo,497.64
+2023,Western Kentucky,491.26
+2023,Middle Tennessee,487.98
+2023,Florida International,487.5
+2023,Arkansas State,487.4
+2023,UConn,484.94
+2023,Texas State,484.79
+2023,Marshall,478.59
+2023,Louisiana,475.45
+2023,North Texas,474.38
+2023,UAB,473.46
+2023,Nevada,470.32
+2023,Rice,466.78
+2023,Troy,454.06
+2023,Akron,445.02
+2023,San Diego State,440.15
+2023,Utah State,435.99
+2023,Louisiana Tech,433.72
+2023,Southern Miss,425.21
+2023,Georgia Southern,416.69
+2023,Colorado State,413.96
+2023,Miami (OH),408.16
+2023,Hawai'i,407.77
+2023,Ball State,403.54
+2023,Western Michigan,401.82
+2023,Bowling Green,397.62
+2023,UTEP,379.64
+2023,New Mexico State,378.99
+2023,Eastern Michigan,377.07
+2023,New Mexico,375.35
+2023,Kent State,373.33
+2023,UNLV,354.46
+2023,Northern Illinois,352.36
+2023,Jackson State,351.51
+2023,Old Dominion,343.17
+2023,Ohio,342.6
+2023,Wyoming,338.5
+2023,UL Monroe,336.22
+2023,Central Michigan,332.64
+2023,Liberty,330.29
+2023,Florida A&M,322.74
+2023,Abilene Christian,306.57
+2023,Buffalo,296.09
+2023,Sam Houston,240.42
+2023,Missouri State,233.11
+2023,Jacksonville State,227.27
+2023,UT Martin,221.77
+2023,Eastern Kentucky,214.42
+2023,Chattanooga,201.79
+2023,Alabama State,197.43
+2023,James Madison,196.53
+2023,Rhode Island,191.72
+2023,Stony Brook,185.5
+2023,Northern Iowa,184.63
+2023,Stephen F. Austin,172.29
+2023,North Alabama,163.24
+2023,Southern,162.55
+2023,Northwestern State,157.75
+2023,Grambling,153.13
+2023,Montana,149.93
+2023,Northern Arizona,148.76
+2023,Northern Colorado,145.36
+2023,Tennessee State,142.51
+2023,Alabama A&M,137.64
+2023,Prairie View A&M,135.18
+2023,Austin Peay,120.36
+2023,East Tennessee State,119.73
+2023,Montana State,119.55
+2023,Southern Illinois,115.37
+2023,Illinois State,114.98
+2023,Duquesne,111.13
+2023,Southern Utah,109.83
+2023,Lamar,108.97
+2023,SE Louisiana,107.19
+2023,Morgan State,105.49
+2023,Delaware,99.19
+2023,Samford,97.62
+2023,South Dakota,96.61
+2023,Alcorn State,96.02
+2023,Cal Poly,94.82
+2023,Hampton,91.03
+2023,Bethune-Cookman,89.46
+2023,North Carolina A&T,88.34
+2023,Eastern Illinois,85.97
+2023,Central Arkansas,84.99
+2023,Sacramento State,83.86
+2023,Eastern Washington,81.05
+2023,Gardner-Webb,80.81
+2023,Indiana State,80.56
+2023,Murray State,80
+2023,Houston Christian,78.5
+2023,Western Illinois,78.14
+2023,UC Davis,77.46
+2023,Portland State,73.81
+2023,Mercer,73.53
+2023,Campbell,73.06
+2023,Norfolk State,72.32
+2023,Western Carolina,70.13
+2023,Towson,66.95
+2023,North Dakota State,63.21
+2023,Elon,62.31
+2023,UAlbany,62.15
+2023,Youngstown State,61.05
+2023,Weber State,59.72
+2023,Kennesaw State,58.84
+2023,Nicholls,57.04
+2023,Furman,56.18
+2023,Maine,54.85
+2023,McNeese,53
+2023,Monmouth,52.49
+2023,Idaho,47.44
+2023,Robert Morris,46.99
+2023,Bryant,45.14
+2023,Central Connecticut,44.75
+2023,Fordham,42.87
+2023,Wofford,42.55
+2023,Tennessee Tech,34.79
+2023,South Carolina State,33.04
+2023,Arkansas-Pine Bluff,32.77
+2023,Howard,31.25
+2023,Southeast Missouri State,30.08
+2023,Delaware State,28.74
+2023,San Diego,26.78
+2023,Richmond,26.51
+2023,The Citadel,26.4
+2023,Wagner,26.18
+2023,Bucknell,25.64
+2023,North Carolina Central,25.46
+2023,South Dakota State,23.58
+2023,Lafayette,22.41
+2023,Butler,20.61
+2023,Lehigh,18.7
+2023,Sacred Heart,17.99
+2023,Jacksonville,17.99
+2023,Texas Southern,17.36
+2023,Saint Francis,16.89
+2023,New Hampshire,16.21
+2023,Charleston Southern,16.1
+2023,Princeton,16.08
+2023,Idaho State,14.47
+2023,North Dakota,14.37
+2023,Morehead State,13.5
+2023,Pennsylvania,12.03
+2023,Holy Cross,11.16
+2023,Drake,10.98
+2023,Yale,8.97
+2023,Presbyterian,8.66
+2023,Villanova,4.33
+2023,Air Force,0
+2023,Army,0
+2023,Navy,0
+2024,Alabama,1018.28
+2024,Georgia,1006.89
+2024,Ohio State,998.62
+2024,Texas,953.95
+2024,Clemson,924.63
+2024,Oregon,916.71
+2024,Texas A&M,914.52
+2024,Oklahoma,906.61
+2024,LSU,906.19
+2024,Notre Dame,905.52
+2024,Penn State,895.31
+2024,Florida,894.24
+2024,Florida State,879.48
+2024,Miami,868.15
+2024,USC,863.09
+2024,Michigan,859.21
+2024,Tennessee,858.67
+2024,Auburn,833.61
+2024,Missouri,807.36
+2024,Ole Miss,801.66
+2024,South Carolina,798.18
+2024,North Carolina,794.99
+2024,Nebraska,790.42
+2024,Kentucky,788.36
+2024,SMU,788.22
+2024,Arkansas,779.17
+2024,Wisconsin,771.35
+2024,TCU,766.5
+2024,UCLA,758.87
+2024,Arizona State,757.02
+2024,Colorado,749.16
+2024,UCF,746.3
+2024,Utah,745.21
+2024,Mississippi State,743.77
+2024,Washington,741.11
+2024,Louisville,739.28
+2024,Purdue,738.93
+2024,Texas Tech,732.07
+2024,Iowa,723.51
+2024,NC State,722.41
+2024,Michigan State,721.75
+2024,Stanford,719.43
+2024,Pittsburgh,713.74
+2024,Baylor,709.46
+2024,Minnesota,705.22
+2024,Georgia Tech,703
+2024,California,702.38
+2024,Syracuse,698.59
+2024,Kansas,696.92
+2024,Vanderbilt,695.96
+2024,Maryland,695.59
+2024,Virginia Tech,695.42
+2024,Oklahoma State,687.76
+2024,West Virginia,684.9
+2024,Northwestern,675.78
+2024,Arizona,672.7
+2024,Indiana,668.92
+2024,Boston College,667.91
+2024,Rutgers,663.55
+2024,Cincinnati,662.34
+2024,Virginia,662.28
+2024,Tulane,654.07
+2024,Illinois,653.75
+2024,Kansas State,651.75
+2024,Charlotte,648.28
+2024,Houston,646.7
+2024,UTSA,644.36
+2024,Iowa State,642.12
+2024,South Florida,641.02
+2024,Duke,635.89
+2024,Wake Forest,635.45
+2024,Memphis,633.44
+2024,Oregon State,626.97
+2024,East Carolina,611.66
+2024,Washington State,610.54
+2024,San Diego State,608.95
+2024,Boise State,608.26
+2024,BYU,602.46
+2024,North Texas,595.42
+2024,Florida Atlantic,592.16
+2024,Marshall,587.22
+2024,Massachusetts,585.57
+2024,UAB,583.23
+2024,App State,575.31
+2024,UNLV,575.16
+2024,Arkansas State,573.27
+2024,Toledo,571.92
+2024,Liberty,569.65
+2024,Fresno State,568.31
+2024,Southern Miss,565.51
+2024,Georgia State,564.88
+2024,Coastal Carolina,557.61
+2024,Tulsa,556.71
+2024,South Alabama,554.77
+2024,Louisiana,553.39
+2024,Western Michigan,547.19
+2024,Colorado State,546.04
+2024,Utah State,543.56
+2024,Texas State,540.17
+2024,Rice,538.4
+2024,UConn,537.91
+2024,Akron,537.82
+2024,Louisiana Tech,533.72
+2024,Temple,532.46
+2024,Georgia Southern,527.99
+2024,Nevada,525.22
+2024,Western Kentucky,518.88
+2024,Hawai'i,513.7
+2024,Eastern Michigan,508.73
+2024,Miami (OH),505.3
+2024,Florida International,504.39
+2024,Middle Tennessee,503.43
+2024,Troy,499.56
+2024,Sam Houston,488.03
+2024,Bowling Green,484.51
+2024,San José State,480.29
+2024,Central Michigan,467.22
+2024,New Mexico,464.59
+2024,Ball State,464.07
+2024,James Madison,459.14
+2024,UTEP,455.97
+2024,Wyoming,455.45
+2024,Ohio,450.55
+2024,Northern Illinois,437.2
+2024,Kent State,435.3
+2024,Buffalo,435.22
+2024,Jacksonville State,430.94
+2024,Old Dominion,428.91
+2024,New Mexico State,370.2
+2024,UL Monroe,329.43
+2024,Kennesaw State,288.14
+2024,Air Force,0
+2024,Navy,0
+2024,Army,0
+2025,Georgia,1002.98
+2025,Alabama,993.55
+2025,Ohio State,973.69
+2025,Texas,973.54
+2025,Oregon,941.22
+2025,LSU,920.05
+2025,Clemson,918.43
+2025,Texas A&M,917.29
+2025,Notre Dame,912.11
+2025,Penn State,910.42
+2025,Michigan,907.22
+2025,Florida,898.58
+2025,Auburn,891.84
+2025,Oklahoma,882.59
+2025,Miami,874.57
+2025,Tennessee,866.57
+2025,USC,847.53
+2025,South Carolina,833.26
+2025,Florida State,828.45
+2025,Nebraska,821.39
+2025,Ole Miss,813.11
+2025,Missouri,804.77
+2025,Arkansas,772.64
+2025,Mississippi State,770.48
+2025,SMU,766.67
+2025,UCLA,766.62
+2025,Kentucky,763.18
+2025,Wisconsin,763.17
+2025,Texas Tech,757.49
+2025,Colorado,755.2
+2025,North Carolina,753.2
+2025,TCU,745.01
+2025,Arizona State,738.52
+2025,Syracuse,727.83
+2025,Baylor,726.3
+2025,California,726.21
+2025,Washington,720.56
+2025,Michigan State,717.42
+2025,Georgia Tech,715.56
+2025,Virginia Tech,712.19
+2025,Minnesota,711.04
+2025,Iowa,710
+2025,UCF,709.99
+2025,Utah,707.86
+2025,NC State,707.51
+2025,Stanford,707.27
+2025,Kansas State,705.85
+2025,Kansas,705.32
+2025,Oklahoma State,702.74
+2025,Louisville,700.77
+2025,UNLV,700.54
+2025,Maryland,699.31
+2025,Rutgers,689.22
+2025,Purdue,687.74
+2025,Vanderbilt,685.42
+2025,Pittsburgh,681.21
+2025,Northwestern,677.97
+2025,Duke,669.18
+2025,Memphis,668.63
+2025,Oregon State,667.99
+2025,South Florida,666.89
+2025,Virginia,666.74
+2025,West Virginia,662.33
+2025,Illinois,662.13
+2025,UTSA,662.09
+2025,Houston,656.74
+2025,Arizona,651.62
+2025,Tulane,650.87
+2025,Boston College,650.12
+2025,BYU,649.36
+2025,Iowa State,648.93
+2025,Indiana,645.34
+2025,Cincinnati,644.1
+2025,Wake Forest,627.16
+2025,Toledo,620.13
+2025,Texas State,612.16
+2025,Georgia State,611.97
+2025,East Carolina,611.55
+2025,App State,611.31
+2025,Coastal Carolina,610.88
+2025,Boise State,610.65
+2025,Florida Atlantic,605.22
+2025,Southern Miss,602.53
+2025,Liberty,599.12
+2025,Tulsa,594.78
+2025,San Diego State,594.27
+2025,Miami (OH),592.1
+2025,Arkansas State,591.27
+2025,Marshall,590.64
+2025,Fresno State,586.84
+2025,Louisiana,585.82
+2025,Colorado State,583.71
+2025,Georgia Southern,574.48
+2025,Eastern Michigan,572.9
+2025,Washington State,569.46
+2025,North Texas,569.15
+2025,UConn,568.12
+2025,Florida International,562.61
+2025,Troy,561.87
+2025,Western Kentucky,561.36
+2025,UTEP,551.88
+2025,South Alabama,544.87
+2025,UAB,540.93
+2025,Akron,537.21
+2025,Western Michigan,534.35
+2025,Rice,530.06
+2025,Bowling Green,527.31
+2025,Charlotte,526.3
+2025,San José State,522.91
+2025,Middle Tennessee,520.55
+2025,Jacksonville State,519.93
+2025,Buffalo,513.33
+2025,Temple,507.91
+2025,Utah State,503.59
+2025,Ball State,495.35
+2025,Louisiana Tech,493.5
+2025,Wyoming,489.33
+2025,Massachusetts,488.73
+2025,Nevada,488.69
+2025,Hawai'i,481.2
+2025,Central Michigan,481.16
+2025,Old Dominion,477.45
+2025,Sam Houston,477.35
+2025,UL Monroe,473.34
+2025,Northern Illinois,471.01
+2025,Ohio,469.99
+2025,James Madison,459.53
+2025,Kent State,456.24
+2025,Missouri State,426.1
+2025,New Mexico State,402.9
+2025,New Mexico,378.8
+2025,Kennesaw State,338.87
+2025,Delaware,242.85
+2025,Army,23.66
 2026,Georgia,1003.67
 2026,Texas,985.17
 2026,Oregon,984.33
