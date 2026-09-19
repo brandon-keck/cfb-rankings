@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFB Power Ratings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0b120e;
+    --surface: #121a15;
+    --surface-2: #0f1712;
+    --rule: #26332a;
+    --rule-soft: #1c2620;
+    --ink: #f2f3ee;
+    --muted: #93a395;
+    --muted-dim: #5f6f63;
+    --gold: #d8a23b;
+    --turf: #4a7a57;
+    --up: #6fae7d;
+    --down: #c1615a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- header ---- */
+
+  header {
+    padding: 40px 0 28px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .title-block h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .title-block p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 48ch;
+  }
+
+  .season-select {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+
+  .season-select label {
+    font-size: 12px;
+    color: var(--muted-dim);
+  }
+
+  select {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+  }
+
+  /* ---- hero ---- */
+
+  .hero {
+    padding: 48px 0 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-eyebrow {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 14px;
+  }
+
+  .hero-team {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-team .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-team .rating {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hero-sub {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* ---- ledger ---- */
+
+  .ledger {
+    padding-top: 36px;
+  }
+
+  .ledger h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+
+  .ledger .desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 20px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 13px 4px;
+    border-bottom: 1px solid var(--rule-soft);
+    cursor: pointer;
+    transition: background 0.12s ease;
+  }
+
+  .row:hover {
+    background: var(--surface);
+  }
+
+  .row.active {
+    background: var(--surface);
+    border-left: 2px solid var(--gold);
+    padding-left: 2px;
+  }
+
+  .row .rank {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .row .team {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .row .rating {
+    font-family: 'Space Grotesk', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  /* ---- trajectory ---- */
+
+  .trajectory {
+    padding-top: 44px;
+    margin-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .trajectory h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+
+  .trajectory .desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 18px;
+  }
+
+  .team-picker {
+    width: 100%;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .chart-panel {
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 20px 20px 8px;
+    display: none;
+  }
+
+  .chart-panel.visible { display: block; }
+
+  .chart-panel-empty {
+    color: var(--muted-dim);
+    font-size: 13px;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  canvas { max-height: 280px; }
+
+  /* ---- footer ---- */
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted-dim);
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--muted); }
+
+  .status {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  @media (max-width: 560px) {
+    .hero-team .name, .hero-team .rating { font-size: 30px; }
+    header { flex-direction: column; align-items: flex-start; }
+    .season-select { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="title-block">
+      <h1>CFB Power Ratings</h1>
+      <p>Elo-style ratings blended with recruiting talent, updated as games are played. No polls, no ballots.</p>
+    </div>
+    <div class="season-select">
+      <label for="season">Season</label>
+      <select id="season"></select>
+    </div>
+  </header>
+
+  <div id="app-content" style="display:none;">
+
+    <section class="hero">
+      <p class="hero-eyebrow" id="hero-eyebrow">Current #1</p>
+      <div class="hero-team">
+        <span class="name" id="hero-name">—</span>
+        <span class="rating" id="hero-rating">—</span>
+      </div>
+      <p class="hero-sub" id="hero-sub"></p>
+    </section>
+
+    <section class="ledger">
+      <h2>Top 25</h2>
+      <p class="desc">Ranked by current Elo rating. Click a team to see its rating across the season.</p>
+      <div id="ledger-rows"></div>
+    </section>
+
+    <section class="trajectory" id="trajectory-section">
+      <h2>Rating trajectory</h2>
+      <p class="desc">Pick any FBS team to see how its rating moved week to week.</p>
+      <select class="team-picker" id="team-picker">
+        <option value="">Choose a team…</option>
+      </select>
+      <div class="chart-panel" id="chart-panel">
+        <canvas id="trajectory-chart"></canvas>
+      </div>
+      <div class="chart-panel-empty" id="chart-empty">Select a team above to see its rating trajectory.</div>
+    </section>
+
+  </div>
+
+  <div class="status" id="status">Loading ratings…</div>
+
+  <footer>
+    <span>Data via CollegeFootballData.com · rankings computed with an Elo-style model</span>
+    <a href="https://github.com/brandon-keck/cfb-rankings" target="_blank" rel="noopener">View source on GitHub</a>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  const state = {
+    seasonFinal: [],     // {season, team, final_rating, rank}
+    weekly: [],          // {season, week, team, rating, rank}
+    currentSeason: null,
+    chart: null,
+  };
+
+  function setStatus(msg, isError) {
+    const el = document.getElementById('status');
+    el.textContent = msg;
+    el.style.color = isError ? '#c1615a' : '';
+  }
+
+  function fetchCSV(path) {
+    return fetch(path).then(function (res) {
+      if (!res.ok) throw new Error('Could not load ' + path + ' (' + res.status + ')');
+      return res.text();
+    }).then(function (text) {
+      const parsed = Papa.parse(text, { header: true, dynamicTyping: true, skipEmptyLines: true });
+      return parsed.data;
+    });
+  }
+
+  function init() {
+    Promise.all([
+      fetchCSV('data/elo_ratings_season_final.csv'),
+      fetchCSV('data/elo_ratings_weekly.csv'),
+    ]).then(function (results) {
+      state.seasonFinal = results[0];
+      state.weekly = results[1];
+
+      if (!state.seasonFinal.length) {
+        setStatus('No ratings data found yet. Run rank_teams.py and push the data/ folder.', true);
+        return;
+      }
+
+      const seasons = Array.from(new Set(state.seasonFinal.map(function (r) { return r.season; })))
+        .filter(function (s) { return s !== null && s !== undefined && s !== ''; })
+        .sort(function (a, b) { return b - a; });
+
+      const seasonSelect = document.getElementById('season');
+      seasons.forEach(function (s) {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        seasonSelect.appendChild(opt);
+      });
+
+      state.currentSeason = seasons[0];
+      seasonSelect.value = state.currentSeason;
+      seasonSelect.addEventListener('change', function () {
+        state.currentSeason = Number(seasonSelect.value);
+        renderSeason();
+      });
+
+      document.getElementById('status').style.display = 'none';
+      document.getElementById('app-content').style.display = 'block';
+      renderSeason();
+    }).catch(function (err) {
+      setStatus('Could not load ratings data: ' + err.message, true);
+    });
+  }
+
+  function renderSeason() {
+    const rows = state.seasonFinal
+      .filter(function (r) { return r.season === state.currentSeason; })
+      .sort(function (a, b) { return a.rank - b.rank; });
+
+    const top25 = rows.slice(0, 25);
+
+    if (top25.length) {
+      const leader = top25[0];
+      document.getElementById('hero-eyebrow').textContent = state.currentSeason + ' season · current #1';
+      document.getElementById('hero-name').textContent = leader.team;
+      document.getElementById('hero-rating').textContent = Number(leader.final_rating).toFixed(1);
+      document.getElementById('hero-sub').textContent =
+        'Leads a ' + rows.length + '-team FBS field.';
+    }
+
+    const ledger = document.getElementById('ledger-rows');
+    ledger.innerHTML = '';
+    top25.forEach(function (r) {
+      const row = document.createElement('div');
+      row.className = 'row';
+      row.dataset.team = r.team;
+      row.innerHTML =
+        '<span class="rank">' + r.rank + '</span>' +
+        '<span class="team">' + r.team + '</span>' +
+        '<span class="rating">' + Number(r.final_rating).toFixed(1) + '</span>';
+      row.addEventListener('click', function () {
+        document.querySelectorAll('.row.active').forEach(function (el) { el.classList.remove('active'); });
+        row.classList.add('active');
+        document.getElementById('team-picker').value = r.team;
+        showTrajectory(r.team);
+        document.getElementById('trajectory-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      ledger.appendChild(row);
+    });
+
+    const allTeamsThisSeason = Array.from(new Set(rows.map(function (r) { return r.team; }))).sort();
+    const picker = document.getElementById('team-picker');
+    picker.innerHTML = '<option value="">Choose a team…</option>';
+    allTeamsThisSeason.forEach(function (t) {
+      const opt = document.createElement('option');
+      opt.value = t;
+      opt.textContent = t;
+      picker.appendChild(opt);
+    });
+    picker.onchange = function () {
+      document.querySelectorAll('.row.active').forEach(function (el) { el.classList.remove('active'); });
+      if (picker.value) {
+        const allRows = document.querySelectorAll('.row');
+        for (let i = 0; i < allRows.length; i++) {
+          if (allRows[i].dataset.team === picker.value) {
+            allRows[i].classList.add('active');
+            break;
+          }
+        }
+        showTrajectory(picker.value);
+      } else {
+        hideTrajectory();
+      }
+    };
+  }
+
+  function showTrajectory(team) {
+    const points = state.weekly
+      .filter(function (r) { return r.season === state.currentSeason && r.team === team; })
+      .sort(function (a, b) { return a.week - b.week; });
+
+    if (!points.length) {
+      hideTrajectory();
+      return;
+    }
+
+    document.getElementById('chart-empty').style.display = 'none';
+    document.getElementById('chart-panel').classList.add('visible');
+
+    const ctx = document.getElementById('trajectory-chart').getContext('2d');
+    if (state.chart) state.chart.destroy();
+
+    state.chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: points.map(function (p) { return 'Wk ' + p.week; }),
+        datasets: [{
+          label: team,
+          data: points.map(function (p) { return p.rating; }),
+          borderColor: '#d8a23b',
+          backgroundColor: 'rgba(216,162,59,0.12)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: '#d8a23b',
+          tension: 0.25,
+          fill: true,
+        }],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#121a15',
+            borderColor: '#26332a',
+            borderWidth: 1,
+            titleColor: '#f2f3ee',
+            bodyColor: '#f2f3ee',
+          },
+        },
+        scales: {
+          x: {
+            ticks: { color: '#93a395', font: { family: 'IBM Plex Sans' } },
+            grid: { color: '#1c2620' },
+          },
+          y: {
+            ticks: { color: '#93a395', font: { family: 'IBM Plex Sans' } },
+            grid: { color: '#1c2620' },
+          },
+        },
+      },
+    });
+  }
+
+  function hideTrajectory() {
+    document.getElementById('chart-panel').classList.remove('visible');
+    document.getElementById('chart-empty').style.display = 'block';
+    if (state.chart) { state.chart.destroy(); state.chart = null; }
+  }
+
+  init();
+})();
+</script>
+
+</body>
+</html>
