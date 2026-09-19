@@ -1,6 +1,6 @@
 """
 Builds week-by-week Elo-style power ratings for FBS teams from the
-data pulled by fetch_cfbd_data.py (cfb.py).
+data pulled.
 
 How it works:
     - Every team starts a season with a rating carried over from the
