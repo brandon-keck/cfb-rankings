@@ -31,7 +31,7 @@ import requests
 BASE_URL = "https://api.collegefootballdata.com"
 OUTPUT_DIR = Path("data")
 
-# Be polite to the free API tier -- small pause between requests
+
 REQUEST_DELAY_SECONDS = 0.5
 
 
