@@ -456,10 +456,22 @@
     };
   }
 
+  function formatDateLabel(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr + 'T00:00:00Z');
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  }
+
   function showTrajectory(team) {
+    // Sort by actual game date, not week number -- a team can play more
+    // than once in the same numbered week (early-season scheduling
+    // quirks), so date is the only reliably unique, chronological key.
     const points = state.weekly
       .filter(function (r) { return r.season === state.currentSeason && r.team === team; })
-      .sort(function (a, b) { return a.week - b.week; });
+      .sort(function (a, b) {
+        if (a.game_date && b.game_date) return a.game_date < b.game_date ? -1 : (a.game_date > b.game_date ? 1 : 0);
+        return a.week - b.week;
+      });
 
     if (!points.length) {
       hideTrajectory();
@@ -475,7 +487,7 @@
     state.chart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: points.map(function (p) { return 'Wk ' + p.week; }),
+        labels: points.map(function (p) { return formatDateLabel(p.game_date) || ('Wk ' + p.week); }),
         datasets: [{
           label: team,
           data: points.map(function (p) { return p.rating; }),
@@ -497,7 +509,19 @@
             borderColor: '#26332a',
             borderWidth: 1,
             titleColor: '#f2f3ee',
-            bodyColor: '#f2f3ee',
+            bodyColor: '#93a395',
+            callbacks: {
+              title: function (items) {
+                const p = points[items[0].dataIndex];
+                return 'Week ' + p.week + (p.opponent ? ' vs ' + p.opponent : '');
+              },
+              label: function (item) {
+                const p = points[item.dataIndex];
+                const lines = ['Rating: ' + p.rating];
+                if (p.result) lines.push(p.result);
+                return lines;
+              },
+            },
           },
         },
         scales: {

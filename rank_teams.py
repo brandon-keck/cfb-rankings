@@ -1,7 +1,4 @@
 """
-Builds week-by-week Elo-style power ratings for FBS teams from the
-data pulled by fetch_cfbd_data.py (cfb.py).
-
 How it works:
     - Every team starts a season with a rating carried over from the
       previous season, regressed partway back toward the average
@@ -287,13 +284,24 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
         # picture once you pivot the data). Non-FBS buy-game opponents are
         # excluded from the output -- their game still updated the FBS
         # team's rating above, they just don't get ranked themselves.
-        for team in (home, away):
+        # game_date is included because a team can play more than once in
+        # the same numbered week (early-season scheduling quirks), so week
+        # number alone isn't a unique x-axis key for charting.
+        game_date = g["start_date"][:10] if g["start_date"] else ""
+        for team, opponent, team_points, opp_points in (
+            (home, away, g["home_points"], g["away_points"]),
+            (away, home, g["away_points"], g["home_points"]),
+        ):
             if team in current_season_fbs:
+                result = "W" if team_points > opp_points else ("L" if team_points < opp_points else "T")
                 weekly_rows.append(
                     {
                         "season": g["season"],
                         "week": g["week"],
+                        "game_date": game_date,
                         "team": team,
+                        "opponent": opponent,
+                        "result": f"{result} {team_points}-{opp_points}",
                         "rating": round(ratings[team], 1),
                     }
                 )
@@ -346,7 +354,7 @@ def main():
     add_ranks_within_group(weekly_rows, ["season", "week"], "rating")
     add_ranks_within_group(season_final_rows, ["season"], "final_rating")
 
-    save_csv(weekly_rows, DATA_DIR / "elo_ratings_weekly.csv", ["season", "week", "team", "rating", "rank"])
+    save_csv(weekly_rows, DATA_DIR / "elo_ratings_weekly.csv", ["season", "week", "game_date", "team", "opponent", "result", "rating", "rank"])
     save_csv(season_final_rows, DATA_DIR / "elo_ratings_season_final.csv", ["season", "team", "final_rating", "rank"])
 
     latest_season = max(r["season"] for r in season_final_rows)
