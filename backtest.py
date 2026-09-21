@@ -1,4 +1,6 @@
 """
+backtest.py
+
 Checks whether the Elo model's rankings actually predict outcomes well,
 rather than just looking plausible. For every FBS-vs-FBS game, this uses
 the exact same rating engine as rank_teams.py to see what the model would
@@ -18,6 +20,14 @@ Metrics:
            season's data, so this comparison isn't perfectly apples-to-apples
            with the Elo model's no-look-ahead predictions -- it's a useful
            reference point, not a strict benchmark.
+
+Run this after rank_teams.py has been run at least once (it reuses the
+same rating engine and data-loading functions).
+
+    python backtest.py
+
+Writes:
+    data/backtest_predictions.csv   every game's prediction vs. actual result
 """
 
 import csv
@@ -57,6 +67,38 @@ def load_sp_plus() -> dict[tuple[int, str], float]:
     return sp
 
 
+def load_ap_poll() -> dict[tuple[int, int, str], int]:
+    """Returns {(season, week, team): ap_rank} for the AP Top 25 poll only,
+    built from per-year rankings_YYYY.csv files. NOTE: this assumes CFBD's
+    "week 1" ranking is the preseason poll (see the comment in
+    fetch_cfbd_data.py) so week N's poll is compared directly against week
+    N's games with no offset."""
+    import glob
+    import re
+
+    ap = {}
+    for path in sorted(glob.glob(str(DATA_DIR / "rankings_*.csv"))):
+        p = Path(path)
+        if p.name == "rankings_all_years.csv":
+            continue
+        m = re.match(r"rankings_(\d{4})\.csv$", p.name)
+        if not m:
+            continue
+        with open(p, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row.get("poll") != "AP Top 25":
+                    continue
+                try:
+                    season = int(row["season"])
+                    week = int(row["week"])
+                    team = (row.get("school") or "").strip()
+                    rank = int(row["rank"])
+                    ap[(season, week, team)] = rank
+                except (KeyError, ValueError, TypeError):
+                    continue
+    return ap
+
+
 def brier_score(predictions: list[dict]) -> float:
     total = 0.0
     for p in predictions:
@@ -81,7 +123,7 @@ def main():
     fbs_teams = load_fbs_teams()
 
     print("Running Elo model and capturing pre-game predictions...")
-    _weekly_rows, _season_final_rows, predictions = run_elo(games, talent_by_team, fbs_teams)
+    _weekly_rows, _season_final_rows, predictions, _full_field_weekly_rows = run_elo(games, talent_by_team, fbs_teams)
 
     if not predictions:
         print("No FBS-vs-FBS games found to backtest. Run cfb.py and rank_teams.py first.")
@@ -125,6 +167,38 @@ def main():
     else:
         print("\nNo overlapping SP+ data found to compare against.")
 
+    # ---- Baseline: AP Poll ----
+    # Unlike Elo/SP+, the poll only gives a hard pick, not a calibrated
+    # probability -- so only accuracy is reported for it, not a Brier score.
+    # Games where NEITHER team is ranked are excluded entirely: the poll
+    # offers no signal there, so including them would understate the poll's
+    # real accuracy on the games it actually has an opinion about.
+    ap_poll = load_ap_poll()
+    ap_correct = 0
+    ap_total = 0
+    for p in predictions:
+        home_rank = ap_poll.get((p["season"], p["week"], p["home_team"]))
+        away_rank = ap_poll.get((p["season"], p["week"], p["away_team"]))
+        if home_rank is None and away_rank is None:
+            continue
+        if home_rank is not None and away_rank is not None:
+            predicted_home_win = home_rank < away_rank  # lower rank number = better
+        else:
+            predicted_home_win = home_rank is not None  # ranked team favored over unranked
+        ap_total += 1
+        if predicted_home_win == p["home_won"]:
+            ap_correct += 1
+
+    if ap_total:
+        ap_acc = ap_correct / ap_total
+        print(f"\nAP Poll baseline accuracy: {ap_acc:.1%}  (on the {ap_total} games where at least one team was ranked)")
+        print(f"  Elo model {'beats' if elo_acc > ap_acc else 'does not beat'} the AP Poll on accuracy by {abs(elo_acc - ap_acc):.1%}")
+        print("  Note: only a hard pick, not a calibrated probability, so no Brier score here.")
+        print("  Note: assumes CFBD's week-1 poll is the preseason poll (see fetch_cfbd_data.py comment).")
+    else:
+        ap_acc = None
+        print("\nNo overlapping AP Poll data found to compare against.")
+
     # ---- Per-season breakdown ----
     seasons = sorted(set(p["season"] for p in predictions))
     per_season = []
@@ -163,6 +237,9 @@ def main():
         "sp_plus_brier_score": round(sp_brier, 4) if sp_predictions else None,
         "sp_plus_games_compared": len(sp_predictions) if sp_predictions else 0,
         "elo_vs_sp_plus_pts": round((elo_acc - sp_acc) * 100, 1) if sp_predictions else None,
+        "ap_poll_accuracy": round(ap_acc, 4) if ap_total else None,
+        "ap_poll_games_compared": ap_total,
+        "elo_vs_ap_poll_pts": round((elo_acc - ap_acc) * 100, 1) if ap_total else None,
         "accuracy_by_season": per_season,
     }
     summary_path = DATA_DIR / "backtest_summary.json"
