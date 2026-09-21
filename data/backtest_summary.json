@@ -9,6 +9,9 @@
   "sp_plus_brier_score": 0.1462,
   "sp_plus_games_compared": 5129,
   "elo_vs_sp_plus_pts": -7.4,
+  "ap_poll_accuracy": null,
+  "ap_poll_games_compared": 0,
+  "elo_vs_ap_poll_pts": null,
   "accuracy_by_season": [
     {
       "season": 2019,

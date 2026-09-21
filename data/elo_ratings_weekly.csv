@@ -2636,8 +2636,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2021,1,2021-09-04,Georgia,Clemson,W 10-3,1758.0,3
 2021,1,2021-09-05,Notre Dame,Florida State,W 41-38,1729.4,4
 2021,1,2021-09-05,Texas A&M,Kent State,W 41-10,1720.9,5
-2021,1,2021-09-04,Florida,Florida Atlantic,W 35-14,1713.1,6
-2021,1,2021-09-04,Clemson,Georgia,L 3-10,1713.1,7
+2021,1,2021-09-04,Clemson,Georgia,L 3-10,1713.1,6
+2021,1,2021-09-04,Florida,Florida Atlantic,W 35-14,1713.1,7
 2021,1,2021-09-04,Oklahoma,Tulane,W 40-35,1710.3,8
 2021,1,2021-09-04,Iowa,Indiana,W 34-6,1708.9,9
 2021,1,2021-09-04,USC,San José State,W 30-7,1708.7,10
@@ -7975,8 +7975,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2024,5,2024-09-28,Navy,UAB,W 41-18,1524.8,56
 2024,5,2024-09-28,North Texas,Tulsa,W 52-20,1522.3,57
 2024,5,2024-09-28,Michigan State,Ohio State,L 7-38,1510.4,58
-2024,5,2024-09-28,Louisiana,Wake Forest,W 41-38,1508.4,59
-2024,5,2024-09-28,Georgia Southern,Georgia State,W 38-21,1508.4,60
+2024,5,2024-09-28,Georgia Southern,Georgia State,W 38-21,1508.4,59
+2024,5,2024-09-28,Louisiana,Wake Forest,W 41-38,1508.4,60
 2024,5,2024-09-28,Sam Houston,Texas State,W 40-39,1503.5,61
 2024,5,2024-09-28,Minnesota,Michigan,L 24-27,1490.8,62
 2024,5,2024-09-28,Ohio,Akron,W 30-10,1490.8,63
@@ -10857,8 +10857,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,2,2026-09-12,LSU,Louisiana Tech,W 45-14,1693.6,12
 2026,2,2026-09-12,Tennessee,Georgia Tech,W 45-24,1688.3,13
 2026,2,2026-09-12,Michigan,Oklahoma,W 17-10,1675.6,14
-2026,2,2026-09-12,Oregon,Oklahoma State,L 31-39,1670.8,15
-2026,2,2026-09-12,Penn State,Temple,W 27-9,1670.8,16
+2026,2,2026-09-12,Penn State,Temple,W 27-9,1670.8,15
+2026,2,2026-09-12,Oregon,Oklahoma State,L 31-39,1670.8,16
 2026,2,2026-09-13,Utah,Arkansas,W 43-10,1662.2,17
 2026,2,2026-09-12,Missouri,Kansas,W 38-21,1661.2,18
 2026,2,2026-09-12,BYU,Arizona,W 28-17,1648.2,19
