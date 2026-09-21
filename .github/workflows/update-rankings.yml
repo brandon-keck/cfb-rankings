@@ -2,8 +2,11 @@ name: Update CFB Rankings
 
 on:
   schedule:
-    # Monday 9am UTC -- catches the full weekend's games (Thu-Sun)
-    - cron: '0 9 * * 1'
+    # Monday, a few minutes after 9am UTC (not exactly on the hour) --
+    # scheduled GitHub Actions runs on the exact hour are more likely to be
+    # delayed or dropped during peak load, since that's when everyone
+    # else's cron jobs fire too.
+    - cron: '17 9 * * 1'
   workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
 
 permissions:
