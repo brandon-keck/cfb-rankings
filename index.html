@@ -154,7 +154,7 @@
 
   .row {
     display: grid;
-    grid-template-columns: 40px 1fr auto;
+    grid-template-columns: 40px 1fr 70px auto;
     align-items: center;
     gap: 16px;
     padding: 13px 4px;
@@ -162,6 +162,17 @@
     cursor: pointer;
     transition: background 0.12s ease;
   }
+
+  .move {
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .move-up { color: var(--up); }
+  .move-down { color: var(--down); }
+  .move-flat { color: var(--muted-dim); }
+  .move-new { color: var(--gold); }
 
   .row:hover {
     background: var(--surface);
@@ -390,6 +401,10 @@
           <div class="stat-value" id="stat-vs-sp">—</div>
           <div class="stat-label">vs. SP+ ratings</div>
         </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-vs-ap">—</div>
+          <div class="stat-label">vs. AP Poll</div>
+        </div>
       </div>
       <p class="stats-note">Backtested using only data available before each game was played — no look-ahead. Recomputed automatically every week.</p>
     </section>
@@ -410,6 +425,7 @@
   const state = {
     seasonFinal: [],     // {season, team, final_rating, rank}
     weekly: [],          // {season, week, team, rating, rank}
+    fullFieldWeekly: [], // {season, week, team, rating, rank} -- full field every week, for movement indicator
     currentSeason: null,
     chart: null,
   };
@@ -466,8 +482,22 @@
       document.getElementById('app-content').style.display = 'block';
       renderSeason();
       loadBacktestSummary();
+      loadFullFieldWeekly();
     }).catch(function (err) {
       setStatus('Could not load ratings data: ' + err.message, true);
+    });
+  }
+
+  function loadFullFieldWeekly() {
+    // Optional, non-blocking: powers the week-over-week movement indicator.
+    // If this file doesn't exist yet (e.g. right after deploying before the
+    // data's been regenerated), fail silently -- the rest of the dashboard
+    // works fine without it, movement indicators just won't show.
+    fetchCSV('data/elo_full_field_weekly.csv').then(function (rows) {
+      state.fullFieldWeekly = rows;
+      renderSeason(); // re-render now that movement data is available
+    }).catch(function () {
+      state.fullFieldWeekly = [];
     });
   }
 
@@ -497,6 +527,15 @@
         vsSpEl.textContent = 'N/A';
       }
 
+      const vsApEl = document.getElementById('stat-vs-ap');
+      if (summary.ap_poll_accuracy !== null && summary.ap_poll_accuracy !== undefined) {
+        const vsAp = summary.elo_vs_ap_poll_pts;
+        vsApEl.textContent = (vsAp >= 0 ? '+' : '') + vsAp.toFixed(1) + ' pts';
+        vsApEl.className = 'stat-value ' + (vsAp >= 0 ? 'positive' : 'negative');
+      } else {
+        vsApEl.textContent = 'N/A';
+      }
+
       document.getElementById('stats-desc').textContent =
         'Across ' + summary.games_evaluated.toLocaleString() + ' FBS-vs-FBS games since 2019 (as of ' + summary.generated_at_utc + ').';
 
@@ -504,6 +543,24 @@
     }).catch(function () {
       // Silently skip -- no backtest data available yet.
     });
+  }
+
+  function getMovement(team, season, currentRank) {
+    const teamHistory = state.fullFieldWeekly
+      .filter(function (r) { return r.season === season && r.team === team; })
+      .sort(function (a, b) { return a.week - b.week; });
+
+    if (teamHistory.length < 2) return null; // no prior week on record yet
+
+    const previousRank = teamHistory[teamHistory.length - 2].rank;
+    return previousRank - currentRank; // positive = moved up, negative = moved down
+  }
+
+  function movementBadge(delta) {
+    if (delta === null) return '<span class="move move-new">NEW</span>';
+    if (delta > 0) return '<span class="move move-up">&#9650; ' + delta + '</span>';
+    if (delta < 0) return '<span class="move move-down">&#9660; ' + Math.abs(delta) + '</span>';
+    return '<span class="move move-flat">&mdash;</span>';
   }
 
   function renderSeason() {
@@ -522,15 +579,19 @@
         'Leads a ' + rows.length + '-team FBS field.';
     }
 
+    const hasMovementData = state.fullFieldWeekly.length > 0;
+
     const ledger = document.getElementById('ledger-rows');
     ledger.innerHTML = '';
     top25.forEach(function (r) {
       const row = document.createElement('div');
       row.className = 'row';
       row.dataset.team = r.team;
+      const movementHtml = hasMovementData ? movementBadge(getMovement(r.team, state.currentSeason, r.rank)) : '';
       row.innerHTML =
         '<span class="rank">' + r.rank + '</span>' +
         '<span class="team">' + r.team + '</span>' +
+        movementHtml +
         '<span class="rating">' + Number(r.final_rating).toFixed(1) + '</span>';
       row.addEventListener('click', function () {
         document.querySelectorAll('.row.active').forEach(function (el) { el.classList.remove('active'); });

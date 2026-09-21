@@ -222,15 +222,32 @@ def seed_season_ratings(
     return prior_for
 
 
+def flush_full_field_week(season, week, ratings, fbs_set, out_list):
+    """Snapshot every FBS team's current rating, ranked against the FULL
+    field (not just teams that happened to play that week). Teams on a bye
+    keep their last rating unchanged, which is exactly the forward-fill
+    behavior we want -- this is what makes week-to-week rank comparisons
+    (the 'movement' indicator) actually apples-to-apples."""
+    if week is None:
+        return
+    rows = [{"season": season, "week": week, "team": t, "rating": round(ratings.get(t, DEFAULT_RATING), 1)} for t in fbs_set]
+    rows.sort(key=lambda r: -r["rating"])
+    for i, r in enumerate(rows, start=1):
+        r["rank"] = i
+    out_list.extend(rows)
+
+
 def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs_teams: dict[int, set[str]]):
     ratings: dict[str, float] = {}
     games_played_this_season: dict[str, int] = {}
     weekly_rows = []
     season_final_rows = []
+    full_field_weekly_rows = []  # one row per FBS team per week, ranked against the whole field -- used for week-over-week movement
     predictions = []  # one row per FBS-vs-FBS game: what the model predicted BEFORE it was played
 
     current_season = None
     current_season_fbs: set[str] = set()
+    current_week = None
 
     def is_fbs(team: str, season: int) -> bool:
         known = fbs_teams.get(season)
@@ -238,6 +255,11 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
 
     for g in games:
         if g["season"] != current_season:
+            # Season transition: flush the full-field snapshot for the last
+            # week of the season that's ending, before we reseed anything.
+            flush_full_field_week(current_season, current_week, ratings, current_season_fbs, full_field_weekly_rows)
+            current_week = None
+
             # New season: seed ratings using last season's finals + talent blend.
             # Only carry forward + rank teams that were actually FBS that season;
             # non-FBS "buy game" opponents are handled separately below.
@@ -261,6 +283,12 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
             games_played_this_season = {team: 0 for team in current_season_fbs}
 
             current_season = g["season"]
+
+        if g["week"] != current_week:
+            # Week transition within the same season: flush the full-field
+            # snapshot for the week that just finished.
+            flush_full_field_week(current_season, current_week, ratings, current_season_fbs, full_field_weekly_rows)
+            current_week = g["week"]
 
         home, away = g["home_team"], g["away_team"]
         if home not in ratings:
@@ -333,11 +361,15 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
                 )
 
     if current_season is not None:
+        # Flush the full-field snapshot for the very last week of the very
+        # last season, since there's no subsequent week transition to
+        # trigger it otherwise.
+        flush_full_field_week(current_season, current_week, ratings, current_season_fbs, full_field_weekly_rows)
         for team, rating in ratings.items():
             if team in current_season_fbs:
                 season_final_rows.append({"season": current_season, "team": team, "final_rating": round(rating, 1)})
 
-    return weekly_rows, season_final_rows, predictions
+    return weekly_rows, season_final_rows, predictions, full_field_weekly_rows
 
 
 def add_ranks_within_group(rows: list[dict], group_keys: list[str], value_key: str) -> None:
@@ -375,13 +407,14 @@ def main():
     print(f"  FBS rosters loaded for seasons: {sorted(fbs_teams.keys())}")
 
     print("Running Elo model...")
-    weekly_rows, season_final_rows, _predictions = run_elo(games, talent_by_team, fbs_teams)
+    weekly_rows, season_final_rows, _predictions, full_field_weekly_rows = run_elo(games, talent_by_team, fbs_teams)
 
     add_ranks_within_group(weekly_rows, ["season", "week"], "rating")
     add_ranks_within_group(season_final_rows, ["season"], "final_rating")
 
     save_csv(weekly_rows, DATA_DIR / "elo_ratings_weekly.csv", ["season", "week", "game_date", "team", "opponent", "result", "rating", "rank"])
     save_csv(season_final_rows, DATA_DIR / "elo_ratings_season_final.csv", ["season", "team", "final_rating", "rank"])
+    save_csv(full_field_weekly_rows, DATA_DIR / "elo_full_field_weekly.csv", ["season", "week", "team", "rating", "rank"])
 
     latest_season = max(r["season"] for r in season_final_rows)
     print(f"\nCurrent Top 25 standings, season {latest_season} (through the most recently played games):")
