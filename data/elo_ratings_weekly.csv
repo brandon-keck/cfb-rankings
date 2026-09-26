@@ -10941,8 +10941,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,2,2026-09-13,Hawai'i,New Mexico State,W 29-19,1431.3,96
 2026,2,2026-09-12,Southern Miss,Auburn,L 8-43,1431.1,97
 2026,2,2026-09-12,Arkansas State,West Georgia,W 52-7,1431.0,98
-2026,2,2026-09-12,Coastal Carolina,Fordham,W 45-7,1429.6,99
-2026,2,2026-09-12,Navy,Florida Atlantic,L 30-38,1429.6,100
+2026,2,2026-09-12,Navy,Florida Atlantic,L 30-38,1429.6,99
+2026,2,2026-09-12,Coastal Carolina,Fordham,W 45-7,1429.6,100
 2026,2,2026-09-12,Florida Atlantic,Navy,W 38-30,1426.2,101
 2026,2,2026-09-12,South Alabama,Tulane,L 24-28,1423.2,102
 2026,2,2026-09-12,Jacksonville State,Ohio,L 27-29,1422.1,103
@@ -11110,3 +11110,14 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,3,2026-09-20,Sacramento State,North Dakota State,L 10-31,1292.3,130
 2026,3,2026-09-19,Charlotte,App State,L 21-26,1292.2,131
 2026,3,2026-09-19,UL Monroe,SE Louisiana,L 35-38,1267.5,132
+2026,4,2026-09-26,Indiana,Northwestern,W 29-23,1732.5,1
+2026,4,2026-09-26,Clemson,California,W 24-10,1649.0,2
+2026,4,2026-09-26,Northwestern,Indiana,L 23-29,1546.3,3
+2026,4,2026-09-24,Liberty,Coastal Carolina,W 34-17,1504.6,4
+2026,4,2026-09-26,California,Clemson,L 10-24,1451.1,5
+2026,4,2026-09-25,Army,Temple,W 21-17,1437.1,6
+2026,4,2026-09-25,UAB,Navy,W 24-20,1410.2,7
+2026,4,2026-09-25,Navy,UAB,L 20-24,1402.4,8
+2026,4,2026-09-25,Rutgers,Howard,W 58-7,1397.6,9
+2026,4,2026-09-25,Temple,Army,L 17-21,1374.1,10
+2026,4,2026-09-24,Coastal Carolina,Liberty,L 17-34,1352.6,11
