@@ -10857,8 +10857,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,2,2026-09-12,LSU,Louisiana Tech,W 45-14,1693.6,12
 2026,2,2026-09-12,Tennessee,Georgia Tech,W 45-24,1688.3,13
 2026,2,2026-09-12,Michigan,Oklahoma,W 17-10,1675.6,14
-2026,2,2026-09-12,Oregon,Oklahoma State,L 31-39,1670.8,15
-2026,2,2026-09-12,Penn State,Temple,W 27-9,1670.8,16
+2026,2,2026-09-12,Penn State,Temple,W 27-9,1670.8,15
+2026,2,2026-09-12,Oregon,Oklahoma State,L 31-39,1670.8,16
 2026,2,2026-09-13,Utah,Arkansas,W 43-10,1662.2,17
 2026,2,2026-09-12,Missouri,Kansas,W 38-21,1661.2,18
 2026,2,2026-09-12,BYU,Arizona,W 28-17,1648.2,19
@@ -11112,72 +11112,130 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,3,2026-09-19,UL Monroe,SE Louisiana,L 35-38,1267.5,132
 2026,4,2026-09-26,Georgia,Oklahoma,W 41-13,1817.3,1
 2026,4,2026-09-26,Notre Dame,Purdue,W 49-10,1794.8,2
-2026,4,2026-09-26,Texas,Tennessee,W 20-17,1770.5,3
-2026,4,2026-09-26,Ohio State,Illinois,W 42-19,1768.1,4
-2026,4,2026-09-26,Indiana,Northwestern,W 29-23,1732.5,5
-2026,4,2026-09-26,Texas Tech,Sam Houston,W 49-14,1716.2,6
-2026,4,2026-09-26,Utah,Iowa State,W 31-17,1710.1,7
-2026,4,2026-09-26,Florida,Ole Miss,W 52-28,1689.9,8
-2026,4,2026-09-26,Ole Miss,Florida,L 28-52,1689.9,9
-2026,4,2026-09-26,Tennessee,Texas,L 17-20,1680.9,10
-2026,4,2026-09-26,Michigan,Iowa,L 19-20,1674.2,11
-2026,4,2026-09-26,Duke,William & Mary,W 62-7,1659.9,12
-2026,4,2026-09-26,UCLA,Maryland,W 54-3,1657.4,13
-2026,4,2026-09-26,Iowa,Michigan,W 20-19,1653.1,14
-2026,4,2026-09-26,Clemson,California,W 24-10,1649.0,15
-2026,4,2026-09-26,Boise State,Western Michigan,W 32-7,1648.4,16
-2026,4,2026-09-26,Oklahoma,Georgia,L 13-41,1638.0,17
-2026,4,2026-09-26,South Florida,Bowling Green,W 14-6,1637.7,18
-2026,4,2026-09-26,Pittsburgh,Bucknell,W 59-0,1630.6,19
-2026,4,2026-09-26,Vanderbilt,Auburn,L 15-21,1630.4,20
-2026,4,2026-09-26,Virginia Tech,Boston College,W 21-14,1601.1,21
-2026,4,2026-09-26,Houston,Georgia Southern,W 42-28,1598.8,22
-2026,4,2026-09-26,Auburn,Vanderbilt,W 21-15,1594.4,23
-2026,4,2026-09-26,Louisville,Wake Forest,L 27-30,1593.2,24
-2026,4,2026-09-26,Kentucky,South Alabama,W 45-21,1584.2,25
-2026,4,2026-09-26,Baylor,Colorado,W 23-13,1559.0,26
-2026,4,2026-09-26,New Mexico,New Mexico State,W 42-18,1557.1,27
-2026,4,2026-09-26,TCU,UCF,L 13-21,1552.8,28
-2026,4,2026-09-26,UTSA,Colorado State,W 59-45,1550.9,29
-2026,4,2026-09-26,UNLV,Akron,W 38-10,1549.7,30
-2026,4,2026-09-26,Wake Forest,Louisville,W 30-27,1548.4,31
-2026,4,2026-09-26,Northwestern,Indiana,L 23-29,1546.3,32
-2026,4,2026-09-26,UCF,TCU,W 21-13,1542.4,33
-2026,4,2026-09-26,Illinois,Ohio State,L 19-42,1539.9,34
-2026,4,2026-09-26,Iowa State,Utah,L 17-31,1529.5,35
-2026,4,2026-09-26,Toledo,San Diego State,W 41-16,1523.3,36
-2026,4,2026-09-26,Florida State,Central Arkansas,W 34-7,1508.5,37
-2026,4,2026-09-26,UConn,Miami (OH),L 21-24,1507.4,38
-2026,4,2026-09-24,Liberty,Coastal Carolina,W 34-17,1504.6,39
-2026,4,2026-09-26,East Carolina,North Carolina Central,W 42-9,1501.7,40
-2026,4,2026-09-26,Western Michigan,Boise State,L 7-32,1495.7,41
-2026,4,2026-09-26,Marshall,Gardner-Webb,W 36-35,1491.7,42
-2026,4,2026-09-26,Miami (OH),UConn,W 24-21,1458.4,43
-2026,4,2026-09-26,Maryland,UCLA,L 3-54,1456.7,44
-2026,4,2026-09-26,California,Clemson,L 10-24,1451.1,45
-2026,4,2026-09-26,Ohio,Stonehill,W 35-7,1446.0,46
-2026,4,2026-09-25,Army,Temple,W 21-17,1437.1,47
-2026,4,2026-09-26,Colorado,Baylor,L 13-23,1430.9,48
-2026,4,2026-09-26,South Alabama,Kentucky,L 21-45,1430.1,49
-2026,4,2026-09-26,Georgia State,Northern Illinois,W 35-14,1426.0,50
-2026,4,2026-09-26,Boston College,Virginia Tech,L 14-21,1421.1,51
-2026,4,2026-09-26,San Diego State,Toledo,L 16-41,1416.4,52
-2026,4,2026-09-25,UAB,Navy,W 24-20,1410.2,53
-2026,4,2026-09-25,Navy,UAB,L 20-24,1402.4,54
-2026,4,2026-09-25,Rutgers,Howard,W 58-7,1397.6,55
-2026,4,2026-09-26,Colorado State,UTSA,L 45-59,1397.1,56
-2026,4,2026-09-26,Kent State,Ball State,W 26-13,1396.1,57
-2026,4,2026-09-26,Georgia Southern,Houston,L 28-42,1391.1,58
-2026,4,2026-09-26,Purdue,Notre Dame,L 10-49,1384.5,59
-2026,4,2026-09-26,Hawai'i,Wyoming,L 10-27,1384.5,60
-2026,4,2026-09-26,Buffalo,Robert Morris,W 31-28,1379.8,61
-2026,4,2026-09-26,Wyoming,Hawai'i,W 27-10,1375.8,62
-2026,4,2026-09-25,Temple,Army,L 17-21,1374.1,63
-2026,4,2026-09-24,Coastal Carolina,Liberty,L 17-34,1352.6,64
-2026,4,2026-09-26,Eastern Michigan,Lindenwood,W 29-3,1348.9,65
-2026,4,2026-09-26,Sam Houston,Texas Tech,L 14-49,1339.8,66
-2026,4,2026-09-26,Akron,UNLV,L 10-38,1326.3,67
-2026,4,2026-09-26,Ball State,Kent State,L 13-26,1314.3,68
-2026,4,2026-09-26,Bowling Green,South Florida,L 6-14,1295.4,69
-2026,4,2026-09-26,New Mexico State,New Mexico,L 18-42,1292.8,70
-2026,4,2026-09-26,Northern Illinois,Georgia State,L 14-35,1285.2,71
+2026,4,2026-09-26,Alabama,South Carolina,W 49-18,1786.6,3
+2026,4,2026-09-26,Miami,Central Michigan,W 52-3,1775.7,4
+2026,4,2026-09-26,Texas,Tennessee,W 20-17,1770.5,5
+2026,4,2026-09-26,Ohio State,Illinois,W 42-19,1768.1,6
+2026,4,2026-09-26,Indiana,Northwestern,W 29-23,1732.5,7
+2026,4,2026-09-26,Oregon,USC,W 41-27,1722.0,8
+2026,4,2026-09-26,Texas Tech,Sam Houston,W 49-14,1716.2,9
+2026,4,2026-09-26,Utah,Iowa State,W 31-17,1710.1,10
+2026,4,2026-09-26,LSU,Texas A&M,W 35-6,1704.1,11
+2026,4,2026-09-26,Florida,Ole Miss,W 52-28,1689.9,12
+2026,4,2026-09-26,Ole Miss,Florida,L 28-52,1689.9,13
+2026,4,2026-09-26,James Madison,Old Dominion,W 46-20,1684.1,14
+2026,4,2026-09-26,Tennessee,Texas,L 17-20,1680.9,15
+2026,4,2026-09-26,Mississippi State,Missouri,W 31-24,1679.6,16
+2026,4,2026-09-26,Michigan,Iowa,L 19-20,1674.2,17
+2026,4,2026-09-26,USC,Oregon,L 27-41,1673.8,18
+2026,4,2026-09-26,Duke,William & Mary,W 62-7,1659.9,19
+2026,4,2026-09-26,UCLA,Maryland,W 54-3,1657.4,20
+2026,4,2026-09-26,Nebraska,Michigan State,W 31-13,1653.2,21
+2026,4,2026-09-26,Iowa,Michigan,W 20-19,1653.1,22
+2026,4,2026-09-26,Missouri,Mississippi State,L 24-31,1652.4,23
+2026,4,2026-09-26,Penn State,Wisconsin,L 20-24,1651.6,24
+2026,4,2026-09-26,Clemson,California,W 24-10,1649.0,25
+2026,4,2026-09-26,Boise State,Western Michigan,W 32-7,1648.4,26
+2026,4,2026-09-26,Oklahoma,Georgia,L 13-41,1638.0,27
+2026,4,2026-09-26,South Florida,Bowling Green,W 14-6,1637.7,28
+2026,4,2026-09-26,Pittsburgh,Bucknell,W 59-0,1630.6,29
+2026,4,2026-09-26,Vanderbilt,Auburn,L 15-21,1630.4,30
+2026,4,2026-09-26,Texas A&M,LSU,L 6-35,1629.7,31
+2026,4,2026-09-27,SMU,Missouri State,W 34-24,1612.9,32
+2026,4,2026-09-26,Arizona,Washington State,W 34-24,1604.4,33
+2026,4,2026-09-26,Kansas State,Cincinnati,L 26-31,1601.7,34
+2026,4,2026-09-27,Washington,Minnesota,L 24-27,1601.4,35
+2026,4,2026-09-26,Virginia Tech,Boston College,W 21-14,1601.1,36
+2026,4,2026-09-26,Houston,Georgia Southern,W 42-28,1598.8,37
+2026,4,2026-09-26,Auburn,Vanderbilt,W 21-15,1594.4,38
+2026,4,2026-09-26,Louisville,Wake Forest,L 27-30,1593.2,39
+2026,4,2026-09-26,Cincinnati,Kansas State,W 31-26,1592.9,40
+2026,4,2026-09-26,Virginia,Delaware,W 42-3,1584.5,41
+2026,4,2026-09-26,Kentucky,South Alabama,W 45-21,1584.2,42
+2026,4,2026-09-27,Fresno State,Rice,W 38-24,1572.3,43
+2026,4,2026-09-26,Wisconsin,Penn State,W 24-20,1559.3,44
+2026,4,2026-09-26,Baylor,Colorado,W 23-13,1559.0,45
+2026,4,2026-09-26,New Mexico,New Mexico State,W 42-18,1557.1,46
+2026,4,2026-09-26,TCU,UCF,L 13-21,1552.8,47
+2026,4,2026-09-26,UTSA,Colorado State,W 59-45,1550.9,48
+2026,4,2026-09-26,UNLV,Akron,W 38-10,1549.7,49
+2026,4,2026-09-27,Minnesota,Washington,W 27-24,1548.9,50
+2026,4,2026-09-26,Wake Forest,Louisville,W 30-27,1548.4,51
+2026,4,2026-09-26,Northwestern,Indiana,L 23-29,1546.3,52
+2026,4,2026-09-26,UCF,TCU,W 21-13,1542.4,53
+2026,4,2026-09-26,Illinois,Ohio State,L 19-42,1539.9,54
+2026,4,2026-09-26,NC State,App State,W 41-31,1538.6,55
+2026,4,2026-09-26,Tulane,Southern Miss,W 24-21,1534.3,56
+2026,4,2026-09-26,South Carolina,Alabama,L 18-49,1533.1,57
+2026,4,2026-09-26,North Texas,Houston Christian,W 63-14,1532.7,58
+2026,4,2026-09-26,Iowa State,Utah,L 17-31,1529.5,59
+2026,4,2026-09-26,Louisiana,Charlotte,W 34-7,1523.8,60
+2026,4,2026-09-26,Toledo,San Diego State,W 41-16,1523.3,61
+2026,4,2026-09-26,Texas State,Incarnate Word,W 63-10,1516.2,62
+2026,4,2026-09-26,West Virginia,Oklahoma State,L 24-41,1512.6,63
+2026,4,2026-09-26,Florida State,Central Arkansas,W 34-7,1508.5,64
+2026,4,2026-09-26,UConn,Miami (OH),L 21-24,1507.4,65
+2026,4,2026-09-26,Oklahoma State,West Virginia,W 41-24,1506.4,66
+2026,4,2026-09-24,Liberty,Coastal Carolina,W 34-17,1504.6,67
+2026,4,2026-09-26,East Carolina,North Carolina Central,W 42-9,1501.7,68
+2026,4,2026-09-26,Western Michigan,Boise State,L 7-32,1495.7,69
+2026,4,2026-09-27,Florida Atlantic,UL Monroe,W 45-17,1493.2,70
+2026,4,2026-09-26,Marshall,Gardner-Webb,W 36-35,1491.7,71
+2026,4,2026-09-27,Arkansas,Tulsa,W 34-6,1485.2,72
+2026,4,2026-09-26,Michigan State,Nebraska,L 13-31,1484.9,73
+2026,4,2026-09-27,Georgia Tech,Stanford,L 27-34,1479.4,74
+2026,4,2026-09-26,App State,NC State,L 31-41,1479.1,75
+2026,4,2026-09-27,Stanford,Georgia Tech,W 34-27,1470.4,76
+2026,4,2026-09-26,Jacksonville State,Middle Tennessee,W 23-13,1469.5,77
+2026,4,2026-09-26,Miami (OH),UConn,W 24-21,1458.4,78
+2026,4,2026-09-26,Maryland,UCLA,L 3-54,1456.7,79
+2026,4,2026-09-26,California,Clemson,L 10-24,1451.1,80
+2026,4,2026-09-26,Florida International,Long Island University,W 20-3,1449.5,81
+2026,4,2026-09-26,Troy,Utah State,L 10-21,1446.8,82
+2026,4,2026-09-26,Ohio,Stonehill,W 35-7,1446.0,83
+2026,4,2026-09-25,Army,Temple,W 21-17,1437.1,84
+2026,4,2026-09-27,Oregon State,UTEP,W 33-7,1436.6,85
+2026,4,2026-09-26,Central Michigan,Miami,L 3-52,1435.4,86
+2026,4,2026-09-27,Tulsa,Arkansas,L 6-34,1435.3,87
+2026,4,2026-09-26,Colorado,Baylor,L 13-23,1430.9,88
+2026,4,2026-09-26,South Alabama,Kentucky,L 21-45,1430.1,89
+2026,4,2026-09-27,Massachusetts,Sacramento State,W 35-6,1429.0,90
+2026,4,2026-09-26,Georgia State,Northern Illinois,W 35-14,1426.0,91
+2026,4,2026-09-26,Boston College,Virginia Tech,L 14-21,1421.1,92
+2026,4,2026-09-26,Arkansas State,Kennesaw State,W 17-14,1420.0,93
+2026,4,2026-09-26,Washington State,Arizona,L 24-34,1419.3,94
+2026,4,2026-09-26,San Diego State,Toledo,L 16-41,1416.4,95
+2026,4,2026-09-26,Old Dominion,James Madison,L 20-46,1413.6,96
+2026,4,2026-09-26,Utah State,Troy,W 21-10,1412.7,97
+2026,4,2026-09-25,UAB,Navy,W 24-20,1410.2,98
+2026,4,2026-09-26,Delaware,Virginia,L 3-42,1405.4,99
+2026,4,2026-09-26,Western Kentucky,Mercyhurst,W 52-7,1404.3,100
+2026,4,2026-09-25,Navy,UAB,L 20-24,1402.4,101
+2026,4,2026-09-25,Rutgers,Howard,W 58-7,1397.6,102
+2026,4,2026-09-26,Colorado State,UTSA,L 45-59,1397.1,103
+2026,4,2026-09-26,Kent State,Ball State,W 26-13,1396.1,104
+2026,4,2026-09-26,Georgia Southern,Houston,L 28-42,1391.1,105
+2026,4,2026-09-26,Purdue,Notre Dame,L 10-49,1384.5,106
+2026,4,2026-09-26,Hawai'i,Wyoming,L 10-27,1384.5,107
+2026,4,2026-09-26,Kennesaw State,Arkansas State,L 14-17,1381.2,108
+2026,4,2026-09-26,Buffalo,Robert Morris,W 31-28,1379.8,109
+2026,4,2026-09-26,Wyoming,Hawai'i,W 27-10,1375.8,110
+2026,4,2026-09-25,Temple,Army,L 17-21,1374.1,111
+2026,4,2026-09-27,Air Force,Nevada,W 36-33,1374.0,112
+2026,4,2026-09-26,Middle Tennessee,Jacksonville State,L 13-23,1373.3,113
+2026,4,2026-09-27,Rice,Fresno State,L 24-38,1367.7,114
+2026,4,2026-09-27,Missouri State,SMU,L 24-34,1366.2,115
+2026,4,2026-09-26,Southern Miss,Tulane,L 21-24,1358.1,116
+2026,4,2026-09-24,Coastal Carolina,Liberty,L 17-34,1352.6,117
+2026,4,2026-09-26,Eastern Michigan,Lindenwood,W 29-3,1348.9,118
+2026,4,2026-09-26,Sam Houston,Texas Tech,L 14-49,1339.8,119
+2026,4,2026-09-27,Nevada,Air Force,L 33-36,1332.1,120
+2026,4,2026-09-26,Akron,UNLV,L 10-38,1326.3,121
+2026,4,2026-09-26,Ball State,Kent State,L 13-26,1314.3,122
+2026,4,2026-09-27,UTEP,Oregon State,L 7-33,1298.1,123
+2026,4,2026-09-26,Bowling Green,South Florida,L 6-14,1295.4,124
+2026,4,2026-09-26,New Mexico State,New Mexico,L 18-42,1292.8,125
+2026,4,2026-09-26,Northern Illinois,Georgia State,L 14-35,1285.2,126
+2026,4,2026-09-26,Charlotte,Louisiana,L 7-34,1260.0,127
+2026,4,2026-09-27,Sacramento State,Massachusetts,L 6-35,1246.4,128
+2026,4,2026-09-27,UL Monroe,Florida Atlantic,L 17-45,1234.1,129
