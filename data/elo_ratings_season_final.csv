@@ -245,8 +245,8 @@ season,team,final_rating,rank
 2020,Utah State,1363.6,114
 2020,New Mexico,1358.2,115
 2020,Arizona,1356.8,116
-2020,Florida International,1349.1,117
-2020,Syracuse,1349.1,118
+2020,Syracuse,1349.1,117
+2020,Florida International,1349.1,118
 2020,Texas State,1341.8,119
 2020,South Florida,1320.2,120
 2020,Massachusetts,1302.1,121
@@ -302,8 +302,8 @@ season,team,final_rating,rank
 2021,Mississippi State,1629.8,43
 2021,Auburn,1623.2,44
 2021,UCF,1619.5,45
-2021,Utah State,1615.3,46
-2021,LSU,1615.3,47
+2021,LSU,1615.3,46
+2021,Utah State,1615.3,47
 2021,Washington State,1613.8,48
 2021,Florida,1612.0,49
 2021,Tennessee,1611.5,50
@@ -760,8 +760,8 @@ season,team,final_rating,rank
 2024,Stanford,1367.1,107
 2024,Eastern Michigan,1366.7,108
 2024,Rice,1365.9,109
-2024,Louisiana Tech,1363.0,110
-2024,New Mexico,1363.0,111
+2024,New Mexico,1363.0,110
+2024,Louisiana Tech,1363.0,111
 2024,Hawai'i,1360.7,112
 2024,Charlotte,1358.3,113
 2024,UL Monroe,1350.7,114
@@ -921,141 +921,141 @@ season,team,final_rating,rank
 2025,UTEP,1220.6,134
 2025,Charlotte,1193.3,135
 2025,Massachusetts,1082.0,136
-2026,Georgia,1817.3,1
-2026,Notre Dame,1794.8,2
-2026,Alabama,1786.6,3
-2026,Miami,1775.7,4
-2026,Texas,1770.5,5
-2026,Ohio State,1768.1,6
-2026,Indiana,1732.5,7
-2026,Oregon,1722.0,8
-2026,Texas Tech,1716.2,9
+2026,Georgia,1833.1,1
+2026,Alabama,1832.2,2
+2026,Miami,1816.9,3
+2026,Notre Dame,1812.0,4
+2026,Ohio State,1804.6,5
+2026,Texas,1770.5,6
+2026,Indiana,1752.6,7
+2026,Texas Tech,1738.2,8
+2026,Oregon,1722.0,9
 2026,Utah,1710.1,10
-2026,LSU,1704.1,11
-2026,Florida,1689.9,12
-2026,Ole Miss,1689.9,13
-2026,BYU,1684.2,14
-2026,James Madison,1684.1,15
-2026,Tennessee,1680.9,16
-2026,Mississippi State,1679.6,17
-2026,Michigan,1674.2,18
-2026,USC,1673.8,19
-2026,Duke,1659.9,20
+2026,BYU,1709.3,11
+2026,LSU,1706.1,12
+2026,James Madison,1700.2,13
+2026,Tennessee,1699.9,14
+2026,Missouri,1696.5,15
+2026,Ole Miss,1689.9,16
+2026,USC,1687.4,17
+2026,Nebraska,1668.4,18
+2026,Duke,1659.9,19
+2026,Boise State,1659.8,20
 2026,UCLA,1657.4,21
-2026,Nebraska,1653.2,22
-2026,Iowa,1653.1,23
-2026,Missouri,1652.4,24
-2026,Penn State,1651.6,25
-2026,Clemson,1649.0,26
-2026,Boise State,1648.4,27
-2026,Oklahoma,1638.0,28
-2026,South Florida,1637.7,29
-2026,Pittsburgh,1630.6,30
-2026,Vanderbilt,1630.4,31
-2026,Texas A&M,1629.7,32
-2026,SMU,1612.9,33
-2026,Arizona,1604.4,34
+2026,Texas A&M,1649.9,22
+2026,Pittsburgh,1647.8,23
+2026,Florida,1645.8,24
+2026,Michigan,1640.4,25
+2026,Oklahoma,1638.0,26
+2026,Mississippi State,1634.1,27
+2026,SMU,1623.9,28
+2026,Houston,1620.5,29
+2026,Iowa,1616.6,30
+2026,Vanderbilt,1614.6,31
+2026,Clemson,1607.9,32
+2026,Arizona,1604.4,33
+2026,South Florida,1602.7,34
 2026,Kansas State,1601.7,35
-2026,Washington,1601.4,36
-2026,Virginia Tech,1601.1,37
-2026,Houston,1598.8,38
-2026,Auburn,1594.4,39
-2026,Louisville,1593.2,40
-2026,Cincinnati,1592.9,41
-2026,Virginia,1584.5,42
-2026,Kentucky,1584.2,43
-2026,Arizona State,1582.4,44
-2026,North Dakota State,1574.9,45
-2026,Fresno State,1572.3,46
-2026,Wisconsin,1559.3,47
-2026,Baylor,1559.0,48
-2026,New Mexico,1557.1,49
-2026,Memphis,1556.7,50
-2026,TCU,1552.8,51
-2026,UTSA,1550.9,52
-2026,UNLV,1549.7,53
-2026,Minnesota,1548.9,54
-2026,Wake Forest,1548.4,55
-2026,Northwestern,1546.3,56
-2026,UCF,1542.4,57
-2026,Illinois,1539.9,58
-2026,NC State,1538.6,59
-2026,Tulane,1534.3,60
-2026,South Carolina,1533.1,61
-2026,North Texas,1532.7,62
-2026,Iowa State,1529.5,63
-2026,Louisiana,1523.8,64
-2026,Toledo,1523.3,65
-2026,Texas State,1516.2,66
-2026,West Virginia,1512.6,67
-2026,Florida State,1508.5,68
-2026,UConn,1507.4,69
-2026,Oklahoma State,1506.4,70
-2026,North Carolina,1505.7,71
-2026,Liberty,1504.6,72
-2026,East Carolina,1501.7,73
-2026,Western Michigan,1495.7,74
-2026,Florida Atlantic,1493.2,75
-2026,Marshall,1491.7,76
-2026,Arkansas,1485.2,77
-2026,Michigan State,1484.9,78
-2026,Georgia Tech,1479.4,79
-2026,App State,1479.1,80
-2026,Stanford,1470.4,81
-2026,Jacksonville State,1469.5,82
-2026,Miami (OH),1458.4,83
-2026,Maryland,1456.7,84
-2026,California,1451.1,85
-2026,Florida International,1449.5,86
-2026,Troy,1446.8,87
-2026,Ohio,1446.0,88
-2026,Army,1437.1,89
-2026,Oregon State,1436.6,90
-2026,Central Michigan,1435.4,91
-2026,Tulsa,1435.3,92
-2026,Colorado,1430.9,93
-2026,Kansas,1430.6,94
-2026,South Alabama,1430.1,95
-2026,Massachusetts,1429.0,96
-2026,Georgia State,1426.0,97
-2026,Boston College,1421.1,98
-2026,Arkansas State,1420.0,99
-2026,Syracuse,1419.8,100
-2026,Washington State,1419.3,101
-2026,Louisiana Tech,1419.2,102
-2026,San Diego State,1416.4,103
-2026,Old Dominion,1413.6,104
-2026,Utah State,1412.7,105
-2026,UAB,1410.2,106
-2026,Delaware,1405.4,107
-2026,Western Kentucky,1404.3,108
-2026,Navy,1402.4,109
-2026,Rutgers,1397.6,110
-2026,Colorado State,1397.1,111
-2026,Kent State,1396.1,112
-2026,Georgia Southern,1391.1,113
-2026,San José State,1384.5,114
-2026,Hawai'i,1384.5,115
-2026,Purdue,1384.5,116
-2026,Kennesaw State,1381.2,117
-2026,Buffalo,1379.8,118
-2026,Wyoming,1375.8,119
-2026,Temple,1374.1,120
-2026,Air Force,1374.0,121
-2026,Middle Tennessee,1373.3,122
-2026,Rice,1367.7,123
-2026,Missouri State,1366.2,124
-2026,Southern Miss,1358.1,125
-2026,Coastal Carolina,1352.6,126
-2026,Eastern Michigan,1348.9,127
-2026,Sam Houston,1339.8,128
+2026,Penn State,1601.0,36
+2026,Northwestern,1596.9,37
+2026,Kentucky,1594.5,38
+2026,Cincinnati,1592.9,39
+2026,North Dakota State,1590.4,40
+2026,Washington,1587.8,41
+2026,Wisconsin,1587.6,42
+2026,Virginia Tech,1584.0,43
+2026,Memphis,1583.2,44
+2026,Minnesota,1582.6,45
+2026,Arizona State,1582.4,46
+2026,Wake Forest,1581.5,47
+2026,Auburn,1575.4,48
+2026,Louisville,1573.9,49
+2026,Fresno State,1572.3,50
+2026,New Mexico,1570.5,51
+2026,UNLV,1566.2,52
+2026,UTSA,1562.1,53
+2026,Florida State,1560.3,54
+2026,Baylor,1559.0,55
+2026,NC State,1557.9,56
+2026,Toledo,1549.2,57
+2026,Iowa State,1544.2,58
+2026,North Texas,1541.9,59
+2026,Liberty,1541.9,60
+2026,Tulane,1534.3,61
+2026,Louisiana,1534.0,62
+2026,Virginia,1532.8,63
+2026,TCU,1527.8,64
+2026,South Carolina,1522.8,65
+2026,UCF,1520.7,66
+2026,Texas State,1516.2,67
+2026,Western Michigan,1513.2,68
+2026,Oklahoma State,1506.4,69
+2026,East Carolina,1501.7,70
+2026,Florida Atlantic,1499.2,71
+2026,West Virginia,1497.8,72
+2026,Illinois,1497.4,73
+2026,UConn,1494.2,74
+2026,Oregon State,1489.1,75
+2026,North Carolina,1488.5,76
+2026,Georgia Tech,1479.4,77
+2026,App State,1479.1,78
+2026,Marshall,1475.7,79
+2026,Jacksonville State,1469.5,80
+2026,Kansas,1466.9,81
+2026,Ohio,1466.7,82
+2026,Arkansas,1465.0,83
+2026,Georgia State,1464.0,84
+2026,Central Michigan,1458.4,85
+2026,Michigan State,1456.7,86
+2026,Florida International,1449.5,87
+2026,Troy,1446.8,88
+2026,South Alabama,1443.7,89
+2026,Maryland,1441.4,90
+2026,Stanford,1437.3,91
+2026,California,1434.6,92
+2026,Syracuse,1433.0,93
+2026,Louisiana Tech,1432.6,94
+2026,Purdue,1427.0,95
+2026,Tulsa,1426.1,96
+2026,Miami (OH),1425.3,97
+2026,Army,1423.7,98
+2026,Georgia Southern,1422.9,99
+2026,Washington State,1419.3,100
+2026,UAB,1417.4,101
+2026,San Diego State,1416.4,102
+2026,Boston College,1410.0,103
+2026,Arkansas State,1409.8,104
+2026,Eastern Michigan,1409.5,105
+2026,Temple,1409.2,106
+2026,Colorado,1408.9,107
+2026,Utah State,1401.3,108
+2026,Air Force,1396.7,109
+2026,Hawai'i,1384.5,110
+2026,San José State,1384.5,111
+2026,Kennesaw State,1381.2,112
+2026,Navy,1379.7,113
+2026,Rutgers,1377.6,114
+2026,Old Dominion,1375.6,115
+2026,Kent State,1375.4,116
+2026,Massachusetts,1368.3,117
+2026,Delaware,1368.0,118
+2026,Missouri State,1366.2,119
+2026,Buffalo,1362.3,120
+2026,Wyoming,1360.3,121
+2026,Southern Miss,1358.1,122
+2026,Rice,1356.4,123
+2026,Western Kentucky,1352.8,124
+2026,Colorado State,1344.6,125
+2026,New Mexico State,1344.3,126
+2026,Sam Houston,1339.8,127
+2026,Middle Tennessee,1336.9,128
 2026,Nevada,1332.1,129
-2026,Akron,1326.3,130
-2026,Ball State,1314.3,131
-2026,UTEP,1298.1,132
-2026,Bowling Green,1295.4,133
-2026,New Mexico State,1292.8,134
-2026,Northern Illinois,1285.2,135
-2026,Charlotte,1260.0,136
-2026,Sacramento State,1246.4,137
-2026,UL Monroe,1234.1,138
+2026,Bowling Green,1328.5,130
+2026,Coastal Carolina,1320.8,131
+2026,Akron,1303.2,132
+2026,Ball State,1288.3,133
+2026,Northern Illinois,1285.2,134
+2026,UTEP,1284.6,135
+2026,Sacramento State,1246.4,136
+2026,Charlotte,1233.4,137
+2026,UL Monroe,1220.6,138
