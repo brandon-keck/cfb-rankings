@@ -10857,8 +10857,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,2,2026-09-12,LSU,Louisiana Tech,W 45-14,1693.6,12
 2026,2,2026-09-12,Tennessee,Georgia Tech,W 45-24,1688.3,13
 2026,2,2026-09-12,Michigan,Oklahoma,W 17-10,1675.6,14
-2026,2,2026-09-12,Penn State,Temple,W 27-9,1670.8,15
-2026,2,2026-09-12,Oregon,Oklahoma State,L 31-39,1670.8,16
+2026,2,2026-09-12,Oregon,Oklahoma State,L 31-39,1670.8,15
+2026,2,2026-09-12,Penn State,Temple,W 27-9,1670.8,16
 2026,2,2026-09-13,Utah,Arkansas,W 43-10,1662.2,17
 2026,2,2026-09-12,Missouri,Kansas,W 38-21,1661.2,18
 2026,2,2026-09-12,BYU,Arizona,W 28-17,1648.2,19
@@ -10941,8 +10941,8 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,2,2026-09-13,Hawai'i,New Mexico State,W 29-19,1431.3,96
 2026,2,2026-09-12,Southern Miss,Auburn,L 8-43,1431.1,97
 2026,2,2026-09-12,Arkansas State,West Georgia,W 52-7,1431.0,98
-2026,2,2026-09-12,Navy,Florida Atlantic,L 30-38,1429.6,99
-2026,2,2026-09-12,Coastal Carolina,Fordham,W 45-7,1429.6,100
+2026,2,2026-09-12,Coastal Carolina,Fordham,W 45-7,1429.6,99
+2026,2,2026-09-12,Navy,Florida Atlantic,L 30-38,1429.6,100
 2026,2,2026-09-12,Florida Atlantic,Navy,W 38-30,1426.2,101
 2026,2,2026-09-12,South Alabama,Tulane,L 24-28,1423.2,102
 2026,2,2026-09-12,Jacksonville State,Ohio,L 27-29,1422.1,103
@@ -11354,3 +11354,53 @@ season,week,game_date,team,opponent,result,rating,rank
 2026,5,2026-10-03,UTEP,New Mexico,L 7-61,1284.6,113
 2026,5,2026-10-03,Charlotte,Memphis,L 8-59,1233.4,114
 2026,5,2026-10-03,UL Monroe,South Alabama,L 35-52,1220.6,115
+2026,6,2026-10-10,Indiana,Nebraska,W 20-17,1768.4,1
+2026,6,2026-10-10,BYU,Iowa State,W 24-10,1724.1,2
+2026,6,2026-10-10,Missouri,Texas A&M,W 27-6,1720.8,3
+2026,6,2026-10-10,Arizona,West Virginia,W 52-31,1670.7,4
+2026,6,2026-10-10,Iowa,Washington,W 41-24,1654.3,5
+2026,6,2026-10-10,Nebraska,Indiana,L 17-20,1652.5,6
+2026,6,2026-10-10,Texas A&M,Missouri,L 6-27,1625.5,7
+2026,6,2026-10-10,Wake Forest,NC State,W 38-14,1623.9,8
+2026,6,2026-10-10,Pittsburgh,North Carolina,L 17-21,1614.8,9
+2026,6,2026-10-10,Northwestern,Ball State,W 45-14,1605.8,10
+2026,6,2026-10-09,Louisville,Florida State,W 44-20,1602.9,11
+2026,6,2026-10-10,Florida,South Carolina,L 19-38,1596.3,12
+2026,6,2026-10-08,UTSA,South Florida,W 31-24,1585.1,13
+2026,6,2026-10-08,South Florida,UTSA,L 24-31,1579.7,14
+2026,6,2026-10-10,South Carolina,Florida,W 38-19,1572.3,15
+2026,6,2026-10-08,Liberty,Sam Houston,W 35-3,1557.8,16
+2026,6,2026-10-10,Washington,Iowa,L 24-41,1550.2,17
+2026,6,2026-10-10,Oklahoma State,UCF,W 42-28,1539.0,18
+2026,6,2026-10-09,Florida State,Louisville,L 20-44,1531.3,19
+2026,6,2026-10-10,Iowa State,BYU,L 10-24,1529.4,20
+2026,6,2026-10-10,North Carolina,Pittsburgh,W 21-17,1521.5,21
+2026,6,2026-10-10,East Carolina,Rice,W 28-12,1518.8,22
+2026,6,2026-10-10,NC State,Wake Forest,L 14-38,1515.5,23
+2026,6,2026-10-10,Tulane,Army,L 17-20,1511.3,24
+2026,6,2026-10-10,UCF,Oklahoma State,L 28-42,1488.1,25
+2026,6,2026-10-07,Jacksonville State,Kennesaw State,W 27-26,1478.9,26
+2026,6,2026-10-07,Florida International,New Mexico State,W 22-3,1471.3,27
+2026,6,2026-10-07,Troy,Southern Miss,W 55-34,1471.1,28
+2026,6,2026-10-08,South Alabama,Arkansas State,W 56-49,1470.5,29
+2026,6,2026-10-10,West Virginia,Arizona,L 31-52,1467.8,30
+2026,6,2026-10-10,Army,Tulane,W 20-17,1446.7,31
+2026,6,2026-10-10,App State,Old Dominion,L 3-10,1438.8,32
+2026,6,2026-10-10,Miami (OH),Massachusetts,W 20-19,1433.8,33
+2026,6,2026-10-10,Old Dominion,App State,W 10-3,1416.0,34
+2026,6,2026-10-10,Utah State,Washington State,W 17-16,1407.5,35
+2026,6,2026-10-10,San José State,Wyoming,L 13-16,1390.3,36
+2026,6,2026-10-08,Western Kentucky,Missouri State,W 34-13,1389.9,37
+2026,6,2026-10-08,Arkansas State,South Alabama,L 49-56,1383.0,38
+2026,6,2026-10-10,Wyoming,San José State,W 16-13,1381.2,39
+2026,6,2026-10-10,Washington State,Utah State,L 16-17,1378.8,40
+2026,6,2026-10-07,Kennesaw State,Jacksonville State,L 26-27,1371.8,41
+2026,6,2026-10-10,Massachusetts,Miami (OH),L 19-20,1359.9,42
+2026,6,2026-10-10,Bowling Green,Sacramento State,W 38-10,1351.3,43
+2026,6,2026-10-10,Rice,East Carolina,L 12-28,1339.3,44
+2026,6,2026-10-07,Southern Miss,Troy,L 34-55,1333.8,45
+2026,6,2026-10-08,Missouri State,Western Kentucky,L 13-34,1329.1,46
+2026,6,2026-10-08,Sam Houston,Liberty,L 3-35,1324.0,47
+2026,6,2026-10-07,New Mexico State,Florida International,L 3-22,1322.5,48
+2026,6,2026-10-10,Ball State,Northwestern,L 14-45,1279.4,49
+2026,6,2026-10-10,Sacramento State,Bowling Green,L 10-38,1223.7,50
