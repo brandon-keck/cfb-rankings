@@ -31,8 +31,8 @@ season,week,team,rating,rank
 2019,1,Florida State,1642.0,30
 2019,1,Miami,1635.7,31
 2019,1,Iowa,1633.2,32
-2019,1,Oregon,1630.9,33
-2019,1,Maryland,1630.9,34
+2019,1,Maryland,1630.9,33
+2019,1,Oregon,1630.9,34
 2019,1,Arkansas,1629.4,35
 2019,1,Syracuse,1627.3,36
 2019,1,TCU,1625.7,37
@@ -171,8 +171,8 @@ season,week,team,rating,rank
 2019,2,Indiana,1627.8,40
 2019,2,TCU,1625.7,41
 2019,2,Minnesota,1624.8,42
-2019,2,Missouri,1624.1,43
-2019,2,Texas Tech,1624.1,44
+2019,2,Texas Tech,1624.1,43
+2019,2,Missouri,1624.1,44
 2019,2,South Carolina,1618.7,45
 2019,2,Boston College,1618.4,46
 2019,2,Kansas State,1617.6,47
@@ -326,8 +326,8 @@ season,week,team,rating,rank
 2019,3,Tulane,1580.0,65
 2019,3,Iowa State,1579.0,66
 2019,3,Texas Tech,1574.1,67
-2019,3,South Carolina,1574.0,68
-2019,3,Indiana,1574.0,69
+2019,3,Indiana,1574.0,68
+2019,3,South Carolina,1574.0,69
 2019,3,Rutgers,1573.0,70
 2019,3,App State,1570.6,71
 2019,3,Army,1562.5,72
@@ -348,8 +348,8 @@ season,week,team,rating,rank
 2019,3,Utah State,1524.9,87
 2019,3,Nevada,1524.7,88
 2019,3,Florida Atlantic,1524.0,89
-2019,3,Oregon State,1522.2,90
-2019,3,Toledo,1522.2,91
+2019,3,Toledo,1522.2,90
+2019,3,Oregon State,1522.2,91
 2019,3,Charlotte,1517.8,92
 2019,3,Tulsa,1515.1,93
 2019,3,Fresno State,1508.0,94
@@ -556,8 +556,8 @@ season,week,team,rating,rank
 2019,5,Missouri,1656.5,35
 2019,5,Mississippi State,1648.9,36
 2019,5,Nebraska,1647.5,37
-2019,5,Kansas State,1639.1,38
-2019,5,Miami,1639.1,39
+2019,5,Miami,1639.1,38
+2019,5,Kansas State,1639.1,39
 2019,5,West Virginia,1637.0,40
 2019,5,Colorado,1635.2,41
 2019,5,California,1633.7,42
@@ -946,8 +946,8 @@ season,week,team,rating,rank
 2019,8,Louisiana Tech,1651.6,35
 2019,8,Florida State,1647.0,36
 2019,8,Oklahoma State,1638.1,37
-2019,8,Navy,1636.7,38
-2019,8,Indiana,1636.7,39
+2019,8,Indiana,1636.7,38
+2019,8,Navy,1636.7,39
 2019,8,Duke,1631.8,40
 2019,8,Nebraska,1629.7,41
 2019,8,North Carolina,1628.1,42
@@ -1025,8 +1025,8 @@ season,week,team,rating,rank
 2019,8,Ohio,1439.8,114
 2019,8,UTSA,1432.7,115
 2019,8,Texas State,1422.5,116
-2019,8,UNLV,1421.8,117
-2019,8,Northern Illinois,1421.8,118
+2019,8,Northern Illinois,1421.8,117
+2019,8,UNLV,1421.8,118
 2019,8,Charlotte,1418.1,119
 2019,8,Rutgers,1404.4,120
 2019,8,New Mexico,1403.4,121
@@ -1244,8 +1244,8 @@ season,week,team,rating,rank
 2019,10,Texas Tech,1552.5,73
 2019,10,Buffalo,1551.1,74
 2019,10,Marshall,1550.6,75
-2019,10,South Florida,1550.3,76
-2019,10,Hawai'i,1550.3,77
+2019,10,Hawai'i,1550.3,76
+2019,10,South Florida,1550.3,77
 2019,10,Temple,1549.3,78
 2019,10,West Virginia,1549.2,79
 2019,10,Western Kentucky,1545.0,80
@@ -1363,8 +1363,8 @@ season,week,team,rating,rank
 2019,11,Temple,1582.5,62
 2019,11,UCLA,1582.3,63
 2019,11,Duke,1582.2,64
-2019,11,Nebraska,1580.0,65
-2019,11,Stanford,1580.0,66
+2019,11,Stanford,1580.0,65
+2019,11,Nebraska,1580.0,66
 2019,11,Washington State,1576.8,67
 2019,11,Ole Miss,1576.6,68
 2019,11,Western Michigan,1570.4,69
@@ -1399,8 +1399,8 @@ season,week,team,rating,rank
 2019,11,Charlotte,1478.9,98
 2019,11,Liberty,1478.7,99
 2019,11,Florida International,1476.6,100
-2019,11,San José State,1475.5,101
-2019,11,Army,1475.5,102
+2019,11,Army,1475.5,101
+2019,11,San José State,1475.5,102
 2019,11,Syracuse,1471.8,103
 2019,11,Ball State,1468.8,104
 2019,11,North Texas,1466.5,105
@@ -1408,8 +1408,8 @@ season,week,team,rating,rank
 2019,11,Middle Tennessee,1461.5,107
 2019,11,Georgia Tech,1457.7,108
 2019,11,Northwestern,1449.1,109
-2019,11,Eastern Michigan,1441.6,110
-2019,11,Kent State,1441.6,111
+2019,11,Kent State,1441.6,110
+2019,11,Eastern Michigan,1441.6,111
 2019,11,Coastal Carolina,1440.2,112
 2019,11,Vanderbilt,1435.9,113
 2019,11,UTSA,1430.3,114
@@ -2267,11 +2267,11 @@ season,week,team,rating,rank
 2020,2,Air Force,1560.5,58
 2020,2,Army,1558.8,59
 2020,2,South Carolina,1554.9,60
-2020,2,Colorado,1554.2,61
-2020,2,West Virginia,1554.2,62
+2020,2,West Virginia,1554.2,61
+2020,2,Colorado,1554.2,62
 2020,2,Hawai'i,1551.7,63
-2020,2,Oregon State,1551.2,64
-2020,2,Texas Tech,1551.2,65
+2020,2,Texas Tech,1551.2,64
+2020,2,Oregon State,1551.2,65
 2020,2,Stanford,1550.9,66
 2020,2,Marshall,1547.7,67
 2020,2,Iowa State,1546.6,68
@@ -2354,8 +2354,8 @@ season,week,team,rating,rank
 2020,3,Wisconsin,1685.5,17
 2020,3,USC,1670.1,18
 2020,3,Baylor,1667.0,19
-2020,3,Texas,1666.7,20
-2020,3,Louisiana,1666.7,21
+2020,3,Louisiana,1666.7,20
+2020,3,Texas,1666.7,21
 2020,3,Utah,1666.6,22
 2020,3,Boise State,1652.8,23
 2020,3,Washington,1650.3,24
@@ -2396,11 +2396,11 @@ season,week,team,rating,rank
 2020,3,Troy,1559.9,59
 2020,3,Army,1558.8,60
 2020,3,South Carolina,1554.9,61
-2020,3,Colorado,1554.2,62
-2020,3,West Virginia,1554.2,63
+2020,3,West Virginia,1554.2,62
+2020,3,Colorado,1554.2,63
 2020,3,Hawai'i,1551.7,64
-2020,3,Oregon State,1551.2,65
-2020,3,Texas Tech,1551.2,66
+2020,3,Texas Tech,1551.2,65
+2020,3,Oregon State,1551.2,66
 2020,3,Stanford,1550.9,67
 2020,3,Iowa State,1546.6,68
 2020,3,UCLA,1544.1,69
@@ -2431,8 +2431,8 @@ season,week,team,rating,rank
 2020,3,Kent State,1495.2,94
 2020,3,South Florida,1493.6,95
 2020,3,Arkansas,1491.8,96
-2020,3,Fresno State,1489.9,97
-2020,3,Western Kentucky,1489.9,98
+2020,3,Western Kentucky,1489.9,97
+2020,3,Fresno State,1489.9,98
 2020,3,UTSA,1489.0,99
 2020,3,San José State,1488.7,100
 2020,3,Tulsa,1488.4,101
@@ -2496,8 +2496,8 @@ season,week,team,rating,rank
 2020,4,Mississippi State,1647.9,31
 2020,4,Boston College,1645.3,32
 2020,4,Iowa,1641.0,33
-2020,4,North Carolina,1638.5,34
-2020,4,Virginia,1638.5,35
+2020,4,Virginia,1638.5,34
+2020,4,North Carolina,1638.5,35
 2020,4,Minnesota,1633.7,36
 2020,4,Pittsburgh,1620.3,37
 2020,4,Florida Atlantic,1611.2,38
@@ -2560,8 +2560,8 @@ season,week,team,rating,rank
 2020,4,UTSA,1498.1,95
 2020,4,Kent State,1495.2,96
 2020,4,South Florida,1493.6,97
-2020,4,Fresno State,1489.9,98
-2020,4,Western Kentucky,1489.9,99
+2020,4,Western Kentucky,1489.9,98
+2020,4,Fresno State,1489.9,99
 2020,4,San José State,1488.7,100
 2020,4,Tulsa,1488.4,101
 2020,4,Colorado State,1487.2,102
@@ -2576,8 +2576,8 @@ season,week,team,rating,rank
 2020,4,Northern Illinois,1454.1,111
 2020,4,Rice,1450.7,112
 2020,4,Duke,1449.5,113
-2020,4,Texas State,1444.0,114
-2020,4,UTEP,1444.0,115
+2020,4,UTEP,1444.0,114
+2020,4,Texas State,1444.0,115
 2020,4,Georgia Tech,1439.9,116
 2020,4,North Texas,1436.6,117
 2020,4,East Carolina,1431.5,118
@@ -2703,8 +2703,8 @@ season,week,team,rating,rank
 2020,5,Southern Miss,1454.3,110
 2020,5,Northern Illinois,1454.1,111
 2020,5,Rice,1450.7,112
-2020,5,Texas State,1444.0,113
-2020,5,UTEP,1444.0,114
+2020,5,UTEP,1444.0,113
+2020,5,Texas State,1444.0,114
 2020,5,Georgia Tech,1439.9,115
 2020,5,Vanderbilt,1432.4,116
 2020,5,Duke,1424.3,117
@@ -2763,8 +2763,8 @@ season,week,team,rating,rank
 2020,6,Air Force,1606.4,42
 2020,6,Michigan State,1602.3,43
 2020,6,Indiana,1596.8,44
-2020,6,Pittsburgh,1595.5,45
-2020,6,UAB,1595.5,46
+2020,6,UAB,1595.5,45
+2020,6,Pittsburgh,1595.5,46
 2020,6,Houston,1589.5,47
 2020,6,NC State,1587.5,48
 2020,6,San Diego State,1585.8,49
@@ -2780,8 +2780,8 @@ season,week,team,rating,rank
 2020,6,Troy,1553.9,59
 2020,6,Tulane,1553.8,60
 2020,6,Hawai'i,1551.7,61
-2020,6,Oregon State,1551.2,62
-2020,6,Liberty,1551.2,63
+2020,6,Liberty,1551.2,62
+2020,6,Oregon State,1551.2,63
 2020,6,Stanford,1550.9,64
 2020,6,Virginia,1548.5,65
 2020,6,Tulsa,1547.6,66
@@ -3047,8 +3047,8 @@ season,week,team,rating,rank
 2020,8,Nevada,1537.8,70
 2020,8,Troy,1535.3,71
 2020,8,Rutgers,1534.3,72
-2020,8,Arkansas,1534.1,73
-2020,8,Illinois,1534.1,74
+2020,8,Illinois,1534.1,73
+2020,8,Arkansas,1534.1,74
 2020,8,Louisville,1533.7,75
 2020,8,Temple,1532.1,76
 2020,8,Western Michigan,1531.9,77
@@ -3218,8 +3218,8 @@ season,week,team,rating,rank
 2020,9,Florida International,1400.7,113
 2020,9,Bowling Green,1399.2,114
 2020,9,Syracuse,1399.0,115
-2020,9,UNLV,1391.4,116
-2020,9,New Mexico State,1391.4,117
+2020,9,New Mexico State,1391.4,116
+2020,9,UNLV,1391.4,117
 2020,9,North Texas,1380.3,118
 2020,9,New Mexico,1371.7,119
 2020,9,Middle Tennessee,1365.4,120
@@ -3330,8 +3330,8 @@ season,week,team,rating,rank
 2020,10,Navy,1468.3,97
 2020,10,Georgia State,1464.7,98
 2020,10,Texas Tech,1462.8,99
-2020,10,Eastern Michigan,1458.1,100
-2020,10,Temple,1458.1,101
+2020,10,Temple,1458.1,100
+2020,10,Eastern Michigan,1458.1,101
 2020,10,Ball State,1456.4,102
 2020,10,Arkansas State,1451.9,103
 2020,10,Georgia Tech,1436.6,104
@@ -3414,8 +3414,8 @@ season,week,team,rating,rank
 2020,11,NC State,1582.6,53
 2020,11,Pittsburgh,1581.6,54
 2020,11,UCLA,1575.0,55
-2020,11,Fresno State,1573.1,56
-2020,11,UAB,1573.1,57
+2020,11,UAB,1573.1,56
+2020,11,Fresno State,1573.1,57
 2020,11,Georgia Southern,1570.7,58
 2020,11,Nebraska,1570.0,59
 2020,11,Purdue,1568.6,60
@@ -3457,8 +3457,8 @@ season,week,team,rating,rank
 2020,11,Navy,1468.3,96
 2020,11,Colorado State,1466.6,97
 2020,11,Illinois,1459.0,98
-2020,11,Georgia State,1458.7,99
-2020,11,UTSA,1458.7,100
+2020,11,UTSA,1458.7,99
+2020,11,Georgia State,1458.7,100
 2020,11,Florida State,1457.2,101
 2020,11,Rutgers,1453.0,102
 2020,11,Arkansas State,1451.9,103
@@ -3543,8 +3543,8 @@ season,week,team,rating,rank
 2020,12,Kansas State,1587.0,54
 2020,12,Minnesota,1582.2,55
 2020,12,Kent State,1580.6,56
-2020,12,Fresno State,1573.1,57
-2020,12,UAB,1573.1,58
+2020,12,UAB,1573.1,57
+2020,12,Fresno State,1573.1,58
 2020,12,Washington State,1568.2,59
 2020,12,UCLA,1567.0,60
 2020,12,Georgia Southern,1563.5,61
@@ -3559,8 +3559,8 @@ season,week,team,rating,rank
 2020,12,Ole Miss,1536.9,70
 2020,12,Tennessee,1532.5,71
 2020,12,Louisiana Tech,1532.4,72
-2020,12,Baylor,1532.0,73
-2020,12,Troy,1532.0,74
+2020,12,Troy,1532.0,73
+2020,12,Baylor,1532.0,74
 2020,12,Air Force,1526.0,75
 2020,12,Wyoming,1524.5,76
 2020,12,Arkansas,1524.3,77
@@ -3673,8 +3673,8 @@ season,week,team,rating,rank
 2020,13,Michigan,1578.9,56
 2020,13,TCU,1574.5,57
 2020,13,Central Michigan,1573.7,58
-2020,13,Fresno State,1573.1,59
-2020,13,UAB,1573.1,60
+2020,13,UAB,1573.1,59
+2020,13,Fresno State,1573.1,60
 2020,13,Washington State,1568.2,61
 2020,13,Wyoming,1559.8,62
 2020,13,Houston,1558.7,63
@@ -3798,8 +3798,8 @@ season,week,team,rating,rank
 2020,14,Virginia,1584.4,53
 2020,14,Minnesota,1582.2,54
 2020,14,Georgia Southern,1581.5,55
-2020,14,Michigan,1578.9,56
-2020,14,Penn State,1578.9,57
+2020,14,Penn State,1578.9,56
+2020,14,Michigan,1578.9,57
 2020,14,Boston College,1575.1,58
 2020,14,UAB,1573.1,59
 2020,14,Virginia Tech,1570.3,60
@@ -3966,8 +3966,8 @@ season,week,team,rating,rank
 2020,15,Illinois,1483.2,93
 2020,15,Purdue,1477.9,94
 2020,15,Texas Tech,1470.3,95
-2020,15,Mississippi State,1467.8,96
-2020,15,Rice,1467.8,97
+2020,15,Rice,1467.8,96
+2020,15,Mississippi State,1467.8,97
 2020,15,Rutgers,1465.0,98
 2020,15,Charlotte,1459.1,99
 2020,15,South Carolina,1449.5,100
@@ -4132,8 +4132,8 @@ season,week,team,rating,rank
 2021,1,Georgia,1758.0,3
 2021,1,Notre Dame,1729.4,4
 2021,1,Texas A&M,1720.9,5
-2021,1,Clemson,1713.1,6
-2021,1,Florida,1713.1,7
+2021,1,Florida,1713.1,6
+2021,1,Clemson,1713.1,7
 2021,1,Oklahoma,1710.3,8
 2021,1,Iowa,1708.9,9
 2021,1,USC,1708.7,10
@@ -4900,8 +4900,8 @@ season,week,team,rating,rank
 2021,6,Kansas,1332.0,121
 2021,6,Bowling Green,1329.8,122
 2021,6,Vanderbilt,1329.2,123
-2021,6,Akron,1329.1,124
-2021,6,Arizona,1329.1,125
+2021,6,Arizona,1329.1,124
+2021,6,Akron,1329.1,125
 2021,6,Florida International,1327.0,126
 2021,6,UNLV,1308.3,127
 2021,6,Massachusetts,1283.9,128
@@ -5190,8 +5190,8 @@ season,week,team,rating,rank
 2021,9,Houston,1691.6,21
 2021,9,Baylor,1689.3,22
 2021,9,SMU,1688.8,23
-2021,9,UTSA,1686.4,24
-2021,9,NC State,1686.4,25
+2021,9,NC State,1686.4,24
+2021,9,UTSA,1686.4,25
 2021,9,Louisiana,1686.1,26
 2021,9,Wisconsin,1683.7,27
 2021,9,Utah,1683.2,28
@@ -5258,8 +5258,8 @@ season,week,team,rating,rank
 2021,9,Eastern Michigan,1492.1,89
 2021,9,Missouri,1490.2,90
 2021,9,Tulsa,1489.3,91
-2021,9,Georgia Tech,1487.7,92
-2021,9,Colorado State,1487.7,93
+2021,9,Colorado State,1487.7,92
+2021,9,Georgia Tech,1487.7,93
 2021,9,Middle Tennessee,1485.7,94
 2021,9,Northwestern,1476.1,95
 2021,9,Wyoming,1472.5,96
@@ -5272,8 +5272,8 @@ season,week,team,rating,rank
 2021,9,Louisiana Tech,1433.9,103
 2021,9,Colorado,1419.3,104
 2021,9,Illinois,1415.2,105
-2021,9,Tulane,1412.5,106
-2021,9,Charlotte,1412.5,107
+2021,9,Charlotte,1412.5,106
+2021,9,Tulane,1412.5,107
 2021,9,UL Monroe,1404.1,108
 2021,9,South Florida,1400.9,109
 2021,9,Georgia Southern,1397.5,110
@@ -5359,8 +5359,8 @@ season,week,team,rating,rank
 2021,10,Boston College,1565.4,60
 2021,10,West Virginia,1564.7,61
 2021,10,Army,1564.0,62
-2021,10,Louisville,1551.8,63
-2021,10,Ball State,1551.8,64
+2021,10,Ball State,1551.8,63
+2021,10,Louisville,1551.8,64
 2021,10,East Carolina,1549.7,65
 2021,10,South Carolina,1548.8,66
 2021,10,Oregon State,1548.6,67
@@ -5408,8 +5408,8 @@ season,week,team,rating,rank
 2021,10,North Texas,1388.5,109
 2021,10,South Florida,1386.2,110
 2021,10,Georgia Southern,1380.7,111
-2021,10,Ohio,1377.6,112
-2021,10,UL Monroe,1377.6,113
+2021,10,UL Monroe,1377.6,112
+2021,10,Ohio,1377.6,113
 2021,10,Rice,1371.5,114
 2021,10,Temple,1365.8,115
 2021,10,Texas State,1364.3,116
@@ -5708,8 +5708,8 @@ season,week,team,rating,rank
 2021,13,Wake Forest,1729.8,19
 2021,13,Michigan State,1723.4,20
 2021,13,NC State,1717.7,21
-2021,13,App State,1715.3,22
-2021,13,San Diego State,1715.3,23
+2021,13,San Diego State,1715.3,22
+2021,13,App State,1715.3,23
 2021,13,Texas A&M,1714.2,24
 2021,13,Coastal Carolina,1711.8,25
 2021,13,Wisconsin,1707.3,26
@@ -6191,8 +6191,8 @@ season,week,team,rating,rank
 2022,1,Middle Tennessee,1432.9,112
 2022,1,Louisiana Tech,1421.3,113
 2022,1,New Mexico,1420.1,114
-2022,1,Buffalo,1418.0,115
-2022,1,Texas State,1418.0,116
+2022,1,Texas State,1418.0,115
+2022,1,Buffalo,1418.0,116
 2022,1,UTEP,1415.9,117
 2022,1,Southern Miss,1413.6,118
 2022,1,Rice,1406.6,119
@@ -6303,11 +6303,11 @@ season,week,team,rating,rank
 2022,2,West Virginia,1483.6,93
 2022,2,Wyoming,1478.4,94
 2022,2,Stanford,1469.8,95
-2022,2,Eastern Michigan,1468.6,96
-2022,2,Northwestern,1468.6,97
+2022,2,Northwestern,1468.6,96
+2022,2,Eastern Michigan,1468.6,97
 2022,2,Vanderbilt,1467.4,98
-2022,2,Troy,1465.9,99
-2022,2,Arizona,1465.9,100
+2022,2,Arizona,1465.9,99
+2022,2,Troy,1465.9,100
 2022,2,San José State,1465.0,101
 2022,2,Georgia State,1464.2,102
 2022,2,Central Michigan,1463.3,103
@@ -6453,8 +6453,8 @@ season,week,team,rating,rank
 2022,3,Louisiana Tech,1422.1,112
 2022,3,Bowling Green,1413.9,113
 2022,3,Northwestern,1410.7,114
-2022,3,Arkansas State,1408.2,115
-2022,3,UL Monroe,1408.2,116
+2022,3,UL Monroe,1408.2,115
+2022,3,Arkansas State,1408.2,116
 2022,3,Southern Miss,1404.8,117
 2022,3,South Florida,1404.5,118
 2022,3,Colorado,1387.4,119
@@ -6940,10 +6940,10 @@ season,week,team,rating,rank
 2022,7,Arizona State,1503.6,75
 2022,7,California,1502.1,76
 2022,7,Fresno State,1495.4,77
-2022,7,Georgia Southern,1493.9,78
-2022,7,Missouri,1493.9,79
-2022,7,Rutgers,1493.3,80
-2022,7,Marshall,1493.3,81
+2022,7,Missouri,1493.9,78
+2022,7,Georgia Southern,1493.9,79
+2022,7,Marshall,1493.3,80
+2022,7,Rutgers,1493.3,81
 2022,7,Georgia State,1492.6,82
 2022,7,Nebraska,1490.3,83
 2022,7,North Texas,1483.1,84
@@ -7050,8 +7050,8 @@ season,week,team,rating,rank
 2022,8,Texas Tech,1577.6,54
 2022,8,UAB,1575.8,55
 2022,8,Toledo,1575.7,56
-2022,8,App State,1570.6,57
-2022,8,South Alabama,1570.6,58
+2022,8,South Alabama,1570.6,57
+2022,8,App State,1570.6,58
 2022,8,Duke,1570.3,59
 2022,8,San José State,1569.2,60
 2022,8,Air Force,1568.5,61
@@ -7415,8 +7415,8 @@ season,week,team,rating,rank
 2022,11,Washington,1667.9,26
 2022,11,Minnesota,1662.4,27
 2022,11,Pittsburgh,1660.5,28
-2022,11,Baylor,1656.9,29
-2022,11,Kentucky,1656.9,30
+2022,11,Kentucky,1656.9,29
+2022,11,Baylor,1656.9,30
 2022,11,NC State,1654.8,31
 2022,11,Louisville,1653.1,32
 2022,11,Mississippi State,1650.7,33
@@ -7618,8 +7618,8 @@ season,week,team,rating,rank
 2022,12,Bowling Green,1436.5,98
 2022,12,Arizona,1430.6,99
 2022,12,Georgia Tech,1429.5,100
-2022,12,UConn,1423.7,101
-2022,12,Ball State,1423.7,102
+2022,12,Ball State,1423.7,101
+2022,12,UConn,1423.7,102
 2022,12,Southern Miss,1420.2,103
 2022,12,Texas State,1419.7,104
 2022,12,Tulsa,1416.1,105
@@ -7629,11 +7629,11 @@ season,week,team,rating,rank
 2022,12,Boston College,1411.5,109
 2022,12,Rice,1403.0,110
 2022,12,Stanford,1387.7,111
-2022,12,UNLV,1387.3,112
-2022,12,Western Michigan,1387.3,113
+2022,12,Western Michigan,1387.3,112
+2022,12,UNLV,1387.3,113
 2022,12,UL Monroe,1377.4,114
-2022,12,Louisiana Tech,1373.9,115
-2022,12,Old Dominion,1373.9,116
+2022,12,Old Dominion,1373.9,115
+2022,12,Louisiana Tech,1373.9,116
 2022,12,Northern Illinois,1371.6,117
 2022,12,Arkansas State,1345.3,118
 2022,12,Temple,1342.7,119
@@ -8073,8 +8073,8 @@ season,week,team,rating,rank
 2023,1,Pittsburgh,1629.1,29
 2023,1,Ole Miss,1627.7,30
 2023,1,Fresno State,1624.9,31
-2023,1,Arkansas,1620.8,32
-2023,1,Mississippi State,1620.8,33
+2023,1,Mississippi State,1620.8,32
+2023,1,Arkansas,1620.8,33
 2023,1,Minnesota,1620.3,34
 2023,1,Texas A&M,1619.2,35
 2023,1,Washington State,1616.8,36
@@ -8097,8 +8097,8 @@ season,week,team,rating,rank
 2023,1,Western Kentucky,1566.9,53
 2023,1,Marshall,1562.1,54
 2023,1,Florida,1560.9,55
-2023,1,Syracuse,1558.9,56
-2023,1,Texas Tech,1558.9,57
+2023,1,Texas Tech,1558.9,56
+2023,1,Syracuse,1558.9,57
 2023,1,San Diego State,1557.0,58
 2023,1,Purdue,1554.8,59
 2023,1,South Carolina,1554.2,60
@@ -8133,8 +8133,8 @@ season,week,team,rating,rank
 2023,1,Ohio,1505.9,89
 2023,1,Tulsa,1503.7,90
 2023,1,Georgia Southern,1496.1,91
-2023,1,Southern Miss,1492.7,92
-2023,1,Middle Tennessee,1492.7,93
+2023,1,Middle Tennessee,1492.7,92
+2023,1,Southern Miss,1492.7,93
 2023,1,Colorado,1484.5,94
 2023,1,Georgia Tech,1478.2,95
 2023,1,Western Michigan,1476.1,96
@@ -8159,8 +8159,8 @@ season,week,team,rating,rank
 2023,1,North Texas,1439.6,115
 2023,1,Louisiana Tech,1434.6,116
 2023,1,Army,1432.6,117
-2023,1,Central Michigan,1431.2,118
-2023,1,Charlotte,1431.2,119
+2023,1,Charlotte,1431.2,118
+2023,1,Central Michigan,1431.2,119
 2023,1,New Mexico State,1418.0,120
 2023,1,Northwestern,1407.4,121
 2023,1,Arkansas State,1405.8,122
@@ -8255,14 +8255,14 @@ season,week,team,rating,rank
 2023,2,Vanderbilt,1507.3,78
 2023,2,San Diego State,1503.6,79
 2023,2,Baylor,1502.4,80
-2023,2,Texas State,1499.4,81
-2023,2,UAB,1499.4,82
+2023,2,UAB,1499.4,81
+2023,2,Texas State,1499.4,82
 2023,2,Louisiana,1497.7,83
 2023,2,Arizona,1497.4,84
 2023,2,Stanford,1497.1,85
 2023,2,Eastern Michigan,1492.1,86
-2023,2,Miami (OH),1491.1,87
-2023,2,Virginia Tech,1491.1,88
+2023,2,Virginia Tech,1491.1,87
+2023,2,Miami (OH),1491.1,88
 2023,2,Utah State,1485.6,89
 2023,2,Georgia Tech,1485.1,90
 2023,2,Tulsa,1480.5,91
@@ -8486,8 +8486,8 @@ season,week,team,rating,rank
 2023,4,Ohio,1609.3,43
 2023,4,James Madison,1603.4,44
 2023,4,NC State,1603.2,45
-2023,4,BYU,1597.8,46
-2023,4,South Alabama,1597.8,47
+2023,4,South Alabama,1597.8,46
+2023,4,BYU,1597.8,47
 2023,4,Auburn,1595.3,48
 2023,4,Cincinnati,1590.7,49
 2023,4,West Virginia,1589.2,50
@@ -8545,8 +8545,8 @@ season,week,team,rating,rank
 2023,4,UAB,1429.6,102
 2023,4,South Florida,1428.4,103
 2023,4,Utah State,1428.1,104
-2023,4,Boston College,1427.5,105
-2023,4,Kent State,1427.5,106
+2023,4,Kent State,1427.5,105
+2023,4,Boston College,1427.5,106
 2023,4,Florida International,1426.6,107
 2023,4,UL Monroe,1425.3,108
 2023,4,Florida Atlantic,1425.1,109
@@ -8817,8 +8817,8 @@ season,week,team,rating,rank
 2023,6,Western Michigan,1415.9,108
 2023,6,Vanderbilt,1410.8,109
 2023,6,Stanford,1407.5,110
-2023,6,Louisiana Tech,1405.6,111
-2023,6,Virginia,1405.6,112
+2023,6,Virginia,1405.6,111
+2023,6,Louisiana Tech,1405.6,112
 2023,6,San José State,1401.6,113
 2023,6,Florida International,1398.6,114
 2023,6,Northern Illinois,1389.0,115
@@ -9205,8 +9205,8 @@ season,week,team,rating,rank
 2023,9,Western Michigan,1437.5,97
 2023,9,San Diego State,1432.4,98
 2023,9,Virginia,1430.6,99
-2023,9,Buffalo,1427.7,100
-2023,9,Arkansas State,1427.7,101
+2023,9,Arkansas State,1427.7,100
+2023,9,Buffalo,1427.7,101
 2023,9,North Texas,1426.3,102
 2023,9,Utah State,1424.1,103
 2023,9,Arizona State,1417.8,104
@@ -9300,16 +9300,16 @@ season,week,team,rating,rank
 2023,10,Georgia Southern,1558.1,59
 2023,10,UCF,1553.9,60
 2023,10,Georgia State,1552.2,61
-2023,10,Nebraska,1551.5,62
-2023,10,Western Kentucky,1551.5,63
+2023,10,Western Kentucky,1551.5,62
+2023,10,Nebraska,1551.5,63
 2023,10,Texas State,1551.0,64
 2023,10,Boston College,1547.3,65
 2023,10,Ohio,1545.6,66
 2023,10,App State,1538.0,67
 2023,10,Virginia Tech,1537.6,68
 2023,10,Arkansas,1536.4,69
-2023,10,Georgia Tech,1536.1,70
-2023,10,Louisiana,1536.1,71
+2023,10,Louisiana,1536.1,70
+2023,10,Georgia Tech,1536.1,71
 2023,10,South Carolina,1534.0,72
 2023,10,Wyoming,1528.0,73
 2023,10,Jacksonville State,1526.4,74
@@ -9353,15 +9353,15 @@ season,week,team,rating,rank
 2023,10,Middle Tennessee,1385.4,112
 2023,10,Tulsa,1371.5,113
 2023,10,Vanderbilt,1370.1,114
-2023,10,Louisiana Tech,1362.3,115
-2023,10,Colorado State,1362.3,116
+2023,10,Colorado State,1362.3,115
+2023,10,Louisiana Tech,1362.3,116
 2023,10,East Carolina,1359.6,117
 2023,10,Navy,1358.5,118
 2023,10,Southern Miss,1349.2,119
 2023,10,Ball State,1345.8,120
 2023,10,Florida International,1345.7,121
-2023,10,UConn,1334.2,122
-2023,10,Charlotte,1334.2,123
+2023,10,Charlotte,1334.2,122
+2023,10,UConn,1334.2,123
 2023,10,Temple,1332.4,124
 2023,10,Hawai'i,1308.2,125
 2023,10,UTEP,1304.9,126
@@ -9516,8 +9516,8 @@ season,week,team,rating,rank
 2023,12,Penn State,1807.1,9
 2023,12,Oklahoma,1785.7,10
 2023,12,Notre Dame,1764.4,11
-2023,12,Oregon State,1748.6,12
-2023,12,Kansas State,1748.6,13
+2023,12,Kansas State,1748.6,12
+2023,12,Oregon State,1748.6,13
 2023,12,Louisville,1744.3,14
 2023,12,Liberty,1739.6,15
 2023,12,LSU,1733.7,16
@@ -9539,8 +9539,8 @@ season,week,team,rating,rank
 2023,12,Toledo,1659.3,32
 2023,12,Utah,1658.1,33
 2023,12,Miami (OH),1652.0,34
-2023,12,Oklahoma State,1640.7,35
-2023,12,USC,1640.7,36
+2023,12,USC,1640.7,35
+2023,12,Oklahoma State,1640.7,36
 2023,12,Kansas,1637.9,37
 2023,12,West Virginia,1630.6,38
 2023,12,Iowa State,1623.3,39
@@ -9588,8 +9588,8 @@ season,week,team,rating,rank
 2023,12,Mississippi State,1491.5,81
 2023,12,Georgia State,1491.2,82
 2023,12,Illinois,1488.3,83
-2023,12,Texas State,1486.6,84
-2023,12,Marshall,1486.6,85
+2023,12,Marshall,1486.6,84
+2023,12,Texas State,1486.6,85
 2023,12,Cincinnati,1485.6,86
 2023,12,Army,1481.5,87
 2023,12,Pittsburgh,1481.2,88
@@ -10053,8 +10053,8 @@ season,week,team,rating,rank
 2024,1,Ole Miss,1645.5,14
 2024,1,USC,1644.9,15
 2024,1,North Carolina,1623.1,16
-2024,1,James Madison,1621.8,17
-2024,1,NC State,1621.8,18
+2024,1,NC State,1621.8,17
+2024,1,James Madison,1621.8,18
 2024,1,Tennessee,1619.5,19
 2024,1,LSU,1617.9,20
 2024,1,Iowa,1616.6,21
@@ -10077,8 +10077,8 @@ season,week,team,rating,rank
 2024,1,Wisconsin,1594.3,38
 2024,1,Iowa State,1577.4,39
 2024,1,UCF,1576.4,40
-2024,1,UTSA,1575.9,41
-2024,1,Auburn,1575.9,42
+2024,1,Auburn,1575.9,41
+2024,1,UTSA,1575.9,42
 2024,1,Oklahoma State,1575.2,43
 2024,1,Coastal Carolina,1572.4,44
 2024,1,Northwestern,1570.2,45
@@ -10492,8 +10492,8 @@ season,week,team,rating,rank
 2024,4,Arkansas,1565.5,51
 2024,4,Pittsburgh,1564.7,52
 2024,4,Arizona State,1564.4,53
-2024,4,Virginia Tech,1562.2,54
-2024,4,Cincinnati,1562.2,55
+2024,4,Cincinnati,1562.2,54
+2024,4,Virginia Tech,1562.2,55
 2024,4,San José State,1561.4,56
 2024,4,Boston College,1561.3,57
 2024,4,TCU,1559.8,58
@@ -10569,8 +10569,8 @@ season,week,team,rating,rank
 2024,4,Wyoming,1324.6,128
 2024,4,Southern Miss,1311.0,129
 2024,4,Massachusetts,1299.3,130
-2024,4,New Mexico,1281.1,131
-2024,4,UTEP,1281.1,132
+2024,4,UTEP,1281.1,131
+2024,4,New Mexico,1281.1,132
 2024,4,Kent State,1255.6,133
 2024,4,Kennesaw State,1203.1,134
 2024,5,Alabama,1844.7,1
@@ -10647,11 +10647,11 @@ season,week,team,rating,rank
 2024,5,North Texas,1522.3,72
 2024,5,Florida,1510.8,73
 2024,5,Michigan State,1510.4,74
-2024,5,Georgia Southern,1508.4,75
-2024,5,Louisiana,1508.4,76
+2024,5,Louisiana,1508.4,75
+2024,5,Georgia Southern,1508.4,76
 2024,5,Sam Houston,1503.5,77
-2024,5,Minnesota,1490.8,78
-2024,5,Ohio,1490.8,79
+2024,5,Ohio,1490.8,78
+2024,5,Minnesota,1490.8,79
 2024,5,Virginia,1490.6,80
 2024,5,South Alabama,1489.9,81
 2024,5,UConn,1489.7,82
@@ -11286,8 +11286,8 @@ season,week,team,rating,rank
 2024,10,California,1603.5,41
 2024,10,Duke,1601.7,42
 2024,10,Memphis,1597.1,43
-2024,10,Texas Tech,1588.7,44
-2024,10,Liberty,1588.7,45
+2024,10,Liberty,1588.7,44
+2024,10,Texas Tech,1588.7,45
 2024,10,North Carolina,1587.8,46
 2024,10,Wisconsin,1586.6,47
 2024,10,Cincinnati,1578.2,48
@@ -11335,8 +11335,8 @@ season,week,team,rating,rank
 2024,10,Old Dominion,1468.1,90
 2024,10,Western Michigan,1468.0,91
 2024,10,Houston,1464.0,92
-2024,10,Wake Forest,1462.8,93
-2024,10,Oklahoma State,1462.8,94
+2024,10,Oklahoma State,1462.8,93
+2024,10,Wake Forest,1462.8,94
 2024,10,Arizona,1462.5,95
 2024,10,Coastal Carolina,1462.0,96
 2024,10,App State,1457.9,97
@@ -11888,8 +11888,8 @@ season,week,team,rating,rank
 2024,14,Stanford,1367.1,107
 2024,14,Eastern Michigan,1366.7,108
 2024,14,Rice,1365.9,109
-2024,14,Louisiana Tech,1363.0,110
-2024,14,New Mexico,1363.0,111
+2024,14,New Mexico,1363.0,110
+2024,14,Louisiana Tech,1363.0,111
 2024,14,Hawai'i,1360.7,112
 2024,14,Charlotte,1358.3,113
 2024,14,UL Monroe,1350.7,114
@@ -12022,8 +12022,8 @@ season,week,team,rating,rank
 2024,15,Stanford,1367.1,107
 2024,15,Eastern Michigan,1366.7,108
 2024,15,Rice,1365.9,109
-2024,15,Louisiana Tech,1363.0,110
-2024,15,New Mexico,1363.0,111
+2024,15,New Mexico,1363.0,110
+2024,15,Louisiana Tech,1363.0,111
 2024,15,Hawai'i,1360.7,112
 2024,15,Charlotte,1358.3,113
 2024,15,UL Monroe,1350.7,114
@@ -12156,8 +12156,8 @@ season,week,team,rating,rank
 2024,16,Stanford,1367.1,107
 2024,16,Eastern Michigan,1366.7,108
 2024,16,Rice,1365.9,109
-2024,16,Louisiana Tech,1363.0,110
-2024,16,New Mexico,1363.0,111
+2024,16,New Mexico,1363.0,110
+2024,16,Louisiana Tech,1363.0,111
 2024,16,Hawai'i,1360.7,112
 2024,16,Charlotte,1358.3,113
 2024,16,UL Monroe,1350.7,114
@@ -12232,8 +12232,8 @@ season,week,team,rating,rank
 2025,1,Texas State,1550.0,49
 2025,1,Colorado,1548.8,50
 2025,1,Arkansas,1548.1,51
-2025,1,NC State,1546.1,52
-2025,1,Western Kentucky,1546.1,53
+2025,1,Western Kentucky,1546.1,52
+2025,1,NC State,1546.1,53
 2025,1,Boston College,1542.4,54
 2025,1,Syracuse,1541.1,55
 2025,1,Boise State,1539.8,56
@@ -12489,14 +12489,14 @@ season,week,team,rating,rank
 2025,3,Texas Tech,1612.5,34
 2025,3,Washington,1612.0,35
 2025,3,Nebraska,1608.1,36
-2025,3,BYU,1607.0,37
-2025,3,NC State,1607.0,38
+2025,3,NC State,1607.0,37
+2025,3,BYU,1607.0,38
 2025,3,South Carolina,1604.6,39
 2025,3,Rutgers,1597.2,40
 2025,3,Iowa,1595.8,41
 2025,3,Arkansas,1583.1,42
-2025,3,Florida State,1578.4,43
-2025,3,Houston,1578.4,44
+2025,3,Houston,1578.4,43
+2025,3,Florida State,1578.4,44
 2025,3,Florida,1574.0,45
 2025,3,Syracuse,1571.1,46
 2025,3,North Texas,1561.1,47
@@ -12544,8 +12544,8 @@ season,week,team,rating,rank
 2025,3,Louisiana Tech,1458.2,89
 2025,3,New Mexico,1455.8,90
 2025,3,Stanford,1455.3,91
-2025,3,App State,1453.8,92
-2025,3,South Alabama,1453.8,93
+2025,3,South Alabama,1453.8,92
+2025,3,App State,1453.8,93
 2025,3,Florida International,1451.7,94
 2025,3,Miami (OH),1445.2,95
 2025,3,UConn,1445.0,96
@@ -12682,8 +12682,8 @@ season,week,team,rating,rank
 2025,4,Buffalo,1443.7,91
 2025,4,Troy,1443.4,92
 2025,4,San José State,1439.7,93
-2025,4,Miami (OH),1427.7,94
-2025,4,Rice,1427.7,95
+2025,4,Rice,1427.7,94
+2025,4,Miami (OH),1427.7,95
 2025,4,UL Monroe,1427.4,96
 2025,4,Washington State,1427.2,97
 2025,4,Wake Forest,1427.1,98
@@ -13228,8 +13228,8 @@ season,week,team,rating,rank
 2025,8,Georgia Southern,1442.7,93
 2025,8,Buffalo,1440.3,94
 2025,8,New Mexico,1440.1,95
-2025,8,Wisconsin,1431.8,96
-2025,8,Army,1431.8,97
+2025,8,Army,1431.8,96
+2025,8,Wisconsin,1431.8,97
 2025,8,Louisiana,1427.6,98
 2025,8,Liberty,1425.9,99
 2025,8,North Carolina,1423.3,100
@@ -13255,8 +13255,8 @@ season,week,team,rating,rank
 2025,8,UL Monroe,1348.1,120
 2025,8,Air Force,1339.9,121
 2025,8,Oregon State,1329.9,122
-2025,8,Eastern Michigan,1325.4,123
-2025,8,Missouri State,1325.4,124
+2025,8,Missouri State,1325.4,123
+2025,8,Eastern Michigan,1325.4,124
 2025,8,Tulsa,1319.7,125
 2025,8,Northern Illinois,1315.1,126
 2025,8,Oklahoma State,1305.4,127
@@ -13498,8 +13498,8 @@ season,week,team,rating,rank
 2025,10,Buffalo,1447.7,91
 2025,10,Army,1447.4,92
 2025,10,San José State,1443.8,93
-2025,10,Arkansas State,1441.6,94
-2025,10,Louisiana,1441.6,95
+2025,10,Louisiana,1441.6,94
+2025,10,Arkansas State,1441.6,95
 2025,10,West Virginia,1439.9,96
 2025,10,App State,1432.8,97
 2025,10,Syracuse,1432.6,98
@@ -13586,8 +13586,8 @@ season,week,team,rating,rank
 2025,11,Navy,1597.5,43
 2025,11,Houston,1590.4,44
 2025,11,Minnesota,1584.3,45
-2025,11,Kansas State,1580.3,46
-2025,11,Arizona,1580.3,47
+2025,11,Arizona,1580.3,46
+2025,11,Kansas State,1580.3,47
 2025,11,Iowa State,1578.3,48
 2025,11,Baylor,1569.0,49
 2025,11,San Diego State,1562.7,50
@@ -13648,8 +13648,8 @@ season,week,team,rating,rank
 2025,11,Wyoming,1402.8,105
 2025,11,Missouri State,1402.1,106
 2025,11,Stanford,1401.7,107
-2025,11,Virginia Tech,1399.1,108
-2025,11,Florida Atlantic,1399.1,109
+2025,11,Florida Atlantic,1399.1,108
+2025,11,Virginia Tech,1399.1,109
 2025,11,Florida International,1382.8,110
 2025,11,Rice,1375.7,111
 2025,11,Delaware,1373.2,112
@@ -13665,8 +13665,8 @@ season,week,team,rating,rank
 2025,11,Boston College,1329.3,122
 2025,11,Northern Illinois,1327.2,123
 2025,11,Oregon State,1326.6,124
-2025,11,New Mexico State,1302.2,125
-2025,11,UL Monroe,1302.2,126
+2025,11,UL Monroe,1302.2,125
+2025,11,New Mexico State,1302.2,126
 2025,11,Oklahoma State,1291.5,127
 2025,11,Tulsa,1291.0,128
 2025,11,Kent State,1280.9,129
@@ -13749,12 +13749,12 @@ season,week,team,rating,rank
 2025,12,Washington State,1508.6,70
 2025,12,New Mexico,1507.8,71
 2025,12,UTSA,1502.9,72
-2025,12,Texas State,1497.2,73
-2025,12,California,1497.2,74
+2025,12,California,1497.2,73
+2025,12,Texas State,1497.2,74
 2025,12,Northwestern,1490.2,75
 2025,12,Mississippi State,1488.1,76
-2025,12,Coastal Carolina,1480.5,77
-2025,12,Western Michigan,1480.5,78
+2025,12,Western Michigan,1480.5,77
+2025,12,Coastal Carolina,1480.5,78
 2025,12,Miami (OH),1474.5,79
 2025,12,Southern Miss,1473.6,80
 2025,12,Troy,1470.5,81
@@ -13829,8 +13829,8 @@ season,week,team,rating,rank
 2025,13,Texas,1743.2,14
 2025,13,SMU,1736.1,15
 2025,13,Tennessee,1722.7,16
-2025,13,Michigan,1721.2,17
-2025,13,Vanderbilt,1721.2,18
+2025,13,Vanderbilt,1721.2,17
+2025,13,Michigan,1721.2,18
 2025,13,USC,1715.8,19
 2025,13,James Madison,1708.3,20
 2025,13,Arizona State,1677.6,21
@@ -13898,8 +13898,8 @@ season,week,team,rating,rank
 2025,13,UCF,1467.1,83
 2025,13,Kennesaw State,1464.7,84
 2025,13,West Virginia,1457.3,85
-2025,13,Arkansas,1456.3,86
-2025,13,California,1456.3,87
+2025,13,California,1456.3,86
+2025,13,Arkansas,1456.3,87
 2025,13,Coastal Carolina,1451.7,88
 2025,13,Southern Miss,1446.5,89
 2025,13,Maryland,1446.4,90
@@ -14444,8 +14444,8 @@ season,week,team,rating,rank
 2026,1,Washington State,1471.5,85
 2026,1,Virginia Tech,1468.7,86
 2026,1,Syracuse,1467.7,87
-2026,1,App State,1464.7,88
-2026,1,Nevada,1464.7,89
+2026,1,Nevada,1464.7,88
+2026,1,App State,1464.7,89
 2026,1,Southern Miss,1464.1,90
 2026,1,Stanford,1462.1,91
 2026,1,Ohio,1453.9,92
@@ -14484,8 +14484,8 @@ season,week,team,rating,rank
 2026,1,Akron,1369.2,125
 2026,1,Georgia State,1368.8,126
 2026,1,Northern Illinois,1362.5,127
-2026,1,Oklahoma State,1354.8,128
-2026,1,Kent State,1354.8,129
+2026,1,Kent State,1354.8,128
+2026,1,Oklahoma State,1354.8,129
 2026,1,Massachusetts,1353.5,130
 2026,1,New Mexico State,1351.3,131
 2026,1,Sacramento State,1351.2,132
@@ -14509,8 +14509,8 @@ season,week,team,rating,rank
 2026,2,LSU,1693.6,12
 2026,2,Tennessee,1688.3,13
 2026,2,Michigan,1675.6,14
-2026,2,Oregon,1670.8,15
-2026,2,Penn State,1670.8,16
+2026,2,Penn State,1670.8,15
+2026,2,Oregon,1670.8,16
 2026,2,Utah,1662.2,17
 2026,2,Missouri,1661.2,18
 2026,2,BYU,1648.2,19
@@ -14596,8 +14596,8 @@ season,week,team,rating,rank
 2026,2,Hawai'i,1431.3,99
 2026,2,Southern Miss,1431.1,100
 2026,2,Arkansas State,1431.0,101
-2026,2,Coastal Carolina,1429.6,102
-2026,2,Navy,1429.6,103
+2026,2,Navy,1429.6,102
+2026,2,Coastal Carolina,1429.6,103
 2026,2,Florida Atlantic,1426.2,104
 2026,2,South Alabama,1423.2,105
 2026,2,Jacksonville State,1422.1,106
@@ -14719,8 +14719,8 @@ season,week,team,rating,rank
 2026,3,Colorado,1449.6,84
 2026,3,Oklahoma State,1449.3,85
 2026,3,Washington State,1448.6,86
-2026,3,Jacksonville State,1447.4,87
-2026,3,San Diego State,1447.4,88
+2026,3,San Diego State,1447.4,87
+2026,3,Jacksonville State,1447.4,88
 2026,3,Boston College,1446.2,89
 2026,3,Florida International,1445.6,90
 2026,3,Central Michigan,1444.7,91
@@ -14884,9 +14884,9 @@ season,week,team,rating,rank
 2026,4,Colorado State,1397.1,111
 2026,4,Kent State,1396.1,112
 2026,4,Georgia Southern,1391.1,113
-2026,4,San José State,1384.5,114
-2026,4,Hawai'i,1384.5,115
-2026,4,Purdue,1384.5,116
+2026,4,Hawai'i,1384.5,114
+2026,4,Purdue,1384.5,115
+2026,4,San José State,1384.5,116
 2026,4,Kennesaw State,1381.2,117
 2026,4,Buffalo,1379.8,118
 2026,4,Wyoming,1375.8,119
@@ -14966,8 +14966,8 @@ season,week,team,rating,rank
 2026,5,Cincinnati,1556.6,55
 2026,5,Toledo,1549.2,56
 2026,5,Iowa State,1544.2,57
-2026,5,North Texas,1541.9,58
-2026,5,Liberty,1541.9,59
+2026,5,Liberty,1541.9,58
+2026,5,North Texas,1541.9,59
 2026,5,Tulane,1534.3,60
 2026,5,Louisiana,1534.0,61
 2026,5,Virginia,1532.8,62
@@ -15251,8 +15251,8 @@ season,week,team,rating,rank
 2026,7,Iowa State,1529.4,64
 2026,7,Virginia,1526.8,65
 2026,7,Florida State,1525.9,66
-2026,7,UConn,1525.1,67
-2026,7,Vanderbilt,1525.1,68
+2026,7,Vanderbilt,1525.1,67
+2026,7,UConn,1525.1,68
 2026,7,Arizona State,1523.6,69
 2026,7,Ohio,1516.5,70
 2026,7,Texas State,1516.3,71
