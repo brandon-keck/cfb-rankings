@@ -311,6 +311,117 @@
     margin: 0;
   }
 
+  /* ---- games (win probabilities) ---- */
+
+  .games {
+    padding-top: 44px;
+    margin-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .games h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+
+  .games .desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 18px;
+    max-width: 64ch;
+  }
+
+  .tabs { display: flex; gap: 8px; margin: 0 0 8px; }
+
+  .tab {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--bg);
+    font-weight: 600;
+  }
+
+  .game { padding: 14px 4px; border-bottom: 1px solid var(--rule-soft); }
+
+  .game-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 16px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+
+  .game-teams { font-size: 15px; font-weight: 500; }
+  .game-teams .at { color: var(--muted-dim); font-weight: 400; margin: 0 7px; }
+  .game-teams .fav { color: var(--ink); }
+  .game-teams .dog { color: var(--muted); }
+
+  .game-when { font-size: 12px; color: var(--muted-dim); white-space: nowrap; }
+
+  .probbar {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--rule);
+  }
+  .seg { height: 100%; }
+  .seg.fav { background: var(--gold); }
+  .seg.dog { background: #3a4a3f; }
+
+  .probnums {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted-dim);
+  }
+  .probnums .fav { color: var(--gold); font-weight: 600; }
+
+  .result { font-size: 12px; font-weight: 600; margin-top: 6px; }
+  .result.hit { color: var(--up); }
+  .result.miss { color: var(--down); }
+
+  .games-empty { color: var(--muted-dim); font-size: 13px; padding: 28px 0; text-align: center; }
+
+  .more-btn {
+    margin-top: 14px;
+    background: none;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .more-btn:hover { color: var(--ink); border-color: var(--muted-dim); }
+
+  .season-record { color: var(--ink); font-size: 14px; margin: 0 0 8px; }
+
+  .calib { margin-top: 40px; }
+  .calib h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .calib .desc { color: var(--muted); font-size: 13px; margin: 0 0 16px; max-width: 64ch; }
+
   /* ---- footer ---- */
 
   footer {
@@ -373,6 +484,17 @@
       <div id="ledger-rows"></div>
     </section>
 
+    <section class="games" id="games-section" style="display:none;">
+      <h2>Win probabilities</h2>
+      <p class="desc" id="games-desc"></p>
+      <div class="tabs" id="games-tabs" style="display:none;">
+        <button class="tab active" id="tab-upcoming" type="button">Coming up</button>
+        <button class="tab" id="tab-recent" type="button">Last week, graded</button>
+      </div>
+      <div id="games-list"></div>
+      <button class="more-btn" id="games-more" type="button" style="display:none;"></button>
+    </section>
+
     <section class="trajectory" id="trajectory-section">
       <h2>Rating trajectory</h2>
       <p class="desc">Pick any FBS team to see how its rating moved week to week.</p>
@@ -401,12 +523,17 @@
           <div class="stat-value" id="stat-vs-sp">—</div>
           <div class="stat-label">vs. SP+ ratings</div>
         </div>
-        <div class="stat">
-          <div class="stat-value" id="stat-vs-ap">—</div>
-          <div class="stat-label">vs. AP Poll</div>
+      </div>
+      <p class="season-record" id="season-record" style="display:none;"></p>
+      <p class="stats-note">Backtested using only data available before each game was played — no look-ahead. Recomputed automatically every week.</p>
+
+      <div class="calib" id="calib-block" style="display:none;">
+        <h3>When we say 70%, does it happen 70% of the time?</h3>
+        <p class="desc">Every FBS-vs-FBS game since 2019, grouped by how confident the model was in its favorite. If the probabilities are honest, the two bars in each group match.</p>
+        <div class="chart-panel visible">
+          <canvas id="calib-chart"></canvas>
         </div>
       </div>
-      <p class="stats-note">Backtested using only data available before each game was played — no look-ahead. Recomputed automatically every week.</p>
     </section>
 
   </div>
@@ -426,8 +553,13 @@
     seasonFinal: [],     // {season, team, final_rating, rank}
     weekly: [],          // {season, week, team, rating, rank}
     fullFieldWeekly: [], // {season, week, team, rating, rank} -- full field every week, for movement indicator
+    upcoming: [],        // scheduled games with win probabilities
+    recent: [],          // last slate of completed games, graded against the pre-game probabilities
+    gamesMode: 'upcoming',
+    gamesExpanded: false,
     currentSeason: null,
     chart: null,
+    calibChart: null,
   };
 
   function setStatus(msg, isError) {
@@ -483,6 +615,7 @@
       renderSeason();
       loadBacktestSummary();
       loadFullFieldWeekly();
+      loadGames();
     }).catch(function (err) {
       setStatus('Could not load ratings data: ' + err.message, true);
     });
@@ -527,21 +660,209 @@
         vsSpEl.textContent = 'N/A';
       }
 
-      const vsApEl = document.getElementById('stat-vs-ap');
-      if (summary.ap_poll_accuracy !== null && summary.ap_poll_accuracy !== undefined) {
-        const vsAp = summary.elo_vs_ap_poll_pts;
-        vsApEl.textContent = (vsAp >= 0 ? '+' : '') + vsAp.toFixed(1) + ' pts';
-        vsApEl.className = 'stat-value ' + (vsAp >= 0 ? 'positive' : 'negative');
-      } else {
-        vsApEl.textContent = 'N/A';
-      }
-
       document.getElementById('stats-desc').textContent =
         'Across ' + summary.games_evaluated.toLocaleString() + ' FBS-vs-FBS games since 2019 (as of ' + summary.generated_at_utc + ').';
 
+      // Show the section first: Chart.js can't size a canvas inside a hidden parent.
       section.style.display = 'block';
+
+      const rec = summary.current_season;
+      if (rec && rec.games) {
+        const recEl = document.getElementById('season-record');
+        recEl.textContent = rec.season + ' so far: ' + rec.correct + ' of ' + rec.games +
+          ' games called correctly (' + (rec.accuracy * 100).toFixed(1) + '%).';
+        recEl.style.display = 'block';
+      }
+
+      if (summary.calibration && summary.calibration.length) {
+        renderCalibration(summary.calibration);
+      }
     }).catch(function () {
       // Silently skip -- no backtest data available yet.
+    });
+  }
+
+  function renderCalibration(rows) {
+    document.getElementById('calib-block').style.display = 'block';
+    const ctx = document.getElementById('calib-chart').getContext('2d');
+    if (state.calibChart) state.calibChart.destroy();
+
+    const tick = { color: '#93a395', font: { family: 'IBM Plex Sans' } };
+    state.calibChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: rows.map(function (r) { return [r.bucket, r.games.toLocaleString() + ' games']; }),
+        datasets: [
+          {
+            label: 'What the model said',
+            data: rows.map(function (r) { return r.avg_predicted * 100; }),
+            backgroundColor: '#5f6f63',
+            borderRadius: 3,
+          },
+          {
+            label: 'What actually happened',
+            data: rows.map(function (r) { return r.actual_win_rate * 100; }),
+            backgroundColor: '#d8a23b',
+            borderRadius: 3,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: '#93a395', font: { family: 'IBM Plex Sans' } } },
+          tooltip: {
+            backgroundColor: '#121a15',
+            borderColor: '#26332a',
+            borderWidth: 1,
+            titleColor: '#f2f3ee',
+            bodyColor: '#f2f3ee',
+            callbacks: {
+              label: function (item) { return item.dataset.label + ': ' + item.parsed.y.toFixed(1) + '%'; },
+            },
+          },
+        },
+        scales: {
+          x: { ticks: tick, grid: { display: false } },
+          y: {
+            min: 0,
+            max: 100,
+            ticks: { color: '#93a395', font: { family: 'IBM Plex Sans' }, callback: function (v) { return v + '%'; } },
+            grid: { color: '#1c2620' },
+          },
+        },
+      },
+    });
+  }
+
+  // ---- win probabilities / graded games ----
+
+  const GAMES_COLLAPSED = 10;
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Python writes booleans as True/False; the CSV parser only auto-converts
+  // lowercase, so these arrive as strings. Normalize them here.
+  function truthy(v) {
+    return v === true || String(v).toLowerCase() === 'true';
+  }
+
+  function formatKickoff(iso, fallbackDate) {
+    const d = iso ? new Date(iso) : (fallbackDate ? new Date(fallbackDate + 'T12:00:00Z') : null);
+    if (!d || isNaN(d.getTime())) return '';
+    // Date only, in the viewer's own timezone. Kickoff times for not-yet-set
+    // games are placeholders, so showing a time could be misleading.
+    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'numeric', day: 'numeric' });
+  }
+
+  function gameRowHtml(g, mode) {
+    const pHome = Number(g.home_win_prob);
+    const homeFav = pHome >= 0.5;
+    const favPct = Math.round(Math.max(pHome, 1 - pHome) * 100);
+    const dogPct = 100 - favPct; // forces the two labels to sum to 100
+    const homePct = homeFav ? favPct : dogPct;
+    const awayPct = homeFav ? dogPct : favPct;
+    const neutral = truthy(g.neutral_site);
+
+    const teams =
+      '<span class="' + (homeFav ? 'dog' : 'fav') + '">' + esc(g.away_team) + '</span>' +
+      '<span class="at">' + (neutral ? 'vs' : 'at') + '</span>' +
+      '<span class="' + (homeFav ? 'fav' : 'dog') + '">' + esc(g.home_team) + '</span>';
+
+    const when = formatKickoff(g.kickoff_utc, g.game_date) + (neutral ? ' (neutral site)' : '');
+
+    let result = '';
+    if (mode === 'recent') {
+      const homeWon = truthy(g.home_won);
+      const correct = truthy(g.predicted_correctly);
+      const winner = homeWon ? g.home_team : g.away_team;
+      const score = homeWon ? (g.home_points + '–' + g.away_points) : (g.away_points + '–' + g.home_points);
+      result = '<div class="result ' + (correct ? 'hit' : 'miss') + '">' +
+        (correct ? '&#10003; ' : '&#10007; ') + esc(winner) + ' won ' + score + '</div>';
+    }
+
+    return '<div class="game">' +
+      '<div class="game-top"><div class="game-teams">' + teams + '</div>' +
+      '<div class="game-when">' + esc(when) + '</div></div>' +
+      '<div class="probbar">' +
+        '<div class="seg ' + (homeFav ? 'dog' : 'fav') + '" style="width:' + awayPct + '%"></div>' +
+        '<div class="seg ' + (homeFav ? 'fav' : 'dog') + '" style="width:' + homePct + '%"></div>' +
+      '</div>' +
+      '<div class="probnums"><span class="' + (homeFav ? '' : 'fav') + '">' + awayPct + '%</span>' +
+      '<span class="' + (homeFav ? 'fav' : '') + '">' + homePct + '%</span></div>' +
+      result + '</div>';
+  }
+
+  function renderGames() {
+    const mode = state.gamesMode;
+    let rows = (mode === 'upcoming' ? state.upcoming : state.recent).slice();
+    if (mode === 'recent') {
+      rows.sort(function (a, b) { return String(b.kickoff_utc || b.game_date) < String(a.kickoff_utc || a.game_date) ? -1 : 1; });
+    }
+
+    const desc = document.getElementById('games-desc');
+    const list = document.getElementById('games-list');
+    const moreBtn = document.getElementById('games-more');
+
+    if (mode === 'upcoming') {
+      const gen = rows.length && rows[0].generated_utc
+        ? new Date(rows[0].generated_utc + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' })
+        : null;
+      desc.textContent = 'Each team\'s chance to win, from the current ratings. The favorite is in gold.' +
+        (gen ? ' Generated ' + gen + ' and refreshed every Monday.' : '');
+    } else {
+      const hits = rows.filter(function (r) { return truthy(r.predicted_correctly); }).length;
+      desc.textContent = hits + ' of ' + rows.length + ' called correctly (' + Math.round(hits / rows.length * 100) +
+        '%). Each probability uses only the ratings as they stood before that game was played.';
+    }
+
+    if (!rows.length) {
+      list.innerHTML = '<div class="games-empty">No FBS-vs-FBS games on the schedule over the coming week.</div>';
+      moreBtn.style.display = 'none';
+      return;
+    }
+
+    const shown = state.gamesExpanded ? rows : rows.slice(0, GAMES_COLLAPSED);
+    list.innerHTML = shown.map(function (g) { return gameRowHtml(g, mode); }).join('');
+
+    if (rows.length > GAMES_COLLAPSED) {
+      moreBtn.textContent = state.gamesExpanded ? 'Show fewer' : 'Show all ' + rows.length + ' games';
+      moreBtn.style.display = 'inline-block';
+    } else {
+      moreBtn.style.display = 'none';
+    }
+  }
+
+  function setGamesMode(mode) {
+    state.gamesMode = mode;
+    state.gamesExpanded = false;
+    document.getElementById('tab-upcoming').classList.toggle('active', mode === 'upcoming');
+    document.getElementById('tab-recent').classList.toggle('active', mode === 'recent');
+    renderGames();
+  }
+
+  function loadGames() {
+    // Optional, non-blocking: if neither file exists yet, the section simply
+    // stays hidden and the rest of the dashboard is unaffected.
+    const get = function (path) { return fetchCSV(path).catch(function () { return []; }); };
+    Promise.all([get('data/upcoming_predictions.csv'), get('data/recent_results.csv')]).then(function (res) {
+      state.upcoming = res[0];
+      state.recent = res[1];
+      const hasUp = state.upcoming.length > 0;
+      const hasRecent = state.recent.length > 0;
+      if (!hasUp && !hasRecent) return;
+
+      document.getElementById('games-section').style.display = 'block';
+      document.getElementById('games-tabs').style.display = (hasUp && hasRecent) ? 'flex' : 'none';
+      document.getElementById('tab-upcoming').onclick = function () { setGamesMode('upcoming'); };
+      document.getElementById('tab-recent').onclick = function () { setGamesMode('recent'); };
+      document.getElementById('games-more').onclick = function () {
+        state.gamesExpanded = !state.gamesExpanded;
+        renderGames();
+      };
+      setGamesMode(hasUp ? 'upcoming' : 'recent');
     });
   }
 

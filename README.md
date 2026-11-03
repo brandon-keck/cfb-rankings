@@ -49,7 +49,8 @@ refinements on top of vanilla Elo:
 All data comes from the free tier of the
 [CollegeFootballData.com](https://collegefootballdata.com) (CFBD) API —
 games, team rosters, recruiting talent composite scores, and SP+ ratings
-(used as an external sanity check, not as an input to the model itself).
+(SP+ is used only as an external comparison in `backtest.py`, never as an
+input to the model itself).
 
 ## Does it actually work?
 
@@ -57,10 +58,21 @@ Backtested against every FBS-vs-FBS game since 2019, using only data available *
 
 As of the most recent backtest:
 - **Beats the naive "home team always wins" baseline** by double digits in accuracy — the model earns its keep beyond just home-field advantage.
-- **Competitive with SP+**, an established, heavily-refined external rating system that has years of development and access to drive-level data this model doesn't use. Being in the same range as SP+ with a from-scratch Elo model is a solid outcome, not a disappointing one.
+- **Competitive with SP+**, an established rating system with years of refinement and access to drive-level data this model doesn't use. SP+ still comes out ahead, and being in the same range with a from-scratch Elo model is a solid outcome rather than a disappointing one.
 - Accuracy is consistent across seasons (not just lucky in one year), which is the more meaningful signal than any single season's number.
 
-Exact current numbers are in `data/backtest_summary.json` (regenerated automatically every week) rather than hardcoded here, since they'll shift slightly as more of the current season completes.
+Exact current numbers are in `data/backtest_summary.json` (regenerated automatically every week) rather than hardcoded here, since they'll shift slightly as more of the current season completes. One caveat worth stating plainly: SP+ ratings are computed using a full season's data, so the SP+ comparison isn't a strict no-look-ahead benchmark the way the Elo predictions are.
+
+## Win probabilities, and how much to trust them
+
+Every Monday the model publishes a win probability for each FBS-vs-FBS game on the schedule over the coming week (`data/upcoming_predictions.csv`), using the same ratings and home-field adjustment the backtest scores. Games involving a non-FBS opponent are skipped, matching the backtest. In the preseason, before any game has been played, ratings are seeded the same way the model seeds a new season.
+
+A probability is only worth publishing if you can check it, so the dashboard puts two checks next to it:
+
+- **Calibration**: every backtested game is grouped by how confident the model was in its favorite (50-60%, 60-70%, and so on), and each group's average prediction is compared with how often those favorites actually won. If the probabilities are honest, the two match.
+- **Last week, graded**: the previous slate of games, each with the probability the model had before kickoff and what actually happened (`data/recent_results.csv`).
+
+The model's settings (K-factor, home-field advantage, regression to the mean, talent weight) come from standard Elo conventions and were chosen up front. They haven't been tuned against the backtest, so the accuracy numbers aren't flattered by fitting to the results they're reported on.
 
 ## Project structure
 
@@ -77,6 +89,9 @@ cfb-rankings/
 │   ├── sp_ratings_<year>.csv       # SP+ ratings (external comparison)
 │   ├── elo_ratings_weekly.csv      # every team's rating after every week it played
 │   ├── elo_ratings_season_final.csv # final (or current, for the in-progress season) rating per team per season
+│   ├── elo_full_field_weekly.csv   # every FBS team's rating and rank, every week (powers the week-over-week movement arrows)
+│   ├── upcoming_predictions.csv    # win probabilities for scheduled games over the coming week
+│   ├── recent_results.csv          # the latest slate of completed games, graded against the pre-game probabilities
 │   ├── backtest_predictions.csv    # every backtested game: prediction vs. actual result
 │   └── backtest_summary.json       # headline backtest metrics (read by the dashboard)
 ├── .gitignore
@@ -140,10 +155,13 @@ so the accuracy numbers stay current too.
 
 ## Roadmap
 
-- [x] Backtest ranking accuracy against historical AP Poll and SP+ ratings
-- [ ] Automate weekly data pulls and rating updates via a scheduled GitHub Action
-- [ ] Build a simple dashboard to visualize current rankings and a team's
-      rating trajectory across a season
+- [x] Backtest ranking accuracy against SP+ ratings and a home-favorite baseline
+- [x] Automate weekly data pulls and rating updates via a scheduled GitHub Action
+- [x] Build a dashboard to visualize current rankings and a team's rating
+      trajectory across a season
+- [x] Publish win probabilities for upcoming games, with calibration and graded results
+- [ ] Predict point totals and compare against sportsbook over/unders, with an
+      honest track record of how the model does against the market
 - [ ] Publish a "why is this team ranked here" breakdown showing the
       schedule-strength math behind each rating
 

@@ -1,38 +1,6 @@
-"""
-backtest.py
-
-Checks whether the Elo model's rankings actually predict outcomes well,
-rather than just looking plausible. For every FBS-vs-FBS game, this uses
-the exact same rating engine as rank_teams.py to see what the model would
-have predicted BEFORE that game was played (no look-ahead), then compares
-that prediction to what actually happened.
-
-Metrics:
-    - Accuracy: did the model favor the team that actually won?
-    - Brier score: how well-calibrated were the win probabilities, not just
-      the yes/no pick? Lower is better (0 = perfect, 0.25 = coin-flip
-      guessing on every game, 1.0 = confidently wrong every time).
-    - Compared against two baselines:
-        1. "Home team always wins" -- tests whether the model earns its
-           keep over the single most obvious naive heuristic in football.
-        2. SP+ rating differential -- tests the model against an established
-           external system. Note: SP+ ratings are computed using the whole
-           season's data, so this comparison isn't perfectly apples-to-apples
-           with the Elo model's no-look-ahead predictions -- it's a useful
-           reference point, not a strict benchmark.
-
-Run this after rank_teams.py has been run at least once (it reuses the
-same rating engine and data-loading functions).
-
-    python backtest.py
-
-Writes:
-    data/backtest_predictions.csv   every game's prediction vs. actual result
-"""
-
 import csv
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from rank_teams import DATA_DIR, load_games, load_talent, load_fbs_teams, run_elo
@@ -67,38 +35,6 @@ def load_sp_plus() -> dict[tuple[int, str], float]:
     return sp
 
 
-def load_ap_poll() -> dict[tuple[int, int, str], int]:
-    """Returns {(season, week, team): ap_rank} for the AP Top 25 poll only,
-    built from per-year rankings_YYYY.csv files. NOTE: this assumes CFBD's
-    "week 1" ranking is the preseason poll (see the comment in
-    fetch_cfbd_data.py) so week N's poll is compared directly against week
-    N's games with no offset."""
-    import glob
-    import re
-
-    ap = {}
-    for path in sorted(glob.glob(str(DATA_DIR / "rankings_*.csv"))):
-        p = Path(path)
-        if p.name == "rankings_all_years.csv":
-            continue
-        m = re.match(r"rankings_(\d{4})\.csv$", p.name)
-        if not m:
-            continue
-        with open(p, newline="", encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                if row.get("poll") != "AP Top 25":
-                    continue
-                try:
-                    season = int(row["season"])
-                    week = int(row["week"])
-                    team = (row.get("school") or "").strip()
-                    rank = int(row["rank"])
-                    ap[(season, week, team)] = rank
-                except (KeyError, ValueError, TypeError):
-                    continue
-    return ap
-
-
 def brier_score(predictions: list[dict]) -> float:
     total = 0.0
     for p in predictions:
@@ -114,6 +50,54 @@ def accuracy(predictions: list[dict], prob_key: str = "home_win_prob") -> float:
         if predicted_home_win == p["home_won"]:
             correct += 1
     return correct / len(predictions) if predictions else float("nan")
+
+
+CALIBRATION_BINS = [(0.5, 0.6), (0.6, 0.7), (0.7, 0.8), (0.8, 0.9), (0.9, 1.0001)]
+
+
+def was_correct(p: dict) -> bool:
+    """Same rule accuracy() uses: the model 'picked' the home team if it gave
+    them better than a 50% chance."""
+    return (p["home_win_prob"] > 0.5) == p["home_won"]
+
+
+def calibration_table(predictions: list[dict]) -> list[dict]:
+    """Group games by how confident the model was in its favored team, then
+    compare that confidence to how often the favorite actually won. A
+    well-calibrated model's 70% favorites win about 70% of the time."""
+    table = []
+    for lo, hi in CALIBRATION_BINS:
+        bucket = []
+        for p in predictions:
+            p_home = p["home_win_prob"]
+            fav_prob = max(p_home, 1 - p_home)
+            if lo <= fav_prob < hi:
+                fav_won = p["home_won"] if p_home >= 0.5 else (not p["home_won"])
+                bucket.append((fav_prob, fav_won))
+        if not bucket:
+            continue
+        table.append(
+            {
+                "bucket": f"{round(lo * 100)}-{min(round(hi * 100), 100)}%",
+                "games": len(bucket),
+                "avg_predicted": round(sum(b[0] for b in bucket) / len(bucket), 4),
+                "actual_win_rate": round(sum(1 for b in bucket if b[1]) / len(bucket), 4),
+            }
+        )
+    return table
+
+
+def recent_slate(predictions: list[dict], days: int = 6) -> list[dict]:
+    """The most recent stretch of completed games (anchored on the latest
+    completed game's date, not today's date, so it behaves the same no matter
+    when the script runs). Used for the 'last week's picks, graded' list."""
+    dated = [p for p in predictions if p.get("game_date")]
+    if not dated:
+        return []
+    latest = datetime.strptime(max(p["game_date"] for p in dated), "%Y-%m-%d")
+    cutoff = (latest - timedelta(days=days)).strftime("%Y-%m-%d")
+    slate = [p for p in dated if p["game_date"] >= cutoff]
+    return sorted(slate, key=lambda p: (p["game_date"], p["home_team"]))
 
 
 def main():
@@ -167,38 +151,6 @@ def main():
     else:
         print("\nNo overlapping SP+ data found to compare against.")
 
-    # ---- Baseline: AP Poll ----
-    # Unlike Elo/SP+, the poll only gives a hard pick, not a calibrated
-    # probability -- so only accuracy is reported for it, not a Brier score.
-    # Games where NEITHER team is ranked are excluded entirely: the poll
-    # offers no signal there, so including them would understate the poll's
-    # real accuracy on the games it actually has an opinion about.
-    ap_poll = load_ap_poll()
-    ap_correct = 0
-    ap_total = 0
-    for p in predictions:
-        home_rank = ap_poll.get((p["season"], p["week"], p["home_team"]))
-        away_rank = ap_poll.get((p["season"], p["week"], p["away_team"]))
-        if home_rank is None and away_rank is None:
-            continue
-        if home_rank is not None and away_rank is not None:
-            predicted_home_win = home_rank < away_rank  # lower rank number = better
-        else:
-            predicted_home_win = home_rank is not None  # ranked team favored over unranked
-        ap_total += 1
-        if predicted_home_win == p["home_won"]:
-            ap_correct += 1
-
-    if ap_total:
-        ap_acc = ap_correct / ap_total
-        print(f"\nAP Poll baseline accuracy: {ap_acc:.1%}  (on the {ap_total} games where at least one team was ranked)")
-        print(f"  Elo model {'beats' if elo_acc > ap_acc else 'does not beat'} the AP Poll on accuracy by {abs(elo_acc - ap_acc):.1%}")
-        print("  Note: only a hard pick, not a calibrated probability, so no Brier score here.")
-        print("  Note: assumes CFBD's week-1 poll is the preseason poll (see fetch_cfbd_data.py comment).")
-    else:
-        ap_acc = None
-        print("\nNo overlapping AP Poll data found to compare against.")
-
     # ---- Per-season breakdown ----
     seasons = sorted(set(p["season"] for p in predictions))
     per_season = []
@@ -214,14 +166,40 @@ def main():
     # ---- Save full results for further analysis ----
     out_path = DATA_DIR / "backtest_predictions.csv"
     with open(out_path, "w", newline="", encoding="utf-8") as f:
-        fieldnames = ["season", "week", "game_date", "home_team", "away_team", "home_win_prob", "home_won", "predicted_correctly"]
+        fieldnames = ["season", "week", "game_date", "kickoff_utc", "home_team", "away_team", "home_win_prob", "home_won", "home_points", "away_points", "predicted_correctly"]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for p in predictions:
             row = dict(p)
-            row["predicted_correctly"] = (p["home_win_prob"] > 0.5) == p["home_won"]
+            row["predicted_correctly"] = was_correct(p)
             writer.writerow(row)
     print(f"\nSaved per-game predictions -> {out_path}")
+
+    # ---- Calibration: does "70%" actually mean 70%? ----
+    calibration = calibration_table(predictions)
+    print("\nCalibration (when the model favors a team at X%, how often does that team win?):")
+    for row in calibration:
+        print(f"  {row['bucket']:>8}: {row['games']:>5} games, predicted {row['avg_predicted']:.1%}, actually won {row['actual_win_rate']:.1%}")
+
+    # ---- Current season record so far ----
+    latest_season = max(p["season"] for p in predictions)
+    current = [p for p in predictions if p["season"] == latest_season]
+    current_correct = sum(1 for p in current if was_correct(p))
+    print(f"\n{latest_season} so far: {current_correct} of {len(current)} games called correctly ({current_correct / len(current):.1%})")
+
+    # ---- Most recent slate of games, graded ----
+    slate = recent_slate(predictions)
+    recent_path = DATA_DIR / "recent_results.csv"
+    with open(recent_path, "w", newline="", encoding="utf-8") as f:
+        fieldnames = ["season", "week", "game_date", "kickoff_utc", "home_team", "away_team", "home_win_prob", "home_points", "away_points", "home_won", "predicted_correctly"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        for p in slate:
+            row = dict(p)
+            row["predicted_correctly"] = was_correct(p)
+            writer.writerow(row)
+    slate_correct = sum(1 for p in slate if was_correct(p))
+    print(f"Most recent slate: {slate_correct} of {len(slate)} correct -> {recent_path}")
 
     # ---- Save a small summary JSON -- this is what the README and the
     # dashboard read from, so both stay current automatically instead of
@@ -237,10 +215,14 @@ def main():
         "sp_plus_brier_score": round(sp_brier, 4) if sp_predictions else None,
         "sp_plus_games_compared": len(sp_predictions) if sp_predictions else 0,
         "elo_vs_sp_plus_pts": round((elo_acc - sp_acc) * 100, 1) if sp_predictions else None,
-        "ap_poll_accuracy": round(ap_acc, 4) if ap_total else None,
-        "ap_poll_games_compared": ap_total,
-        "elo_vs_ap_poll_pts": round((elo_acc - ap_acc) * 100, 1) if ap_total else None,
         "accuracy_by_season": per_season,
+        "current_season": {
+            "season": latest_season,
+            "correct": current_correct,
+            "games": len(current),
+            "accuracy": round(current_correct / len(current), 4),
+        },
+        "calibration": calibration,
     }
     summary_path = DATA_DIR / "backtest_summary.json"
     with open(summary_path, "w", encoding="utf-8") as f:

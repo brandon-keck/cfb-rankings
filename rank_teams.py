@@ -1,32 +1,8 @@
-"""
-Builds week-by-week Elo-style power ratings for FBS teams from the
-data pulled by fetch_cfbd_data.py (cfb.py).
-
-How it works:
-    - Every team starts a season with a rating carried over from the
-      previous season, regressed partway back toward the average
-      (1500) so last year's results don't dominate forever.
-    - That carryover rating is blended with the team's recruiting
-      talent composite for the new season, so roster turnover shows
-      up in the preseason number instead of waiting for games to
-      reveal it.
-    - Teams with no rating history (first year in FBS, or first year
-      in our data) start from a talent-only estimate, or 1500 if no
-      talent data exists either.
-    - After each completed game, both teams' ratings are updated
-      based on the actual result vs. what the pre-game rating
-      difference predicted, with a home-field-advantage bonus and a
-      margin-of-victory multiplier (blowouts move ratings more than
-      one-score games, but with diminishing returns).
-    - A snapshot of every team's rating is saved after each week, so
-      you can plot a team's rating trajectory across a season or
-      reconstruct "what would the rankings have looked like in week 8."
-"""
-
 import csv
 import glob
 import math
 import re
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 DATA_DIR = Path("data")
@@ -37,6 +13,7 @@ HOME_FIELD_ADVANTAGE = 65.0      # Elo points added to the home team's rating pr
 BASE_K = 24.0                    # base update speed; higher = ratings move faster per game
 REGRESSION_TO_MEAN = 0.65        # fraction of last season's rating strength kept into the next season
 TALENT_BLEND_WEIGHT = 0.30       # weight given to talent-based prior vs. carryover rating
+UPCOMING_WINDOW_DAYS = 9         # how far ahead to publish win probabilities for scheduled games
 
 
 def find_season_game_files() -> list[Path]:
@@ -314,10 +291,13 @@ def run_elo(games: list[dict], talent_by_team: dict[tuple[int, str], float], fbs
                     "season": g["season"],
                     "week": g["week"],
                     "game_date": g["start_date"][:10] if g["start_date"] else "",
+                    "kickoff_utc": kickoff_utc(g["start_date"]),
                     "home_team": home,
                     "away_team": away,
                     "home_win_prob": round(expected_home, 4),
                     "home_won": actual_home == 1.0,
+                    "home_points": g["home_points"],
+                    "away_points": g["away_points"],
                 }
             )
 
@@ -390,6 +370,122 @@ def save_csv(rows: list[dict], path: Path, fieldnames: list[str]) -> None:
     print(f"  saved {len(rows)} rows -> {path}")
 
 
+def parse_start(value):
+    """Parse CFBD's ISO timestamps (e.g. 2026-08-29T19:00:00.000Z) into an
+    aware UTC datetime, or None if missing/garbled."""
+    if not value:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(value).strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def kickoff_utc(value) -> str:
+    """Normalized kickoff timestamp ('' if missing), so the dashboard can show
+    each game in the viewer's own timezone."""
+    dt = parse_start(value)
+    return dt.strftime("%Y-%m-%dT%H:%M:%SZ") if dt else ""
+
+
+def load_upcoming_games(now=None, window_days: int = UPCOMING_WINDOW_DAYS) -> list[dict]:
+    """Scheduled-but-not-yet-completed games kicking off between a few hours
+    ago (so games still in progress aren't dropped) and `window_days` from
+    now. Games that were postponed long ago and never completed fall outside
+    the window, so they can't linger in the list forever."""
+    now = now or datetime.now(timezone.utc)
+    earliest = now - timedelta(hours=4)
+    horizon = now + timedelta(days=window_days)
+
+    upcoming = {}
+    for path in find_season_game_files():
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if str(row.get("completed", "")).strip().lower() == "true":
+                    continue
+                start = parse_start(row.get("startDate"))
+                if start is None or not (earliest <= start <= horizon):
+                    continue
+                home = (row.get("homeTeam") or "").strip()
+                away = (row.get("awayTeam") or "").strip()
+                if not home or not away:
+                    continue
+                try:
+                    season = int(row["season"])
+                    week = int(row["week"])
+                except (KeyError, ValueError, TypeError):
+                    continue
+                upcoming[(season, week, home, away)] = {
+                    "season": season,
+                    "week": week,
+                    "kickoff_utc": start.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "home_team": home,
+                    "away_team": away,
+                    "neutral_site": str(row.get("neutralSite", "")).strip().lower() == "true",
+                }
+    return sorted(upcoming.values(), key=lambda g: (g["kickoff_utc"], g["home_team"]))
+
+
+def ratings_for_season(season, season_final_rows, talent_by_team, fbs_teams) -> dict[str, float]:
+    """Current ratings to use when predicting games in `season`.
+    - Same season as the latest completed game: the current ratings.
+    - A newer season that hasn't had a completed game yet (i.e. the
+      preseason): seed it exactly the way run_elo would -- last season's
+      ratings regressed toward the mean, blended with recruiting talent.
+    - An older season: nothing (those games are history, not predictions)."""
+    by_season: dict[int, dict[str, float]] = {}
+    for r in season_final_rows:
+        by_season.setdefault(r["season"], {})[r["team"]] = r["final_rating"]
+    if not by_season:
+        return {}
+
+    latest = max(by_season)
+    if season == latest:
+        return by_season[latest]
+    if season > latest:
+        roster = fbs_teams.get(season)
+        if not roster:
+            return {}
+        prior_for = seed_season_ratings(season, by_season[latest], talent_by_team)
+        return {team: prior_for(team) for team in roster}
+    return {}
+
+
+def predict_upcoming(upcoming, season_final_rows, talent_by_team, fbs_teams) -> list[dict]:
+    """Win probability for each scheduled FBS-vs-FBS game, using the same
+    home-field adjustment and win-probability formula the backtest scores.
+    Games involving a non-FBS team are skipped, matching the backtest."""
+    generated = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    cache: dict[int, dict[str, float]] = {}
+    rows = []
+    for g in upcoming:
+        season = g["season"]
+        if season not in cache:
+            cache[season] = ratings_for_season(season, season_final_rows, talent_by_team, fbs_teams)
+        ratings = cache[season]
+        home, away = g["home_team"], g["away_team"]
+        if home not in ratings or away not in ratings:
+            continue
+        home_adv = 0.0 if g["neutral_site"] else HOME_FIELD_ADVANTAGE
+        p_home = expected_score(ratings[home] + home_adv, ratings[away])
+        rows.append(
+            {
+                "season": season,
+                "week": g["week"],
+                "kickoff_utc": g["kickoff_utc"],
+                "home_team": home,
+                "away_team": away,
+                "neutral_site": g["neutral_site"],
+                "home_win_prob": round(p_home, 4),
+                "generated_utc": generated,
+            }
+        )
+    return rows
+
+
 def main():
     print("Loading games...")
     games = load_games()
@@ -416,6 +512,13 @@ def main():
     save_csv(season_final_rows, DATA_DIR / "elo_ratings_season_final.csv", ["season", "team", "final_rating", "rank"])
     save_csv(full_field_weekly_rows, DATA_DIR / "elo_full_field_weekly.csv", ["season", "week", "team", "rating", "rank"])
 
+    upcoming_rows = predict_upcoming(load_upcoming_games(), season_final_rows, talent_by_team, fbs_teams)
+    save_csv(
+        upcoming_rows,
+        DATA_DIR / "upcoming_predictions.csv",
+        ["season", "week", "kickoff_utc", "home_team", "away_team", "neutral_site", "home_win_prob", "generated_utc"],
+    )
+
     latest_season = max(r["season"] for r in season_final_rows)
     print(f"\nCurrent Top 25 standings, season {latest_season} (through the most recently played games):")
     top25 = sorted(
@@ -424,6 +527,15 @@ def main():
     )[:25]
     for r in top25:
         print(f"  {r['rank']:>2}. {r['team']:<25} {r['final_rating']}")
+
+    print(f"\nWin probabilities for the next {UPCOMING_WINDOW_DAYS} days: {len(upcoming_rows)} FBS-vs-FBS games")
+    for r in upcoming_rows[:8]:
+        fav_is_home = r["home_win_prob"] >= 0.5
+        fav = r["home_team"] if fav_is_home else r["away_team"]
+        prob = r["home_win_prob"] if fav_is_home else 1 - r["home_win_prob"]
+        print(f"  {r['away_team']} at {r['home_team']}: {fav} {prob:.0%}")
+    if len(upcoming_rows) > 8:
+        print(f"  ... and {len(upcoming_rows) - 8} more in data/upcoming_predictions.csv")
 
 
 if __name__ == "__main__":
