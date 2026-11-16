@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-09",
-  "games_evaluated": 5534,
-  "elo_accuracy": 0.7105,
-  "elo_brier_score": 0.1894,
-  "home_baseline_accuracy": 0.5869,
+  "generated_at_utc": "2026-11-16",
+  "games_evaluated": 5601,
+  "elo_accuracy": 0.7106,
+  "elo_brier_score": 0.1896,
+  "home_baseline_accuracy": 0.5863,
   "elo_vs_home_baseline_pts": 12.4,
-  "sp_plus_accuracy": 0.7864,
-  "sp_plus_brier_score": 0.1478,
-  "sp_plus_games_compared": 5534,
-  "elo_vs_sp_plus_pts": -7.6,
+  "sp_plus_accuracy": 0.7859,
+  "sp_plus_brier_score": 0.1482,
+  "sp_plus_games_compared": 5601,
+  "elo_vs_sp_plus_pts": -7.5,
   "accuracy_by_season": [
     {
       "season": 2019,
@@ -47,46 +47,46 @@
     },
     {
       "season": 2026,
-      "accuracy": 0.7028,
-      "games": 562
+      "accuracy": 0.7043,
+      "games": 629
     }
   ],
   "current_season": {
     "season": 2026,
-    "correct": 395,
-    "games": 562,
-    "accuracy": 0.7028
+    "correct": 443,
+    "games": 629,
+    "accuracy": 0.7043
   },
   "calibration": [
     {
       "bucket": "50-60%",
-      "games": 1695,
+      "games": 1714,
       "avg_predicted": 0.5504,
-      "actual_win_rate": 0.5493
+      "actual_win_rate": 0.5508
     },
     {
       "bucket": "60-70%",
-      "games": 1566,
-      "avg_predicted": 0.6486,
-      "actual_win_rate": 0.6935
+      "games": 1589,
+      "avg_predicted": 0.6487,
+      "actual_win_rate": 0.6929
     },
     {
       "bucket": "70-80%",
-      "games": 1301,
-      "avg_predicted": 0.7482,
-      "actual_win_rate": 0.7955
+      "games": 1317,
+      "avg_predicted": 0.7483,
+      "actual_win_rate": 0.795
     },
     {
       "bucket": "80-90%",
-      "games": 781,
+      "games": 789,
       "avg_predicted": 0.8437,
-      "actual_win_rate": 0.8886
+      "actual_win_rate": 0.8885
     },
     {
       "bucket": "90-100%",
-      "games": 191,
+      "games": 192,
       "avg_predicted": 0.9261,
-      "actual_win_rate": 0.9738
+      "actual_win_rate": 0.974
     }
   ]
 }
